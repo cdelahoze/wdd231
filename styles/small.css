@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap');
+
+:root {
+  --bg-page: #eafaf6;
+  --bg-panel: #d7f1e9;
+  --bg-dark: #0f3d36;
+  --bg-mid: #bde6da;
+  --text-main: #12312b;
+  --text-light: #f4fffb;
+  --border-main: #1f7666;
+  --nav-divider: #2f8b7a;
+  --nav-active: #17584d;
+  --surface-light: #f8fffd;
+  --surface-soft: #c6eadf;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0.4rem;
+  font-family: 'Barlow', sans-serif;
+  color: var(--text-main);
+  background: radial-gradient(circle at top right, #cef7ee 0%, var(--bg-page) 48%, #ddf4ee 100%);
+}
+
+.site-header {
+  padding: 0.2rem 0;
+}
+
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.95rem;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.site-logo {
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+
+.logo-placeholder {
+  width: 50px;
+  height: 50px;
+  border: 1px solid var(--border-main);
+  background-image: linear-gradient(
+      45deg,
+      transparent 48%,
+      var(--border-main) 48%,
+      var(--border-main) 52%,
+      transparent 52%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 48%,
+      var(--border-main) 48%,
+      var(--border-main) 52%,
+      transparent 52%
+    );
+}
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: var(--bg-dark);
+  border: 1px solid var(--border-main);
+}
+
+.main-nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 0.72rem;
+  padding: 0.32rem 0.65rem;
+  border-right: 1px solid var(--nav-divider);
+}
+
+.main-nav a[aria-current='page'] {
+  background-color: var(--nav-active);
+}
+
+main h1 {
+  margin: 0.45rem 0;
+  font-size: 1.85rem;
+  font-weight: 400;
+}
+
+.top-panels {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.55rem;
+}
+
+.panel {
+  background-color: var(--bg-panel);
+  min-height: 185px;
+  border: 1px solid #9fd5c7;
+}
+
+.panel h2 {
+  margin: 0;
+  padding: 0.16rem;
+  font-size: 0.88rem;
+  text-align: center;
+  color: var(--text-light);
+  background-color: var(--bg-dark);
+}
+
+.panel p {
+  margin: 0;
+  padding: 0.48rem;
+  font-size: 0.82rem;
+  line-height: 1.2;
+}
+
+.student-photo-panel {
+  min-height: 170px;
+}
+
+.student-photo {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 130px;
+}
+
+.student-photo img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border: 1px solid var(--border-main);
+}
+
+.course-work {
+  margin-top: 0.55rem;
+  min-height: auto;
+  padding-bottom: 0.5rem;
+}
+
+.course-tags,
+.course-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.35rem;
+  padding: 0.4rem;
+}
+
+.course-tags button,
+.course-list span {
+  border: 1px solid var(--border-main);
+  border-radius: 4px;
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 0.18rem 0.2rem;
+  background-color: var(--surface-light);
+}
+
+.course-tags button.is-active {
+  background-color: var(--nav-active);
+  color: var(--text-light);
+}
+
+.course-list {
+  grid-template-columns: 1fr;
+}
+
+.course-card {
+  border: 1px solid var(--border-main);
+  border-radius: 6px;
+  background-color: var(--surface-light);
+  padding: 0.5rem;
+}
+
+.course-card.is-completed {
+  border-color: #14564a;
+  background-color: #d9f1e7;
+}
+
+.course-card__title {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--bg-dark);
+}
+
+.course-card__detail {
+  margin: 0.16rem 0;
+  font-size: 0.78rem;
+  line-height: 1.25;
+}
+
+.course-tags button:hover,
+.course-tags button:focus-visible {
+  background-color: #e0f4ee;
+}
+
+.course-tags button {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.credits-note {
+  text-align: center;
+  font-size: 0.72rem;
+  padding: 0 0.4rem;
+}
+
+footer {
+  text-align: center;
+  padding: 0.2rem 0 0.4rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0.35rem 0;
+}
+
+.social-links a {
+  width: 32px;
+  height: 32px;
+  border-radius: 5px;
+  border: 1px solid var(--border-main);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg-dark);
+  text-decoration: none;
+  background-color: var(--surface-light);
+  font-weight: 700;
+}
+
+.copyright,
+.last-update {
+  margin: 0.2rem 0;
+  font-size: 0.7rem;
+}
+
+@media (max-width: 759px) {
+  body {
+    max-width: 380px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.55rem;
+  }
+
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: 1px solid var(--border-main);
+    background-color: var(--surface-light);
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .menu-toggle__line {
+    width: 20px;
+    height: 2px;
+    background-color: var(--text-main);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .menu-toggle.is-open .menu-toggle__line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menu-toggle.is-open .menu-toggle__line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.is-open .menu-toggle__line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .site-brand {
+    font-size: 1.6rem;
+  }
+
+  .site-brand span {
+    font-size: 1.6rem;
+    color: var(--text-main);
+    font-weight: 700;
+  }
+
+  .logo-placeholder {
+    width: 46px;
+    height: 46px;
+  }
+
+  .main-nav {
+    display: none;
+    border-top: 1px solid var(--nav-divider);
+    border-bottom: 1px solid var(--nav-divider);
+    border-left: none;
+    border-right: none;
+    background-color: var(--bg-dark);
+  }
+
+  .main-nav.is-open {
+    display: block;
+  }
+
+  .main-nav a {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 0.85rem 0.55rem;
+    border-right: none;
+    border-bottom: 1px solid var(--nav-divider);
+    background: linear-gradient(90deg, #12433b 0%, #238a78 100%);
+  }
+
+  .main-nav a[aria-current='page'] {
+    background: var(--nav-active);
+  }
+
+  main h1 {
+    margin: 0.8rem 0.55rem;
+    font-size: 1.9rem;
+  }
+
+  .top-panels {
+    gap: 1rem;
+    padding: 0 0.55rem;
+  }
+
+  .panel {
+    min-height: 295px;
+  }
+
+  .panel h2 {
+    padding: 0.34rem 0.2rem;
+    font-size: 1.6rem;
+  }
+
+  .panel p {
+    padding: 0.75rem;
+    font-size: 1.6rem;
+    line-height: 1.28;
+  }
+
+  .student-photo-panel {
+    min-height: 430px;
+  }
+
+  .student-photo {
+    min-height: 325px;
+  }
+
+  .student-photo img {
+    width: 72%;
+    max-width: 250px;
+    height: 255px;
+    border: 0;
+    border-radius: 8px;
+    background-color: var(--bg-mid);
+    box-shadow: 0 8px 16px rgb(19 94 79 / 22%);
+  }
+
+  .course-work {
+    margin: 1rem 0.55rem 0;
+    padding-bottom: 0.7rem;
+  }
+
+  .course-tags {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.45rem;
+    padding: 0.55rem 0.4rem;
+  }
+
+  .course-tags button {
+    font-size: 1.6rem;
+    padding: 0.35rem 0.2rem;
+    border-radius: 8px;
+  }
+
+  .course-list {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+    padding: 0 0.4rem 0.4rem;
+  }
+
+  .course-list span {
+    border-radius: 0;
+    background-color: var(--surface-soft);
+    font-size: 1.45rem;
+    padding: 0.2rem;
+  }
+
+  .course-list {
+    grid-template-columns: 1fr;
+  }
+
+  .course-card {
+    border-radius: 8px;
+    padding: 0.55rem;
+    background-color: var(--surface-soft);
+  }
+
+  .course-card__title {
+    font-size: 1.25rem;
+  }
+
+  .course-card__detail {
+    font-size: 1rem;
+  }
+
+  .credits-note {
+    font-size: 1.45rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  footer {
+    padding: 0.2rem 0 0.8rem;
+  }
+
+  .social-links {
+    gap: 0.9rem;
+    margin: 0.45rem 0;
+  }
+
+  .social-links a {
+    width: 52px;
+    height: 52px;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+    font-size: 2.5rem;
+  }
+
+  .copyright,
+  .last-update {
+    font-size: 1.2rem;
+    margin: 0.2rem 0;
+  }
+}
+
