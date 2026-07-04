@@ -1,8 +1,7 @@
-const dataSources = ['scripts/data.json', './scripts/data.json', 'data.json'];
+const dataSource = 'scripts/data.json';
 const filterButtons = document.querySelectorAll('.course-tags button[data-filter]');
 const courseList = document.querySelector('.course-list');
 const creditsNote = document.querySelector('.credits-note');
-const embeddedCourses = Array.isArray(window.COURSE_DATA) ? window.COURSE_DATA : null;
 
 let allCourses = [];
 
@@ -94,40 +93,17 @@ async function loadCourses() {
 	}
 
 	try {
-		if (embeddedCourses && embeddedCourses.length > 0) {
-			allCourses = embeddedCourses;
-			renderCourses('ALL');
-			return;
+		const response = await fetch(dataSource);
+		if (!response.ok) {
+			throw new Error(`Could not fetch course data (${response.status})`);
 		}
 
-		let data = null;
-
-		for (const source of dataSources) {
-			try {
-				const response = await fetch(source);
-				if (!response.ok) {
-					continue;
-				}
-
-				const parsed = await response.json();
-				if (Array.isArray(parsed) && parsed.length > 0) {
-					data = parsed;
-					break;
-				}
-			} catch (fetchError) {
-				// Ignore fetch errors here and continue with other sources or fallback data.
-			}
+		const data = await response.json();
+		if (!Array.isArray(data)) {
+			throw new Error('Course data format is invalid. Expected an array.');
 		}
 
-		if (!data && Array.isArray(window.COURSE_DATA)) {
-			data = window.COURSE_DATA;
-		}
-
-		if (!data) {
-			throw new Error('No course data source is available.');
-		}
-
-		allCourses = Array.isArray(data) ? data : [];
+		allCourses = data;
 		renderCourses('ALL');
 	} catch (error) {
 		courseList.innerHTML = '<p>Could not load course data from data.json.</p>';
