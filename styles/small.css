@@ -169,6 +169,8 @@ main h1 {
 
 .course-list {
   grid-template-columns: 1fr;
+  min-height: 26rem;
+  align-content: start;
 }
 
 .course-card {
@@ -242,6 +244,7 @@ footer {
 .last-update {
   margin: 0.2rem 0;
   font-size: 0.7rem;
+  min-height: 1.2em;
 }
 
 @media (max-width: 759px) {
@@ -397,6 +400,7 @@ footer {
     grid-template-columns: 1fr;
     gap: 0.3rem;
     padding: 0 0.4rem 0.4rem;
+    min-height: 32rem;
   }
 
   .course-list span {
@@ -451,6 +455,7 @@ footer {
   .last-update {
     font-size: 1.2rem;
     margin: 0.2rem 0;
+    min-height: 1.2em;
   }
 }
 

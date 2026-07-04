@@ -2,6 +2,7 @@ const dataSources = ['scripts/data.json', './scripts/data.json', 'data.json'];
 const filterButtons = document.querySelectorAll('.course-tags button[data-filter]');
 const courseList = document.querySelector('.course-list');
 const creditsNote = document.querySelector('.credits-note');
+const embeddedCourses = Array.isArray(window.COURSE_DATA) ? window.COURSE_DATA : null;
 
 let allCourses = [];
 
@@ -93,6 +94,12 @@ async function loadCourses() {
 	}
 
 	try {
+		if (embeddedCourses && embeddedCourses.length > 0) {
+			allCourses = embeddedCourses;
+			renderCourses('ALL');
+			return;
+		}
+
 		let data = null;
 
 		for (const source of dataSources) {
