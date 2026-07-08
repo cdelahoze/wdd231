@@ -1,0 +1,66 @@
+
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+html {
+    margin: auto;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    max-width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 1em;
+}
+
+main {
+    margin: 10px;
+}
+
+/* Encabezados */
+h1, h2, h3, h5 {
+    text-align: center;
+    margin-block-start: 0em;
+    margin-block-end: 0.5em;
+}
+
+h1, h2 {
+    color: rgb(59, 59, 184);
+}
+
+/* CONTENEDOR DE TARJETAS (CSS GRID RESPONSIVO SIN MEDIA QUERIES)
+   Usa auto-fit para acomodar tantas columnas como quepan en la pantalla.
+*/
+#cards, .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+    justify-content: center;
+}
+
+/* TARJETAS */
+section {
+    background-color: #eee;
+    padding: 1.5em;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* IMÁGENES DENTRO DE LAS TARJETAS */
+img {
+    display: block;
+    margin: 1rem auto 0;
+    width: 100%;
+    height: auto;
+    max-width: 250px;
+    border-radius: 4px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+}
