@@ -13,7 +13,7 @@ async function getProphetData() {
 
 // 3. Expresión de función de flecha para construir las tarjetas HTML
 const displayProphets = (prophets) => {
-  prophets.forEach((prophet) => {
+  prophets.forEach((prophet, index) => {
     // Crear elementos HTML
     let card = document.createElement('section');
     let fullName = document.createElement('h2');
@@ -31,9 +31,12 @@ const displayProphets = (prophets) => {
     // Configurar atributos de la imagen
     portrait.setAttribute('src', prophet.imageurl);
     portrait.setAttribute('alt', `Portrait of ${prophet.name} ${prophet.lastname}`);
-    portrait.setAttribute('loading', 'lazy');
-    portrait.setAttribute('width', '340');
-    portrait.setAttribute('height', '440');
+    const isFirstCard = index === 0;
+    portrait.setAttribute('loading', isFirstCard ? 'eager' : 'lazy');
+    portrait.setAttribute('fetchpriority', isFirstCard ? 'high' : 'auto');
+    portrait.setAttribute('decoding', 'async');
+    portrait.setAttribute('width', '250');
+    portrait.setAttribute('height', '324');
 
     // Agregar los elementos al contenedor 'card'
     card.appendChild(fullName);
