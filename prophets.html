@@ -10,6 +10,12 @@
     This description is temporary while we develop it."
     />
     <meta name="author" content="Cristian Moises De La Hoz Escorcia" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="preconnect" href="https://byui-cse.github.io" crossorigin />
     <link
       rel="preload"
@@ -20,14 +26,33 @@
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/prophets.css" />
     <script src="scripts/prophets.js" defer></script>
-    <title>Prophets</title>
+    <title>Latter-day Prophets</title>
   </head>
   <body>
     <header>
-      <h1>Latter-day Prophets</h1>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="chamber/">Chamber</a>
+        <a href="prophets.html" aria-current="page">Prophets</a>
+        <a href="final/">Final</a>
+      </nav>
     </header>
     <main>
-      <div class="cards"></div>
+      <section class="page-section">
+        <h1>Latter-day Prophets</h1>
+        <h2>Overview</h2>
+        <p>Explore brief profile cards for modern prophets of The Church of Jesus Christ of Latter-day Saints.</p>
+      </section>
+
+      <section class="page-section">
+        <h2>Data Source</h2>
+        <p>The cards are generated dynamically from the official BYUI JSON endpoint.</p>
+      </section>
+
+      <section class="page-section">
+        <h2>Prophet Cards</h2>
+        <div class="cards" role="list" aria-label="Prophet cards"></div>
+      </section>
     </main>
     <footer>Cristian De La Hoz | Latter-day Prophets</footer>
   </body>

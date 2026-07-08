@@ -16,6 +16,7 @@ const displayProphets = (prophets) => {
   prophets.forEach((prophet, index) => {
     // Crear elementos HTML
     let card = document.createElement('section');
+    card.setAttribute('role', 'listitem');
     let fullName = document.createElement('h2');
     let birthDate = document.createElement('p');
     let birthPlace = document.createElement('p');
