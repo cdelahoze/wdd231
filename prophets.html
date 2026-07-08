@@ -10,8 +10,20 @@
     This description is temporary while we develop it."
     />
     <meta name="author" content="Cristian Moises De La Hoz Escorcia" />
-    <link rel="stylesheet" href="styles/normalize.css" />
-    <link rel="stylesheet" href="styles/prophets.css" />
+    <link
+      rel="preload"
+      href="styles/normalize.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="styles/normalize.css" /></noscript>
+    <link
+      rel="preload"
+      href="styles/prophets.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="styles/prophets.css" /></noscript>
     <script src="scripts/prophets.js" defer></script>
     <title>Prophets</title>
   </head>
