@@ -24,6 +24,7 @@ function updateCreditsText(courses) {
 function createCourseCard(course) {
 	const card = document.createElement('article');
 	card.className = 'course-card';
+	card.setAttribute('role', 'listitem');
 	const isCompleted = Boolean(course.completed ?? Number(course.credits_earned || 0) > 0);
 	if (isCompleted) {
 		card.classList.add('is-completed');
@@ -71,6 +72,7 @@ function renderCourses(filter) {
 
 	if (!filteredCourses.length) {
 		const emptyState = document.createElement('p');
+		emptyState.setAttribute('role', 'listitem');
 		emptyState.textContent = 'No courses found for this filter.';
 		courseList.append(emptyState);
 		updateCreditsText([]);
@@ -106,7 +108,11 @@ async function loadCourses() {
 		allCourses = data;
 		renderCourses('ALL');
 	} catch (error) {
-		courseList.innerHTML = '<p>Could not load course data from data.json.</p>';
+		courseList.innerHTML = '';
+		const errorMessage = document.createElement('p');
+		errorMessage.setAttribute('role', 'listitem');
+		errorMessage.textContent = 'Could not load course data from data.json.';
+		courseList.append(errorMessage);
 		if (creditsNote) {
 			creditsNote.textContent = 'Credits unavailable.';
 		}
