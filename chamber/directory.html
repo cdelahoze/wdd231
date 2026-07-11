@@ -2,31 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Facatativá Chamber of Commerce | Directory</title>
+    <title>Facatativá Chamber of Commerce Directory</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
       content="Explore the official Facatativá Chamber of Commerce Directory. Connect with local businesses, entrepreneurs, and services."
     />
     <meta name="author" content="Cristian Moises De La Hoz Escorcia" />
-    <!-- Open Graph meta tags for social media sharing -->
-    <meta property="og:title" content="Facatativá Chamber of Commerce" />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:image"
-      content="https://cdelahoze.github.io/wdd231/chamber/images/logo-footer.svg"
-    />
-    <meta
-      property="og:url"
-      content="https://cdelahoze.github.io/wdd231/chamber/directory"
-    />
-    <meta
-      property="og:description"
-      content="Explore the official Facatativá Chamber of Commerce Directory. Connect with local businesses, entrepreneurs, and services."
-    />
-    <!-- favicon -->
-    <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
-    <!-- Google Fonts Preconnect y Hojas de Estilo -->
+
+    <!-- Preconexión de fuentes para acelerar DNS/TLS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -37,11 +21,14 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
     />
+
+    <!-- Hojas de estilo con rendimiento condicional -->
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/base.css" />
     <link rel="stylesheet" href="styles/directory.css" />
-    <link rel="stylesheet" href="styles/large.css" />
-    <link rel="stylesheet" href="styles/medium.css" />
+    <link rel="stylesheet" href="styles/medium.css" media="(min-width: 48em)" />
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 64em)" />
+
     <script src="scripts/date.js" defer></script>
     <script src="scripts/directory.js" defer></script>
   </head>
@@ -49,11 +36,16 @@
     <header>
       <div class="wrapper">
         <div class="logo-image">
-          <img class="img-log" src="images/logo.svg" alt="logo of chamber" />
+          <img
+            class="img-log"
+            src="images/logo.svg"
+            alt="Facatativá Chamber of Commerce Logo"
+            fetchpriority="high"
+          />
         </div>
         <div class="chamber">
-          <h1>Facatativá</h1>
-          <h2>Chamber of Commerce</h2>
+          <h2>Facatativá</h2>
+          <h3>Chamber of Commerce</h3>
         </div>
         <div class="top-nav">
           <nav class="topnav" id="myTopnav">
@@ -93,6 +85,7 @@
       <button id="list">List</button>
     </div>
     <main>
+      <h1 class="visually-hidden">Facatativá Chamber of Commerce Directory</h1>
       <div class="cards"></div>
     </main>
     <footer>
@@ -100,6 +93,7 @@
         class="logo-footer"
         src="images/logo-footer.svg"
         alt="logo image logo-footer"
+        fetchpriority="high"
       />
       <div class="social-links" role="navigation" aria-label="Social links">
         <!-- Enlace a LinkedIn -->
