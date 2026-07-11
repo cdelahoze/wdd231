@@ -44,14 +44,11 @@ html {
 body {
   width: 80%;
   text-align: center;
-  margin: 0 auto;
   background-color: var(--paragraph-background-color);
   padding: 1em;
   font-size: 16px;
   font-family: var(--heading-font);
-  text-align: center;
   margin: 0 auto;
-  background-color: var(--nav-background-color);
 }
 
 main {
@@ -313,7 +310,6 @@ footer {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(1, 1fr);
   background-color: var(--secondary-color);
-  grid-template-rows: 80% 20%;
 }
 
 footer h2 {
