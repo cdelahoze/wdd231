@@ -165,6 +165,8 @@ h2 {
 
 /* this is the top nav css control */
 
+/* --- CONTROL DE LA NAVEGACIÓN --- */
+
 .material-symbols-outlined {
   font-variation-settings:
     "FILL" 0,
@@ -178,7 +180,7 @@ h2 {
   background-color: var(--nav-background-color);
 }
 
-/* --- NAVEGACIÓN (Topnav) --- */
+/* Estilos para los enlaces principales */
 .topnav a {
   float: left;
   display: block;
@@ -186,10 +188,11 @@ h2 {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 1rem; /* Cambiado de 1.7vw a 1rem para estabilidad */
+  font-size: 1rem;
 }
 
-.topnav a:hover {
+.topnav a:hover,
+button.icon:hover {
   background-color: var(--nav-hover-background-color);
   color: var(--nav-hover-link-color);
 }
@@ -199,39 +202,54 @@ h2 {
   color: var(--nav-link-color);
 }
 
+/* Ocultar el botón de menú por defecto en pantallas grandes */
 .topnav .icon {
   display: none;
+  background: transparent;
+  border: none;
+  color: var(--nav-link-color);
+  padding: 10px 16px;
+  cursor: pointer;
 }
 
+button.icon {
+  background: transparent;
+  border: none;
+  color: var(--nav-link-color);
+  cursor: pointer;
+  padding: 14px 1vw;
+  font-size: 1.7vw;
+}
+
+button.icon:hover {
+  background-color: var(--nav-hover-background-color);
+  color: var(--nav-hover-link-color);
+}
+
+/* --- VISTA MÓVIL (Menú Hamburguesa) --- */
 @media screen and (max-width: 47.9375em) {
+  /* Ocultar todos los enlaces excepto el primero (Home) */
   .topnav a:not(:first-child) {
     display: none;
   }
-  .topnav a.icon {
+
+  /* Mostrar el botón de hamburguesa (usando .icon o button.icon) */
+  .topnav .icon {
     float: right;
     display: block;
   }
-}
 
-@media screen and (max-width: 47.9375em) {
-  .topnav a:not(:first-child) {
-    display: none;
-  }
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 47.9375em) {
+  /* Estado desplegado del menú cuando tiene la clase .responsive */
   .topnav.responsive {
     position: relative;
   }
+
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
     top: 0;
   }
+
   .topnav.responsive a {
     float: none;
     display: block;
@@ -271,10 +289,17 @@ footer {
   max-width: 100%;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(1, 1fr);
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   grid-template-rows: 80% 20%;
 }
 
+footer h2 {
+  color: var(--paragraph-color-on-white);
+}
+
+footer p {
+  color: var(--paragraph-color-on-white);
+}
 .contact {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
@@ -291,7 +316,7 @@ footer {
   font-size: 1.1em;
   padding: 2em;
   width: 96%;
-  color: white;
+  color: var(--paragraph-color-on-white);
 }
 
 .logo-footer {
@@ -306,7 +331,7 @@ footer {
   text-align: center;
   font-size: 1.2rem;
   width: 96%;
-  color: white;
+  color: var(--paragraph-color-on-white);
   padding: 0.5rem;
   margin: 0;
 }
@@ -689,9 +714,10 @@ footer {
 
   .social-links a {
     display: inline-block;
-    width: 35px; /* Tamaño adecuado para móviles */
-    height: 35px;
-    background-color: transparent;
+    width: 44px; /* Tamaño adecuado para móviles */
+    height: 44px;
+    background-color: var(--paragraph-color-on-color);
+    border-radius: 50%;
   }
 
   .copyright2 {
