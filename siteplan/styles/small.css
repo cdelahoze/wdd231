@@ -1,0 +1,202 @@
+/* if you are using any Google fonts change the font names below to your fonts. 
+Any spaces in your font name should be replaced with a +. 
+Fonts are separated by a | */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Shadows+Into+Light&display=swap');
+
+
+:root {
+  /* Paleta Institucional - Cámara de Comercio de Barranquilla */
+  --primary-color: #004c9e; /* Azul Institucional CCB (Header, títulos principales) */
+  --secondary-color: #f0f4f8; /* Gris/Azulado Muy Claro (Tarjetas, módulos y contenedores) */
+  --accent1-color: #3482fe; /* Azul Acción / Interactivo (Botones CTA, enlaces, hovers) */
+  --accent2-color: #e2e8f0; /* Gris Claro de Borde / Divisor */
+
+  /* Fuentes del proyecto */
+  --heading-font: "Montserrat", sans-serif;
+  --paragraph-font: "Inter", sans-serif;
+
+  /* Asignación funcional sobre fondos claros */
+  --headline-color-on-white: #004c9e; /* Titulares sobre fondo blanco/claro */
+  --headline-color-on-color: #ffffff; /* Titulares sobre botones o banners de color */
+  --paragraph-color-on-white: #1a1a1a; /* Texto oscuro sobre blanco (Gris Grafito) */
+  --paragraph-color-on-color: #ffffff; /* Texto sobre elementos con color acento */
+  --paragraph-background-color: #ffffff; /* Fondo general de la página (Blanco) */
+
+  /* Navegación al estilo camarabaq.org.co */
+  --nav-link-color: #004c9e; /* Enlaces azul institucional */
+  --nav-background-color: #ffffff; /* Barra superior limpia en blanco */
+  --nav-hover-link-color: #ffffff; /* Texto blanco al resaltar */
+  --nav-hover-background-color: #3482fe; /* Fondo azul brillante en hover */
+}
+
+
+html {
+background-color: var(--paragraph-color-on-color);
+}
+
+body {
+max-width: 940px;
+margin: 0 auto;
+background-color: white;
+padding: 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+font-family: var(--heading-font);
+color: var(--paragraph-color-on-white);
+}
+
+p {
+font-family: var(--paragraph-font);
+color: var(--headline-color-on-white);
+
+}
+
+
+header {
+display: grid;
+padding-bottom: 15px;
+background-color: var(--primary-color);
+line-height: 1em;
+text-align: center;
+font-size: 1.1vw;
+}
+
+h1 {
+text-align: center;
+color:white;
+padding-top: 0.5em;
+}
+
+h2 {
+text-align: center;
+color:white
+}
+
+
+main{
+  display: flex;
+  flex-direction: column;
+}
+
+.wireframes{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.wireframes img {
+  width: 100%;
+  height: auto;
+}
+
+.main-title-1{
+  text-align: center;
+  padding: 0.5em;
+  border: 10px solid rgb(255, 255, 255);
+  background-color: rgb(129, 174, 219);
+}
+
+.main-title-2{
+  text-align: center;
+  padding: 0.5em;
+  border: 10px solid rgb(255, 255, 255);
+  background-color: rgb(129, 174, 219);
+}
+
+.main-title-3{
+  text-align: center;
+  padding: 0.5em;
+  border: 10px solid rgb(255, 255, 255);
+  background-color: rgb(129, 174, 219);
+    }
+
+h3{
+  background-color: rgba(5, 49, 93, 0.637);
+  display: flex;
+  font-size: 1.17em;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  font-weight: bold;
+}
+
+h4{
+  margin-block-start: 0.2em;
+  margin-block-end: 0.2em;
+  padding-left: 40px;
+  padding-top: 27px;
+}
+
+img{
+  grid-column: 1/1;
+  grid-row: 9/10;
+  width: 20%;
+  padding-left: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+p{
+  text-align: justify;
+  padding-left: 50px;
+  padding-right: 112px;
+}
+
+
+.colors {
+  width: 100%;
+  min-width: 350px;
+  margin: auto;
+  text-align: center;
+}
+.colors th {
+  background-color: #999;
+}
+.colors td{
+  width: 25%;
+  height: 3em;
+}
+
+.primary {
+  background-color: var(--primary-color);
+}
+.secondary {
+  background-color: var(--secondary-color);
+}
+.accent1 {
+  background-color: var(--accent1-color);
+}
+.accent2{
+  background-color: var(--accent2-color);
+}
+
+
+
+p.colored {
+  background-color: var(--paragraph-background-color);
+  color: var(--paragraph-color-on-color);
+}
+
+footer {
+display: grid;
+max-width: 100%;
+background-color: var(--primary-color);
+text-align: center;
+padding: 1em 0;
+grid-template-columns: 1fr;
+grid-gap: 2em
+}
+
+.copyright{
+grid-column: 1 / 3;
+grid-row: 1 / 2;
+font-family: Lato, Helvetica, sans-serif;
+text-align: center;
+font-size: 0.8em;
+padding: 1em;
+width: 96%; 
+color:white
+}
