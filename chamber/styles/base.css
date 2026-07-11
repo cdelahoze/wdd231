@@ -25,6 +25,15 @@ Fonts are separated by a | */
   --nav-background-color: #ffffff; /* Barra superior limpia en blanco */
   --nav-hover-link-color: #ffffff; /* Texto blanco al resaltar */
   --nav-hover-background-color: #3482fe; /* Fondo azul brillante en hover */
+
+  --back: var(--primary-color);
+  --back2: var(--secondary-color);
+  --foredark: var(--paragraph-color-on-white);
+  --forelight: var(--headline-color-on-color);
+  --border: var(--secondary-color);
+  --borderlight: var(--primary-color);
+  --shadow: var(--accent1-color);
+  --zebra: var(--paragraph-background-color);
 }
 
 html {
@@ -99,8 +108,8 @@ header h3 {
 
 /* Corrección de contraste en el Banner */
 #banner {
-  background-color: var(--paragraph-background-color); 
-  color: var(--primary-color); 
+  background-color: var(--paragraph-background-color);
+  color: var(--primary-color);
   font-size: 1.1rem;
   width: 100%;
   padding: 1em;
@@ -188,14 +197,6 @@ h2 {
 
 /* --- CONTROL DE LA NAVEGACIÓN --- */
 
-.material-symbols-outlined {
-  font-variation-settings:
-    "FILL" 0,
-    "wght" 400,
-    "GRAD" 0,
-    "opsz" 48;
-}
-
 .topnav {
   overflow: hidden;
   background-color: var(--nav-background-color);
@@ -239,7 +240,8 @@ button.icon {
   color: var(--nav-link-color);
   cursor: pointer;
   padding: 14px 1vw;
-  font-size: 1.7vw;
+  font-size: 1.7rem;
+  line-height: 1;
 }
 
 button.icon:hover {
@@ -343,6 +345,10 @@ footer p {
 .logo-footer {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
+  width: min(100%, 300px);
+  height: auto;
+  aspect-ratio: 3 / 1;
+  justify-self: center;
 }
 
 .copyright {
@@ -1041,17 +1047,6 @@ form label.top1 textarea {
 }
 
 /* table */
-
-:root {
-  --back: var(--primary-color);
-  --back2: var(--secondary-color);
-  --foredark: var(--paragraph-color-on-white);
-  --forelight: var(--headline-color-on-color);
-  --border: var(--secondary-color);
-  --borderlight: var(--primary-color);
-  --shadow: var(--accent1-color);
-  --zebra: var(--paragraph-background-color);
-}
 
 table {
   margin: 10px auto;
