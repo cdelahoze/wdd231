@@ -942,7 +942,7 @@ form fieldset {
   margin: 2rem 0;
   border: 1px solid var(--secondary-color);
   border-radius: 10px;
-  padding: 0.5rem 296;
+  padding: 0.5rem 2rem;
 }
 
 form legend {
