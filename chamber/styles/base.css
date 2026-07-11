@@ -13,7 +13,7 @@ Fonts are separated by a | */
 
   /* Fuentes del proyecto */
   --heading-font: "Montserrat", sans-serif;
-  --paragraph-font: "Raleway", sans-serif;
+  --paragraph-font: "Inter", sans-serif;
 
   /* Asignación funcional sobre fondos claros */
   --headline-color-on-white: #004c9e; /* Titulares sobre fondo blanco/claro */
@@ -31,6 +31,7 @@ Fonts are separated by a | */
 
 html {
   background-color: var(--secondary-color);
+  margin: auto;
 }
 
 body {
@@ -39,6 +40,17 @@ body {
   margin: 0 auto;
   background-color: var(--paragraph-background-color);
   padding: 1em;
+  font-size: 16px;
+  font-family: var(--heading-font);
+  text-align: center;
+  margin: 0 auto;
+  background-color: var(--nav-background-color);
+}
+
+main {
+  display: flex;
+  margin: 10px;
+  justify-content: center;
 }
 
 h1,
@@ -64,12 +76,14 @@ header {
   width: 100%;
 }
 
+/* Corrección de contraste en el Banner */
 #banner {
-  background-color: var(--accent2-color);
-  color: var(--secondary-color);
-  font-size: 2em;
+  background-color: var(--paragraph-background-color); 
+  color: var(--primary-color); 
+  font-size: 1.1rem;
   width: 100%;
   padding: 1em;
+  font-weight: 600;
   display: none;
 }
 
@@ -125,6 +139,10 @@ h1 {
   padding-top: 0.5em;
   font-size: 2rem; /* Cambiado de 2.5vw a un tamaño fijo/escalable ideal */
   margin-bottom: 0.2rem;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 26.4px;
 }
 
 h2 {
@@ -140,7 +158,7 @@ h2 {
   font-size: 1.6rem;
   margin-block-start: 1em;
   margin-block-end: 0em;
-  background-color: var(--accent2-color);
+  background-color: var(--paragraph-background-color);
   padding-block: 9px;
   font-weight: bolder;
 }
@@ -239,11 +257,6 @@ h2 {
   box-sizing: border-box;
 }
 
-main {
-  margin: 10px;
-  justify-content: center;
-}
-
 .container {
   display: flex;
   font-size: 20px;
@@ -286,15 +299,6 @@ footer {
   grid-row: 1 / 2;
 }
 
-.social-links {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  padding-top: 95px;
-}
-
 .copyright {
   grid-column: 1 / 4;
   grid-row: 2 / 3;
@@ -307,19 +311,20 @@ footer {
   margin: 0;
 }
 
-
-
 .copyright2 {
   display: none;
 }
 
 /* Control global para los iconos de redes sociales */
 .social-links {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 15px; /* Espaciado limpio entre iconos */
   margin: 10px 0;
+  padding-top: 95px;
 }
 
 .social-links a {
@@ -353,14 +358,11 @@ footer {
     display: flex;
     flex-direction: column;
     background-color: var(--paragraph-background-color);
-}
+  }
 
-
-
-.img-log {
+  .img-log {
     width: 20%;
-    
-}
+  }
   .container {
     display: flex;
     flex-direction: column;
@@ -1049,14 +1051,6 @@ tfoot {
   font-weight: bold;
   color: var(--zebra);
   background-color: var(--back);
-}
-
-h1 {
-  font-size: 24px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 700;
-  line-height: 26.4px;
 }
 
 h3 {
