@@ -54,6 +54,7 @@ function displayMembers(members) {
     let name = document.createElement("h3");
     let address = document.createElement("p");
     let phone = document.createElement("p");
+    let membership = document.createElement("p");
     let website = document.createElement("a");
     let portrait = document.createElement("img");
 
@@ -61,7 +62,7 @@ function displayMembers(members) {
     name.textContent = member.name;
     address.textContent = member.address;
     phone.textContent = member.phone;
-    
+    membership.textContent = member.membership || "member";
     website.textContent = member.webname || "Visitar sitio web";
     website.setAttribute("href", member.website);
     website.setAttribute("target", "_blank"); // Abre en pestaña nueva
@@ -78,6 +79,7 @@ function displayMembers(members) {
     card.appendChild(name);
     card.appendChild(address);
     card.appendChild(phone);
+    card.appendChild(membership);
     card.appendChild(website);
 
     // Insertar tarjeta en la galería

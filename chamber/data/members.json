@@ -6,15 +6,17 @@
       "phone": "3207919016",
       "name": "Centro de Estética Erikim Jeim",
       "website": "https://erikim-jeim.negocio.site",
-      "webname": "https://erikim-jeim"
+      "webname": "https://erikim-jeim",
+      "membership": "gold"
     },
     {
       "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/logo-bauxsas-final-plano.webp",
-      "address": "TRANSVERSAL DE OCCIDENTE EMPRESARIAL DE, FUNZA, CUNDINAMARCA",
+      "address": "Transversal de Occidente Empresarial de, Funza, Cundinamarca",
       "phone": "6018223803",
       "name": "Baux Chemical S.A.S.",
       "website": "https://www.bauxchemical.com",
-      "webname": "https://www.bauxchemical.com"
+      "webname": "https://www.bauxchemical.com",
+      "membership": "silver"
     },
     {
       "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/chico-pizza.webp",
@@ -22,7 +24,8 @@
       "phone": "6018446406",
       "name": "Chico Pizza - pizza, sabor, variedad y calidad",
       "website": "https://pizza.guiabbb.co/Sasaima/#google_vignette",
-      "webname": "https://pizza.guiabbb.co"
+      "webname": "https://pizza.guiabbb.co",
+      "membership": "silver"
     },
     {
       "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/corcolombia.webp",
@@ -30,7 +33,8 @@
       "phone": "6018934453",
       "name": "CorColombia",
       "website": "https://www.corcolombia.com",
-      "webname": "https://www.corcolombia.com"
+      "webname": "https://www.corcolombia.com",
+      "membership": "member"
     },
     {
       "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/franar-colombia.webp",
@@ -38,7 +42,8 @@
       "phone": "6018985388",
       "name": "Franar Colombia S.A.S.",
       "website": "https://www.franarcolombia.com",
-      "webname": "https://www.franarcolombia.com"
+      "webname": "https://www.franarcolombia.com",
+      "membership": "silver"
     },
     {
       "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/grupo-sasa.webp",
@@ -46,7 +51,8 @@
       "phone": "3141892345",
       "name": "Grupo Sasa",
       "website": "https://www.lasempresas.com.co/facatativa/grupo-sasa-sas/",
-      "webname": "https://www.grupo-sasa-sas"
+      "webname": "https://www.grupo-sasa-sas",
+      "membership": "member"
     },
     {
       "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/ingenium.webp",
@@ -54,7 +60,8 @@
       "phone": "6018276178",
       "name": "Ingenium Ingeniería y Consultoría Ltda",
       "website": "http://www.ingenium.com.co",
-      "webname": "http://www.ingenium.com.co"
+      "webname": "http://www.ingenium.com.co",
+      "membership": "silver"
     },
     {
       "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/inject-tecnologia.webp",
@@ -62,7 +69,8 @@
       "phone": "3144684165",
       "name": "Inject Tecnologia",
       "website": "https://www.celuguia.com/inicio/ad/directorio-celular/inject-tecnologia--facatativa---cundinamarca-871145.html",
-      "webname": "https://www.injecttecnologia"
+      "webname": "https://www.injecttecnologia",
+      "membership": "silver"
     },
     {
       "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/kaisen.webp",
@@ -70,15 +78,17 @@
       "phone": "6018901010",
       "name": "Kaizen Ingenieros",
       "website": "https://www.kaizeningenieros.com",
-      "webname": "https://www.kaizeningenieros.com"
+      "webname": "https://www.kaizeningenieros.com",
+      "membership": "member"
     },
     {
       "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/launion.webp",
-      "address": "CALLE 4 4 19, SUBACHOQUE, CUNDINAMARCA",
+      "address": "Calle 4 4 19, Subachoque, Cundinamarca",
       "phone": "3214482364",
       "name": "Comercializadora la unión c2s SAS",
       "website": "https://empresite.eleconomistaamerica.co/COMERCIALIZADORA-UNION-C2S-SAS.html",
-      "webname": "https://comercializadora-union.html"
+      "webname": "https://comercializadora-union.html",
+      "membership": "silver"
     },
     {
       "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/logo-redes.webp",
@@ -86,7 +96,8 @@
       "phone": "6018901321",
       "name": "Söt Chocolate Shop",
       "website": "https://www.sotchocolate.com",
-      "webname": "https://www.sotchocolate.com"
+      "webname": "https://www.sotchocolate.com",
+      "membership": "gold"
     },
     {
       "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/mariposa-azul.webp",
@@ -94,7 +105,8 @@
       "phone": "3152467808",
       "name": "Mariposa Azul",
       "website": "https://www.mariposaazul.net",
-      "webname": "https://www.mariposaazul.net"
+      "webname": "https://www.mariposaazul.net",
+      "membership": "gold"
     },
     {
       "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/monserrate.webp",
@@ -102,7 +114,8 @@
       "phone": "6018426002",
       "name": "Hotel Monserrate",
       "website": "https://www.tripadvisor.co/Hotel_Review-g1222953-d7594087-Reviews-Hotel_Monserrate-Facatativa_Cundinamarca_Department.html",
-      "webname": "https://Reviews-Hotel_Monserrate"
+      "webname": "https://Reviews-Hotel_Monserrate",
+      "membership": "silver"
     },
     {
       "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/museo_panela.webp",
@@ -110,7 +123,8 @@
       "phone": "3134373482",
       "name": "Museo de la panela",
       "website": "https://colombia.worldplaces.me/review/93328133-museo-de-la-panela.html",
-      "webname": "https://museo-de-la-panela.html"
+      "webname": "https://museo-de-la-panela.html",
+      "membership": "silver"
     },
     {
       "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/nubal.webp",
@@ -118,7 +132,8 @@
       "phone": "6018295516",
       "name": "Nubal S.A.",
       "website": "https://www.nucleosbalanceados.com",
-      "webname": "https://www.nucleosbalanceados.com"
+      "webname": "https://www.nucleosbalanceados.com",
+      "membership": "member"
     },
     {
       "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/obsesion-valle.webp",
@@ -126,15 +141,17 @@
       "phone": "6018427928",
       "name": "Grupo Obsesión -Parranda Vallenata-",
       "website": "https://www.obsesionvallenata.com",
-      "webname": "https://www.obsesionvallenata.com"
+      "webname": "https://www.obsesionvallenata.com",
+      "membership": "silver"
     },
     {
       "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/oral.webp",
-      "address": " CARRERA 7 7 111, FACATATIVA, CUNDINAMARCA",
+      "address": "Carrera 7 7 111, Facatativá, Cundinamarca",
       "phone": "3133768493",
       "name": "Orales Morales S.A.S",
       "website": "https://empresite.eleconomistaamerica.co/ORALES-MORALES-SAS.html",
-      "webname": "https://orales-morales-sas.html"
+      "webname": "https://orales-morales-sas.html",
+      "membership": "member"
     },
     {
       "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/pachoaventura.webp",
@@ -142,23 +159,26 @@
       "phone": "5732148556",
       "name": "Pacho Aventura Natural",
       "website": "http://www.facebook.com/PachoAventuraNatural/",
-      "webname": "http://PachoAventuraNatural"
+      "webname": "http://PachoAventuraNatural",
+      "membership": "silver"
     },
     {
       "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/pack-film.webp",
-      "address": "AUTOPISTA BOGOTA MEDELLIN KM 7 LOTE 92 B, FUNZA, CUNDINAMARCA",
+      "address": "Autopista Bogotá Medellin Km 7 Lote 92 B, Funza, Cundinamarca",
       "phone": "6017467706",
       "name": "Envases Plásticos PackFilm Ltda",
       "website": "https://empresite.eleconomistaamerica.co/ENVASES-PLASTICOS-PACKFILM-LTDA.html",
-      "webname": "https://envases-plasticos-packfilm.html"
+      "webname": "https://envases-plasticos-packfilm.html",
+      "membership": "member"
     },
     {
       "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/soluprac.webp",
-      "address": "CALLE 20 16 A 79 URBANIZACION MONACO, BOJACA, CUNDINAMARCA",
+      "address": "Calle 20 16 A 79 Urbanizacion Monaco, Bojaca, Cundinamarca",
       "phone": "3115306591",
       "name": "Solupract S.A.S.",
       "website": "https://co.linkedin.com/in/solupract-s-a-s-3967a218b",
-      "webname": "https://solupract-sas"
+      "webname": "https://solupract-sas",
+      "membership": "member"
     }
   ]
 }
