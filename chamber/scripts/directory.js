@@ -71,6 +71,7 @@ function displayMembers(members) {
     portrait.setAttribute("src", member.imageurl || member.image);
     portrait.setAttribute("alt", `Logo o imagen de ${member.name}`);
     portrait.setAttribute("loading", "lazy");
+    portrait.setAttribute("fetchpriority", "high");
     portrait.setAttribute("width", "200");
     portrait.setAttribute("height", "100");
 
