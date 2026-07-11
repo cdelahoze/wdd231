@@ -20,7 +20,7 @@ if (gridbutton && listbutton) {
 }
 
 // Ruta al archivo JSON en la carpeta local 'data'
-const url = 'https://cdelahoze.github.io/wdd230/images_directory/directory.json';
+const url = 'https://cdelahoze.github.io/wdd231/chamber/data/members.json';
 
 // Función asíncrona para obtener los datos usando async/await
 async function getMemberData() {
