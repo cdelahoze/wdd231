@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ES Modules Activity</title>
+  <link rel="stylesheet" href="styles/modules.css" />
+  <!-- Use type="module" to enable ES Module imports/exports -->
+  <script type="module" src="scripts/modules.mjs"></script>
+</head>
+<body>
+  <h1 id="courseName"></h1>
+  <h2 id="courseCode"></h2>
+
+  <label for="sectionNumber">Select Section:</label>
+  <select id="sectionNumber"></select>
+
+  <button id="enrollStudent">Enroll Student</button>
+  <button id="dropStudent">Drop Student</button>
+
+  <div class="table-container">
+    <table id="sectionsTable" class="custom-table">
+    <thead>
+      <tr>
+        <th>Section #</th>
+        <th>Room #</th>
+        <th>Enrolled</th>
+        <th>Days</th>
+        <th>Instructor</th>
+      </tr>
+    </thead>
+    <tbody id="sections"></tbody>
+    </table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Shadows+Into+Light&display=swap");
+
+:root {
+  /* Paleta Institucional - Cámara de Comercio de Barranquilla */
+  --primary-color: #004c9e; /* Azul Institucional CCB (Header, títulos principales) */
+  --secondary-color: #f0f4f8; /* Gris/Azulado Muy Claro (Tarjetas, módulos y contenedores) */
+  --accent1-color: #3482fe; /* Azul Acción / Interactivo (Botones CTA, enlaces, hovers) */
+  --accent2-color: #e2e8f0; /* Gris Claro de Borde / Divisor */
+  --accent1-color-hover: #2563eb; /* Azul Acción / Interactivo en hover */
+
+  /* Fuentes del proyecto */
+  --heading-font: "Montserrat", sans-serif;
+  --paragraph-font: "Inter", sans-serif;
+
+  /* Asignación funcional sobre fondos claros */
+  --headline-color-on-white: #004c9e; /* Titulares sobre fondo blanco/claro */
+  --headline-color-on-color: #ffffff; /* Titulares sobre botones o banners de color */
+  --paragraph-color-on-white: #1a1a1a; /* Texto oscuro sobre blanco (Gris Grafito) */
+  --paragraph-color-on-color: #ffffff; /* Texto sobre elementos con color acento */
+  --paragraph-background-color: #ffffff; /* Fondo general de la página (Blanco) */
+
+  /* Navegación al estilo camarabaq.org.co */
+  --nav-link-color: #004c9e; /* Enlaces azul institucional */
+  --nav-background-color: #ffffff; /* Barra superior limpia en blanco */
+  --nav-hover-link-color: #ffffff; /* Texto blanco al resaltar */
+  --nav-hover-background-color: #3482fe; /* Fondo azul brillante en hover */
+}
+
+html {
+  background-color: var(--paragraph-color-on-color);
+}
+
+body {
+  max-width: 940px;
+  margin: 0 auto;
+  background-color: var(--paragraph-background-color);
+  padding: 1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  color: var(--paragraph-color-on-white);
+}
+
+p {
+  font-family: var(--paragraph-font);
+  color: var(--headline-color-on-white);
+}
+
+/* Contenedor responsivo (para que no se desborde en móviles) */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin: 20px 0;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+}
+
+/* Estilos principales de la tabla */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse; /* Elimina espacios entre bordes */
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  font-size: 0.95rem;
+  background-color: var(--paragraph-background-color);
+  text-align: left;
+}
+
+/* Encabezado (th) */
+.custom-table thead tr {
+  background-color: var(--primary-color); /* Color de fondo principal (azul) */
+  color: var(--paragraph-color-on-color);
+  font-weight: 600;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 12px 16px;
+}
+
+/* Filas del cuerpo (tb) */
+.custom-table tbody tr {
+  border-bottom: 1px solid #e5e7eb; /* Línea divisoria suave */
+  transition: background-color 0.2s ease;
+}
+
+/* Filas alternadas (Efecto cebra) */
+.custom-table tbody tr:nth-of-type(even) {
+  background-color: #f9fafb;
+}
+
+/* Efecto hover al pasar el ratón */
+.custom-table tbody tr:hover {
+  background-color: #f3f4f6;
+}
+
+/* Última fila sin borde inferior para acabado limpio */
+.custom-table tbody tr:last-of-type {
+  border-bottom: 2px solid #2563eb;
+}
+
+button {
+  background-color: var(--accent1-color);
+  color: var(--paragraph-color-on-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+button:hover {
+  background-color: var(--accent1-color-hover);
+  transform: translateY(-2px);
+}
+
+#sectionNumber {
+  display: inline-block;
+  background-color: var(--paragraph-color-on-color);
+  color: var(--primary-color);
+  padding: 5px 10px;
+  font-weight: bold;
+  margin-right: 10px;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+label {
+  font-family: var(--paragraph-font);
+  color: var(--headline-color-on-white);
+  margin-right: 10px;
+}

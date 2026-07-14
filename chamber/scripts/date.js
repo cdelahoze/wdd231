@@ -2,18 +2,14 @@
 const currentDate = new Date();
 document.querySelector('#year').textContent = currentDate.getFullYear();
 
-const currentDate1 = new Date();
-document.querySelector('#year1').textContent = currentDate1.getFullYear();
+
 
 const upDate = new Date();
-document.querySelector('#update').textContent = upDate.toLocaleString();
+document.querySelector('#update').textContent = upDate.toLocaleString('en-au');
 
-const upDate3 = new Date();
-document.querySelector('#update3').textContent = upDate3.toLocaleString();
+const options= { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' };
+document.querySelector('#updateFormatted').textContent = upDate.toLocaleString('en-au', options);
 
-const upDate2 = new Date();
-const opciones2 = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' };
-document.querySelector('#update2').textContent = upDate2.toLocaleDateString('en-au', opciones2);
 
 
 // make onclick of the top nav
@@ -72,3 +68,14 @@ if('IntersectionObserver' in window) {
       loadImages(img);
     });
   } 
+
+  // Resaltar el enlace activo en la navegación
+const mainNav = document.querySelectorAll('.topnav a');
+const currentPath = window.location.pathname;
+
+mainNav.forEach((link) => {
+  // Compara la ruta de la página actual con el atributo href del enlace
+  if (link.getAttribute('href') && currentPath.endsWith(link.getAttribute('href'))) {
+    link.classList.add('active');
+  }
+});

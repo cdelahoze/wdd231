@@ -329,11 +329,6 @@
 
   /* discovery page css */
 
-  p {
-    font-family: var(--paragraph-font);
-    color: var(--paragraph-color);
-    padding: 1.1em;
-  }
 
   .title {
     color: var(--secondary-color);

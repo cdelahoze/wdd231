@@ -107,11 +107,11 @@ header h3 {
 
 /* Corrección de contraste en el Banner */
 #banner {
-  background-color: var(--paragraph-background-color);
-  color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--paragraph-background-color);
   font-size: 1.1rem;
   width: 100%;
-  padding: 1em;
+  padding: 0.5em;
   font-weight: 600;
   display: none;
 }
@@ -141,6 +141,13 @@ header h3 {
 .top-nav {
   flex: 60%;
   padding-top: 31px;
+}
+
+/* Estilo para el enlace activo */
+.topnav a.active {
+  background-color: var(--nav-hover-background-color);
+  color: var(--nav-hover-link-color);
+  font-weight: bold;
 }
 
 .social-red {
@@ -181,7 +188,7 @@ h2 {
   font-weight: 400;
 }
 
-#update2 {
+#updateFormatted {
   text-align: center;
   color: var(--primary-color);
   font-size: 1.6rem;
@@ -246,6 +253,12 @@ button.icon {
 button.icon:hover {
   background-color: var(--nav-hover-background-color);
   color: var(--nav-hover-link-color);
+}
+
+p {
+  font-family: var(--paragraph-font);
+  color: var(--paragraph-color);
+  padding: 1.1em;
 }
 
 /* --- VISTA MÓVIL (Menú Hamburguesa) --- */
@@ -320,7 +333,10 @@ footer h2 {
 
 footer p {
   color: var(--paragraph-color-on-white);
+  padding: 0em;
+  font-size: 1rem;
 }
+
 .contact {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
@@ -361,8 +377,15 @@ footer p {
   margin: 0;
 }
 
-.copyright2 {
-  display: none;
+
+.contact address p {
+  margin: 0; /* Elimina la separación superior e inferior entre los párrafos */
+  line-height: 1.4; /* Ajusta la altura de línea para un interlineado cómodo */
+}
+
+.contact address {
+  font-style: normal; /* Opcional: quita la cursiva predeterminada del elemento address */
+  margin-top: 5px; /* Un pequeño espacio opcional respecto al h2 */
 }
 
 /* Control global para los iconos de redes sociales */
@@ -745,14 +768,6 @@ footer p {
     border-radius: 50%;
   }
 
-  .copyright2 {
-    grid-column: 1 / 2;
-    grid-row: 5 / 6;
-    font-family: var(--paragraph-font);
-    text-align: center;
-    font-size: 0.8em;
-    color: var(--paragraph-color-on-color);
-  }
   .name {
     font-size: 1.2em;
     font-weight: bold;
@@ -766,10 +781,9 @@ footer p {
 /* discovery page css */
 
 @media only screen and (max-width: 47.9375em) {
-  p {
+  footer p {
     font-family: var(--paragraph-font);
-    color: var(--paragraph-color-on-white);
-    padding: 1.1em;
+    color: var(--paragraph-color-on-color);
   }
 
   .title {
