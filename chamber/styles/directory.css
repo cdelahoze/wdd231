@@ -12,9 +12,10 @@
 
 div .cards,
 section {
-  margin: 0.75rem;
-  height: 95%;
-  width: 95%;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 section {
@@ -36,12 +37,15 @@ section {
   flex-direction: column;
 }
 
+/* Configuración por defecto de la lista (Móvil / Pantallas pequeñas) */
 .list section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  flex-direction: row;
-  justify-content: left;
+  display: flex;
+  flex-direction: column; /* Organiza en vertical para pantallas pequeñas */
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%; /* Asegura que ocupe todo el ancho sin salirse */
+  box-sizing: border-box;
 }
 
 .grid section {
@@ -54,12 +58,11 @@ section {
 }
 
 .list section > * {
-  margin: 0 1rem;
-  text-align: left;
+  margin: 0.25rem 0;
 }
 
 .list section img {
-  display: none; 
+  display: none;
 }
 
 section h3 {
@@ -77,7 +80,6 @@ section img {
 }
 
 @media (min-width: 900px) {
-
   .list section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -88,7 +90,7 @@ section img {
 @media (min-width: 20em) {
   div .cards,
   section {
-    width: 96%; 
+    width: 96%;
     box-sizing: border-box;
   }
 }
@@ -100,5 +102,15 @@ section img {
     flex-wrap: wrap;
     width: 96%;
     margin: 1em;
+  }
+}
+
+/* Para pantallas medianas y grandes (tabletas y escritorio) */
+@media (min-width: 48em) {
+  .list section {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1.5fr 1fr 2fr; /* Ajusta las columnas según tus datos */
+    align-items: center;
+    gap: 10px;
   }
 }
