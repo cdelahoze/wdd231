@@ -26,6 +26,7 @@ Fonts are separated by a | */
   --nav-hover-link-color: #ffffff; /* Texto blanco al resaltar */
   --nav-hover-background-color: #3482fe; /* Fondo azul brillante en hover */
 
+
   --back: var(--primary-color);
   --back2: var(--secondary-color);
   --foredark: var(--paragraph-color-on-white);
@@ -144,10 +145,12 @@ header h3 {
 }
 
 /* Estilo para el enlace activo */
+/* Estilo suave con fondo claro y borde inferior */
 .topnav a.active {
-  background-color: var(--nav-hover-background-color);
-  color: var(--nav-hover-link-color);
+  background-color: var(--secondary-color); /* Gris/Azulado muy claro */
+  color: var(--primary-color);
   font-weight: bold;
+  border-bottom: 3px solid var(--accent1-color);
 }
 
 .social-red {
