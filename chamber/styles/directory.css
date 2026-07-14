@@ -88,13 +88,11 @@ section img {
 @media (min-width: 20em) {
   div .cards,
   section {
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 96%;
-    position: relative;
-    justify-content: center;
+    width: 96%; 
+    box-sizing: border-box;
   }
 }
+
 @media (min-width: 51em) {
   div .cards,
   section {

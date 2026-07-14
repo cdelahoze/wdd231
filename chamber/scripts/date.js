@@ -14,16 +14,14 @@ document.querySelector('#updateFormatted').textContent = upDate.toLocaleString('
 
 // make onclick of the top nav
 
-function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
-    }
-}
+const navButton = document.getElementById('demo');
+const topNav = document.getElementById('myTopnav');
 
-document.getElementById('demo').addEventListener('click', myFunction);
+if (navButton && topNav) {
+  navButton.addEventListener('click', () => {
+    topNav.classList.toggle('responsive');
+  });
+}
 
 // banner 
 

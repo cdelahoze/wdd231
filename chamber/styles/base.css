@@ -43,14 +43,11 @@ html {
 }
 
 body {
-  width: 80%;
-  text-align: center;
-  background-color: var(--paragraph-background-color);
-  padding: 1em;
-  font-size: 16px;
-  font-family: var(--heading-font);
+  width: 100%;
+  max-width: 1200px; /* Ajusta según el diseño general */
   margin: 0 auto;
-  line-height: 1.5;
+  padding: 1em;
+  box-sizing: border-box;
 }
 
 main {
@@ -261,7 +258,7 @@ button.icon:hover {
 p {
   font-family: var(--paragraph-font);
   color: var(--paragraph-color);
-  padding: 1.1em;
+  padding: 0.1em;
 }
 
 /* --- VISTA MÓVIL (Menú Hamburguesa) --- */
@@ -292,6 +289,13 @@ p {
     float: none;
     display: block;
     text-align: left;
+    background-color: var(--nav-background-color);
+  }
+
+  /* Hover específico en el menú móvil */
+  .topnav.responsive a:hover {
+    background-color: var(--nav-hover-background-color); /* Fondo azul al pasar el cursor */
+    color: var(--nav-hover-link-color);                  /* Texto blanco */
   }
 }
 
