@@ -136,19 +136,6 @@ header h3 {
   flex: 30%;
 }
 
-.top-nav {
-  flex: 60%;
-  padding-top: 31px;
-}
-
-/* Estilo para el enlace activo */
-/* Estilo suave con fondo claro y borde inferior */
-.topnav a.active {
-  background-color: var(--secondary-color); /* Gris/Azulado muy claro */
-  color: var(--primary-color);
-  font-weight: bold;
-  border-bottom: 3px solid var(--accent1-color);
-}
 
 .social-red {
   flex: 10%;
@@ -208,6 +195,13 @@ h2 {
   background-color: var(--nav-background-color);
 }
 
+.top-nav {
+  flex: 60%;
+  padding-top: 31px;
+}
+
+
+
 /* Estilos para los enlaces principales */
 .topnav a {
   float: left;
@@ -225,9 +219,14 @@ button.icon:hover {
   color: var(--nav-hover-link-color);
 }
 
+
+/* Estilo para el enlace activo */
+/* Estilo suave con fondo claro y borde inferior */
 .topnav a.active {
-  background-color: var(--nav-background-color);
-  color: var(--nav-link-color);
+  background-color: var(--secondary-color); /* Gris/Azulado muy claro */
+  color: var(--primary-color);
+  font-weight: bold;
+  border-bottom: 3px solid var(--accent1-color);
 }
 
 /* Ocultar el botón de menú por defecto en pantallas grandes */
@@ -259,6 +258,11 @@ p {
   font-family: var(--paragraph-font);
   color: var(--paragraph-color);
   padding: 0.1em;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
 }
 
 /* --- VISTA MÓVIL (Menú Hamburguesa) --- */
@@ -289,7 +293,6 @@ p {
     float: none;
     display: block;
     text-align: left;
-    background-color: var(--nav-background-color);
   }
 
   /* Hover específico en el menú móvil */
@@ -1122,13 +1125,6 @@ h3 {
   line-height: 15.4px;
 }
 
-p {
-  font-size: 14px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 400;
-  line-height: 20px;
-}
 
 blockquote {
   font-size: 21px;

@@ -1,7 +1,7 @@
 {
   "directory": [
     {
-      "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/centro-de-estetica.webp",
+      "imageurl": "data/centro-de-estetica.webp",
       "address": "Carrera 3 # 21- 40, Mosquera, Cundinamarca, Colombia",
       "phone": "3207919016",
       "name": "Centro de Estética Erikim Jeim",
@@ -10,7 +10,7 @@
       "membership": "gold"
     },
     {
-      "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/logo-bauxsas-final-plano.webp",
+      "imageurl": "data/logo-bauxsas-final-plano.webp",
       "address": "Transversal de Occidente Empresarial de, Funza, Cundinamarca",
       "phone": "6018223803",
       "name": "Baux Chemical S.A.S.",
@@ -19,7 +19,7 @@
       "membership": "silver"
     },
     {
-      "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/chico-pizza.webp",
+      "imageurl": "data/chico-pizza.webp",
       "address": "Cra. 5 Nº 2-32 Barrio San Cayetano , Villeta",
       "phone": "6018446406",
       "name": "Chico Pizza - pizza, sabor, variedad y calidad",
@@ -28,7 +28,7 @@
       "membership": "silver"
     },
     {
-      "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/corcolombia.webp",
+      "imageurl": "data/corcolombia.webp",
       "address": "Calle 12 13 123, Facatativá, Cundinamarca, Colombia",
       "phone": "6018934453",
       "name": "CorColombia",
@@ -37,7 +37,7 @@
       "membership": "member"
     },
     {
-      "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/franar-colombia.webp",
+      "imageurl": "data/franar-colombia.webp",
       "address": "Km 2,3 vía Madrid, vereda los Árboles, Parque Industrial Santa Cruz, bodega 9. Madrid – Cundinamarca. Colomb",
       "phone": "6018985388",
       "name": "Franar Colombia S.A.S.",
@@ -46,7 +46,7 @@
       "membership": "silver"
     },
     {
-      "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/grupo-sasa.webp",
+      "imageurl": "data/grupo-sasa.webp",
       "address": "Cra. 5 Este No. 20 69 BG 10, Facatativá, Cundinamarca",
       "phone": "3141892345",
       "name": "Grupo Sasa",
@@ -55,7 +55,7 @@
       "membership": "member"
     },
     {
-      "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/ingenium.webp",
+      "imageurl": "data/ingenium.webp",
       "address": "Av troncal de occidente Nro. 1-59 este Bodega 25 El portal centro logístico y empresarial",
       "phone": "6018276178",
       "name": "Ingenium Ingeniería y Consultoría Ltda",
@@ -64,7 +64,7 @@
       "membership": "silver"
     },
     {
-      "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/inject-tecnologia.webp",
+      "imageurl": "data/inject-tecnologia.webp",
       "address": "Calle 8 # 4 - 02 Facatativá, Cundinamarca",
       "phone": "3144684165",
       "name": "Inject Tecnologia",
@@ -73,7 +73,7 @@
       "membership": "silver"
     },
     {
-      "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/kaisen.webp",
+      "imageurl": "data/kaisen.webp",
       "address": "Vereda Prado Santa Marta, sector Sagrado, Facatativá – C/marca",
       "phone": "6018901010",
       "name": "Kaizen Ingenieros",
@@ -82,7 +82,7 @@
       "membership": "member"
     },
     {
-      "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/launion.webp",
+      "imageurl": "data/launion.webp",
       "address": "Calle 4 4 19, Subachoque, Cundinamarca",
       "phone": "3214482364",
       "name": "Comercializadora la unión c2s SAS",
@@ -91,7 +91,7 @@
       "membership": "silver"
     },
     {
-      "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/logo-redes.webp",
+      "imageurl": "data/logo-redes.webp",
       "address": "Calle 25 16 114, Facatativá, Cundinamarca",
       "phone": "6018901321",
       "name": "Söt Chocolate Shop",
@@ -100,7 +100,7 @@
       "membership": "gold"
     },
     {
-      "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/mariposa-azul.webp",
+      "imageurl": "data/mariposa-azul.webp",
       "address": "Calle 10 4 59, Facatativá, Cundinamarca",
       "phone": "3152467808",
       "name": "Mariposa Azul",
@@ -109,7 +109,7 @@
       "membership": "gold"
     },
     {
-      "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/monserrate.webp",
+      "imageurl": "data/monserrate.webp",
       "address": "Calle 8 Nº 3-40, Facatativá, Cundinamarca",
       "phone": "6018426002",
       "name": "Hotel Monserrate",
@@ -118,7 +118,7 @@
       "membership": "silver"
     },
     {
-      "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/museo_panela.webp",
+      "imageurl": "data/museo_panela.webp",
       "address": "Carretera central kilómetro 1 vía Guaduas",
       "phone": "3134373482",
       "name": "Museo de la panela",
@@ -127,7 +127,7 @@
       "membership": "silver"
     },
     {
-      "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/nubal.webp",
+      "imageurl": "data/nubal.webp",
       "address": "Parque Industrial San Jorge Bodega 100 Mosquera",
       "phone": "6018295516",
       "name": "Nubal S.A.",
@@ -136,7 +136,7 @@
       "membership": "member"
     },
     {
-      "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/obsesion-valle.webp",
+      "imageurl": "data/obsesion-valle.webp",
       "address": "Carrera 10 7 120, Facatativá, Cundinamarca",
       "phone": "6018427928",
       "name": "Grupo Obsesión -Parranda Vallenata-",
@@ -145,7 +145,7 @@
       "membership": "silver"
     },
     {
-      "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/oral.webp",
+      "imageurl": "data/oral.webp",
       "address": "Carrera 7 7 111, Facatativá, Cundinamarca",
       "phone": "3133768493",
       "name": "Orales Morales S.A.S",
@@ -154,7 +154,7 @@
       "membership": "member"
     },
     {
-      "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/pachoaventura.webp",
+      "imageurl": "data/pachoaventura.webp",
       "address": "Cra 40A 7 BIS 05, Pacho, Cundinamarca",
       "phone": "5732148556",
       "name": "Pacho Aventura Natural",
@@ -163,7 +163,7 @@
       "membership": "silver"
     },
     {
-      "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/pack-film.webp",
+      "imageurl": "data/pack-film.webp",
       "address": "Autopista Bogotá Medellin Km 7 Lote 92 B, Funza, Cundinamarca",
       "phone": "6017467706",
       "name": "Envases Plásticos PackFilm Ltda",
@@ -172,7 +172,7 @@
       "membership": "member"
     },
     {
-      "imageurl": "https://cdelahoze.github.io/wdd231/chamber/data/soluprac.webp",
+      "imageurl": "data/soluprac.webp",
       "address": "Calle 20 16 A 79 Urbanizacion Monaco, Bojaca, Cundinamarca",
       "phone": "3115306591",
       "name": "Solupract S.A.S.",

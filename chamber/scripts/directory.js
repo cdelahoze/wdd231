@@ -20,7 +20,7 @@ if (gridbutton && listbutton) {
 }
 
 // Ruta al archivo JSON en la carpeta local 'data'
-const url = 'https://cdelahoze.github.io/wdd231/chamber/data/members.json';
+const url = 'data/members.json';
 
 // Función asíncrona para obtener los datos usando async/await
 async function getMemberData() {
@@ -71,8 +71,8 @@ function displayMembers(members) {
     portrait.setAttribute("src", member.imageurl || member.image);
     portrait.setAttribute("alt", `Logo o imagen de ${member.name}`);
     portrait.setAttribute("fetchpriority", "high");
-    portrait.setAttribute("width", "200");
-    portrait.setAttribute("height", "100");
+    portrait.setAttribute("width", "216");
+    portrait.setAttribute("height", "85");
 
     // Construir la tarjeta
     card.appendChild(portrait);

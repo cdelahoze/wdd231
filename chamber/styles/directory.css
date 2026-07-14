@@ -26,6 +26,14 @@ section {
   align-items: center;
 }
 
+/* Forzar centrado específico en títulos, párrafos y enlaces */
+section h3,
+section p,
+section a {
+  text-align: center;
+  width: 100%;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
