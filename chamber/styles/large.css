@@ -272,10 +272,10 @@
 
   .container div:nth-of-type(6) .right2 .text-1 {
     border: none;
-    color: white;
+    color: black;
     text-align: center;
     font-size: 15px;
-    font-weight: 300;
+    font-weight: 500;
     top: 20%;
     left: 10px;
   }
@@ -307,10 +307,10 @@
 
   .container div:nth-of-type(6) .right3 .text-1 {
     border: none;
-    color: white;
+    color: black;
     text-align: center;
     font-size: 15px;
-    font-weight: 300;
+    font-weight: 500;
     top: 20%;
     left: 10px;
   }
@@ -343,10 +343,10 @@
 
   .container div:nth-of-type(6) .right4 .text-1 {
     border: none;
-    color: white;
+    color: black;
     text-align: center;
     font-size: 15px;
-    font-weight: 300;
+    font-weight: 500;
     top: 20%;
     left: 10px;
   }

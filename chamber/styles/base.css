@@ -251,7 +251,7 @@ button.icon:hover {
 
 p {
   font-family: var(--paragraph-font);
-  color: var(--paragraph-color);
+  color: var(--paragraph-color-on-white);
   padding: 0.1em;
   font-size: 14px;
   font-style: normal;
@@ -468,7 +468,7 @@ p {
   height: 120px;
 }
 
-.spotlights h5 {
+.spotlights h4 {
   color: black;
   text-align: center;
 }
@@ -622,6 +622,13 @@ footer p {
     order: 2;
     margin: 15px auto;
     text-align: center;
+  }
+
+  .join .text-1 p {
+    border: none;
+    color: var(--paragraph-color-on-color);
+    font-size: 20px;
+    font-weight: 400;
   }
 
   .forecast-main-card {
