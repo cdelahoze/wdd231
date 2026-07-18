@@ -2,8 +2,7 @@
   .container {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    max-width: 100%;
+    grid-template-rows: repeat(4, 1fr);
     height: 1500px;
     color: rgb(193, 145, 2);
     font-size: 25px;
@@ -11,134 +10,50 @@
   }
 
   /* Ribbon */
-  .container div:nth-of-type(1) {
-    grid-column: 1 / 7;
-    grid-row: 6 / 7;
-    background-color: var(--secondary-color);
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-right: 5px;
-    position: relative;
-    display: inline-block;
-    text-align: center;
+  .forecast-main-card {
+    grid-column: 3 / 7;
+    grid-row: 4 / 5;
+    margin: 16px 13px 17px 45px;
   }
 
-  .container div:nth-of-type(1) .title-1 {
-    width: 100%;
-    position: absolute;
-    top: 15%;
-    left: 0%;
-    font-size: 2.2vw;
-    color: white;
-  }
-
-  .container div:nth-of-type(1) .text-1 {
-    width: 100%;
-    position: absolute;
-    top: 40%;
-    left: 0%;
-    font-size: 1.5vw;
-    color: white;
-    font-weight: 500;
-  }
-  .container div:nth-of-type(1) .text-2 {
-    width: 80%;
-    position: absolute;
-    bottom: 0px;
-    top: 70%;
-    left: 40%;
-    font-size: 2vw;
-    color: rgb(210, 173, 22);
-    font-weight: 500;
+  .forecast-days-container {
+    gap: 5px;
+    font-size: 23px;
   }
 
   /* Wather */
-  .container div:nth-of-type(2) {
+  .weather {
     grid-column: 7 / 10;
-    grid-row: 6 / 7;
-    background-color: var(--accent2-color);
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 5px;
-    position: relative;
-    font-size: 2.5vw;
-    display: inline-block;
-    text-align: center;
-    color: var(--secondary-color);
-  }
-
-  .container div:nth-of-type(2) figure #weather-icon {
-    width: 40%;
-    position: absolute;
-    top: calc(1rem + 4vh);
-    left: 1vw;
-  }
-
-  .container div:nth-of-type(2) .temp {
-    width: 40%;
-    position: absolute;
-    top: calc(1rem + 4vh);
-    right: 2vw;
-    font-size: 3.5vw;
-    color: var(--secondary-color);
-    font-weight: 600;
-    -webkit-text-stroke: 1px var(--secondary-color);
-  }
-
-  .container div:nth-of-type(2) .cloudy {
-    width: 60%;
-    position: absolute;
-    top: calc(1rem + 18vh);
-    left: 6vw;
-    font-size: 2.5vw;
-    font-weight: 800;
-    color: var(--secondary-color);
-  }
-  .container div:nth-of-type(2) .wind {
-    width: 80%;
-    position: absolute;
-    top: calc(1rem + 20vh);
-    left: 2.5vw;
-    color: var(--secondary-color);
-    font-size: 1.5vw;
-    font-weight: 600;
-  }
-  .container div:nth-of-type(2) .wind-ch {
-    width: 80%;
-    position: absolute;
-    top: calc(1rem + 24vh);
-    left: 2.5vw;
-    color: var(--secondary-color);
-    font-size: 1.5vw;
-    font-weight: 600;
+    grid-row: 4 / 5;
+    margin: 15px 13px 17px 0px;
   }
 
   /* Join */
-  .container div:nth-of-type(3) {
-    grid-column: 1 / 10;
-    grid-row: 5 / 6;
+  .join {
+    grid-column: 1 / 3;
+    grid-row: 4 / 5;
+    order: 2;
+    margin: 15px auto;
+  }
+
+  .join-us {
     background-color: var(--secondary-color);
     padding: 10px;
     margin-top: 15px;
     margin-bottom: 5px;
-  }
-
-  .container div:nth-of-type(3) .join-us {
     background-color: var(--accent1-color);
     border: none;
     color: white;
     padding: 5px 50px;
     text-align: center;
     display: inline-block;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
     cursor: pointer;
     border-radius: 1em;
   }
 
-  .container div:nth-of-type(3) .text-1 {
+  .join-us .text-1 {
     border: none;
     color: white;
     text-align: center;
@@ -146,88 +61,67 @@
     font-weight: 300;
   }
 
-  /* Image */
-  .container div:nth-of-type(4) {
-    grid-column: 1 / 10;
-    grid-row: 1 / 2;
-    border-radius: 0.5em;
-    margin: 0.5px;
-    position: relative;
-    display: inline-block;
-    text-align: center;
-  }
-
-  .landscape {
-    max-height: 100%;
-    max-width: 100%;
-  }
-
-  .container div:nth-of-type(4) .welcome {
+  .hero-image .welcome {
     position: absolute;
     top: 10px;
-    left: 10px;
-    color: var(--secondary-color);
+    left: 230px;
+    color: var(--paragraph-color-on-white);
     font-weight: bold;
     background-color: transparent;
-
-    font-size: 5vw;
+    font-size: 35px;
   }
 
-  .container div:nth-of-type(4) .button {
-    background-color: var(--accent1-color);
-    border: none;
-    color: var(--primary-color);
-    padding: 15px 32px;
-    text-align: center;
+  .hero-image {
+    grid-column: 1 / 10; /* Mantiene sus dimensiones originales en la grilla */
+    grid-row: 1 / 2;
+    position: relative; /* Crucial para que el botón no se salga */
     display: inline-block;
-    font-size: 2.2vw;
-    font-weight: bold;
-    margin: 4px 2px;
-    cursor: pointer;
-    position: absolute;
-    top: 30vw;
-    right: 50px;
-    border: 1px solid var(--accent1-color);
-    border-radius: 1em;
+  }
+  .hero-image .button {
+    font-size: 20px; /* Solo escalamos la fuente, hereda los % de base.css */
   }
 
   /* News Relase */
-  .container div:nth-of-type(5) {
+  .news-release {
     grid-column: 1 / 10;
     grid-row: 2 / 3;
-    background-color: var(--secondary-color);
+    background-color: var(--paragraph-color-on-white);
     padding: 10px;
     margin-top: 5px;
     margin-bottom: 5px;
+    border-radius: 15px;
   }
 
-  .container div:nth-of-type(5) .text-1 {
+  .news-release h3 {
+    font-size: 30px;
+  }
+
+  .news-release .text-1 {
     border: none;
     color: white;
     text-align: center;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 300;
   }
 
   /* Spot Light */
-  .container div:nth-of-type(6) {
+  .spotlights {
     grid-column: 1 / 10;
-    grid-row: 3 / 5;
+    grid-row: 3 / 4;
     background-color: var(--secondary-color);
     display: flex;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(1, 1fr);
     order: 6;
     height: 100%;
     margin-top: 5px;
     margin-bottom: 10px;
+    border-radius: 15px;
   }
 
   /* Spot Light */
-  .container div:nth-of-type(6) .right2 {
+  .spotlights .right2 {
     background-color: var(--accent1-color);
     height: 95%;
-    width: 48%;
+    width: 50%;
     margin-top: auto;
     margin-bottom: auto;
     margin-right: 2px;
@@ -236,26 +130,28 @@
     display: inline-block;
     text-align: center;
     color: var(--primary-color);
+    border-radius: 15px;
   }
 
-  .container div:nth-of-type(6) .right2 .img-spotlight {
-    width: 40%;
+  .spotlights .right2 .img-spotlight {
+    width: 35%;
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: 10px;
   }
 
-  .container div:nth-of-type(6) .right2 .text-1 {
+  .spotlights .right2 .text-1 {
     border: none;
     color: white;
-    text-align: center;
-    font-size: 15px;
+    text-align: right;
+    padding-right: 14px;
+    font-size: 20px;
     font-weight: 300;
     top: 20%;
     left: 10px;
   }
 
-  .container div:nth-of-type(6) .right3 {
+  .spotlights .right3 {
     background-color: var(--accent1-color);
     height: 95%;
     width: 48%;
@@ -267,44 +163,36 @@
     display: inline-block;
     text-align: center;
     color: var(--primary-color);
+    border-radius: 15px;
   }
 
-  .container div:nth-of-type(6) .right3 .img-spotlight {
-    width: 40%;
+  .spotlights .right3 .img-spotlight {
+    width: 35%;
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: 10px;
   }
 
-  .container div:nth-of-type(6) .right3 .text-1 {
+  .spotlights .right3 .text-1 {
     border: none;
     color: white;
-    text-align: center;
-    font-size: 15px;
+    text-align: right;
+    padding-right: 14px;
+    font-size: 20px;
     font-weight: 300;
     top: 20%;
     left: 10px;
   }
 
-  .container div:nth-of-type(6) .right4 {
-    background-color: rgba(64, 134, 204, 0);
-    padding: 0px;
-    border: 1px solid rgba(204, 204, 204, 0);
-    border-radius: 1em;
-    height: 0%;
-    width: 0%;
-    color: #ffffff00;
-    margin: 0%;
-    position: relative;
-    display: inline-block;
-    text-align: center;
+  .spotlights .right4 h5 {
+    display: none;
+  }
+  .spotlights .right4 {
+    display: none;
   }
 
-  .container div:nth-of-type(6) .right4 .img-spotlight {
-    width: 0%;
-    position: absolute;
-    top: 0%;
-    left: 0%;
+  .spotlights .right4 .img-spotlight {
+    display: none;
   }
 
   /* discovery page css */
@@ -451,6 +339,4 @@
     margin: 0 auto;
     padding: 1em;
   }
-
-
 }

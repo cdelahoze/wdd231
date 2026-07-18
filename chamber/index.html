@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Explore the official Facatativá Chamber of Commerce Directory. Connect with local businesses, entrepreneurs, and services."
+      content="Explore the official Facatativá Chamber of Commerce home. Connect with local businesses, entrepreneurs, and services."
     />
     <meta name="author" content="Cristian Moises De La Hoz Escorcia" />
     <!-- Open Graph meta tags for social media sharing -->
@@ -18,11 +18,11 @@
     />
     <meta
       property="og:url"
-      content="https://cdelahoze.github.io/wdd231/chamber/directory"
+      content="https://cdelahoze.github.io/wdd231/chamber/index.html"
     />
     <meta
       property="og:description"
-      content="Explore the official Facatativá Chamber of Commerce Directory. Connect with local businesses, entrepreneurs, and services."
+      content="Explore the official Facatativá Chamber of Commerce home. Connect with local businesses, entrepreneurs, and services."
     />
     <!-- favicon -->
     <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
@@ -54,6 +54,7 @@
     <link rel="stylesheet" href="styles/large.css" media="(min-width: 64em)" />
     <script src="scripts/date.js" defer></script>
     <script src="scripts/directory.js" defer></script>
+    <script src="scripts/windchill.js" defer></script>
   </head>
   <body>
     <header>
@@ -94,6 +95,96 @@
       </p>
     </header>
     <main>
+      <div class="container">
+        <div class="forecast-main-card">
+                <div id="forecast-container"></div>
+        </div>
+        <div class="weather">
+          <p class="weather_title">Weather</p>
+
+            <img
+              src="images/weather.webp"
+              alt="Chamber of Facatativá images"
+              id="weather-icon"
+            />
+  
+          <figcaption class="cloudy"></figcaption>
+          <p class="temp"><span id="current-temp"></span> &deg;C</p>
+          <p class="wind">Wind Speed:<span id="wind"></span></p>
+          <p class="wind-ch">Wind Chill: <span id="wind-ch"></span></p>
+        </div>
+        <div class="join">
+          <button class="join-us">Join Us!</button>
+          <div class="text-1">
+            <p>
+              Discover how to join the chamber of commerce and how it will
+              benefit your organization!
+            </p>
+          </div>
+        </div>
+        <div class="hero-image">
+          <picture>
+            <!-- Imagen para pantallas grandes (Desktop - min-width: 64em) -->
+            <source
+              media="(min-width: 64em)"
+              srcset="images/wdd231-org-l.webp"
+            />
+            <!-- Imagen para pantallas medianas (Tablet - min-width: 48em) -->
+            <source
+              media="(min-width: 48em)"
+              srcset="images/wdd231-org-m.webp"
+            />
+            <!-- Imagen por defecto para pantallas pequeñas (Móvil) y fallback -->
+            <img
+              src="images/wdd231-org-s.webp"
+              alt="Welcome to Facatativá"
+              class="landscape"
+              loading="lazy"
+            />
+          </picture>
+          <h1 class="welcome">Welcome to Facatativá</h1>
+          <button class="button">Join the Chamber</button>
+        </div>
+        <div class="news-release">
+          <h3>News Release</h3>
+          <p class="text-1">
+            The Director of the Chamber of Commerce will inaugurate on June 6
+            the new service center in the El Rincón village. The event will be
+            attended by the mayor of Facatativá and other leaders of the
+            municipal government. People interested in the event can register by
+            sending an email to customers@facacc.org
+          </p>
+        </div>
+        <div class="spotlights">
+          <div class="right2">
+            <h5>Clothes Shop</h5>
+            <img
+              src="images/clothes.webp"
+              alt="Clothing Shop in the Chamber of Comerce"
+              class="img-spotlight"
+            />
+            <p class="text-1">The best clothes at a lower price</p>
+          </div>
+          <div class="right3">
+            <h5>Fast Supermarket</h5>
+            <img
+              src="images/market.webp"
+              alt="Supermarket in the Chamber of Comerce"
+              class="img-spotlight"
+            />
+            <p class="text-1">The best food delivery service</p>
+          </div>
+          <div class="right4">
+            <h5>Organic Agriculture</h5>
+            <img
+              src="images/agriculture.webp"
+              alt="Agiculture in the Chamber of Comerce"
+              class="img-spotlight"
+            />
+            <p class="text-1">Your organic products from farm to table</p>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
       <img
