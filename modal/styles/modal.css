@@ -1,0 +1,246 @@
+body {
+  margin: 2rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+/* Styles for dialog elements with IDs #signup or #newsletter */
+#signup,
+#newsletter {
+  padding: 1em;
+  max-width: 40ch;
+  border: 0;
+  box-shadow: 0 0 1em rgb(0 0 0 / 30%);
+
+  /* Style for the backdrop when the dialog is modal */
+  &::backdrop {
+    background: rgb(0 0 0 / 70%);
+  }
+
+  /* Styles for forms within these dialogs */
+  form {
+    display: grid;
+    gap: 0.5em;
+
+    /* Styles for input fields within the forms */
+    input {
+      width: 95%;
+      padding: 0.5rem;
+    }
+  }
+
+  /* Styles for the close button within these dialogs */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: none;
+    cursor: pointer; /* Added for better UX */
+  }
+}
+
+/* General button styles */
+.button {
+  border: 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background: #333;
+  color: #eee;
+  font-weight: 700;
+  padding: 0.75rem 1rem;
+
+  /* Hover and focus states for buttons */
+  &:hover,
+  &:focus {
+    background: purple;
+  }
+}
+
+/* Styles for any 'dialog' element when it's open */
+dialog[open] {
+  background-color: beige;
+  border-radius: 10px;
+  border: 1px solid rgb(0 0 0 / 0.1);
+}
+
+/* The :modal pseudo-class is not yet fully supported across all browsers and may cause errors in some environments. dialog[open] targets all dialog elements ... */
+
+code {
+  color: forestgreen;
+}
+
+/* Styles for the CSS animation boxes */
+/* 1. Definición de la animación (tal como está en la imagen) */
+@keyframes fadeColor {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: yellow;
+  }
+}
+
+/* 2. Elemento al que le aplicamos la animación */
+
+.boxes {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  /* Aplicamos la animación 'fadeColor' */
+  /* Duración: 3 segundos | Tipo: ease | Repetición: infinita (opcional) */
+  animation: fadeColor 3s ease-in-out infinite alternate;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.box2 {
+  width: 200px;
+  height: 200px;
+  background-color: rgb(0, 76, 255);
+
+  /* Aplicamos la animación 'fadeIn' */
+  /* Duración: 3 segundos | Tipo: ease | Repetición: infinita (opcional) */
+  animation: fadeIn 3s ease-in-out infinite alternate;
+}
+
+/* 3. Transición de color al pasar el mouse (hover) */
+
+.box3 {
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  border: 1px solid #ccc;
+  transition: background-color 0.5s ease;
+}
+.box3:hover {
+  background-color: lightblue;
+}
+
+/* 4. Transición de tamaño al pasar el mouse (hover) */
+
+.box4 {
+  width: 150px;
+  height: 150px;
+  background-color: coral;
+  transition:
+    width 0.3s ease-in-out 0.2s,
+    height 0.3s ease-in-out 0.2s;
+}
+.box4:hover {
+  width: 200px;
+  height: 200px;
+}
+
+/* 5. Transformación de un elemento al pasar el mouse (hover) */
+
+.box5 {
+  width: 200px;
+  height: 200px;
+  background-color: rgb(5, 248, 5);
+  transition: transform 0.5s ease-in-out;
+}
+
+.box5:hover {
+  transform: rotate(15deg) translateX(20px) scale(1.2);
+}
+
+/* 6. Loader con animación de giro y pulso */
+
+#loader {
+  position: relative; /* ¡Importante para centrar el ::after! */
+  margin: 2rem;
+  width: 50px; /* width of the loader */
+  height: 50px; /* height of the loader */
+  border: 5px solid transparent; /* border width */
+  border-color: #999 transparent #999 transparent; /* border colors (4 - 2 transparent) */
+  border-radius: 50%; /* make it round */
+  animation: spin 1.5s linear infinite; /* spin animation with duration and continuous */
+  box-shadow: 0 0 1rem rgb(0 0 255 / 40%); /* blueish shadow effect on round div */
+}
+
+#loader::after {
+  content: "⚙";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  } /* spin 360 degrees */
+}
+
+@keyframes pulse {
+  /* pulse the gear emoji */
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  } /* scale to 1 */
+  50% {
+    transform: translate(-50%, -50%) scale(1.25);
+  } /* scale to 1.25 */
+}
+
+/* 1. Estilos base del aro exterior */
+.loader-t {
+  position: relative; /* Indispensable para centrar el ::after */
+  margin: 2rem;
+  width: 50px;
+  height: 50px;
+  border: 5px solid transparent;
+  border-color: #999 transparent #999 transparent;
+  border-radius: 50%;
+  box-shadow: 0 0 1rem rgb(0 0 255 / 40%);
+
+  /* Transición para que gire suavemente al hacer hover */
+  transition: transform 1.5s linear;
+}
+
+/* 2. Estilos base del icono interior (inicialmente invisible) */
+.loader-t::after {
+  content: "⚙";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 2rem;
+
+  /* Oculto inicialmente con scale(0) */
+  transform: translate(-50%, -50%) scale(0);
+
+  /* Transición para que crezca suavemente */
+  transition: transform 1.5s ease-in-out;
+}
+
+/* 3. Efectos al pasar el mouse (:hover) */
+
+/* El aro exterior gira 360 grados */
+.loader-t:hover {
+  transform: rotate(360deg);
+}
+
+/* El icono interior aparece y se agranda hasta 1.5x */
+.loader-t:hover::after {
+  transform: translate(-50%, -50%) scale(1.5);
+}

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/modal.css" />
+    <script src="./scripts/modal.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Modals</h1>
+      <hr />
+      <p>
+        This is an example of using HTML only <code>popover</code> to support
+        the dialog.<br />
+        Click the button below to open a modal newsletter signup form.
+      </p>
+      <button class="button open-button" popovertarget="newsletter">
+        Sign Up
+      </button>
+      <p>
+        Note that the <code>popovertarget</code> attribute needs to point to the
+        dialog element using its <code>id </code> attribute value to open and
+        close the modal.
+      </p>
+      <dialog class="modal" id="newsletter" popover>
+        <button
+          class="close-button"
+          popovertarget="newsletter"
+          popovertargetaction="hide"
+        >
+          ❌
+        </button>
+        <h2>Stake Trek</h2>
+        <h3>Volunteer Signup</h3>
+        <form class="form" method="dialog">
+          <label>Name<input type="text" required /></label>
+          <label
+            >Phone<input
+              type="tel"
+              pattern="^\+?\d{1,4}?\s?(\(?\d{3}\)?\s?-?\s?\d{3}\s?-?\s?\d{4})$"
+              placeholder="+1 555-123-4567"
+              required
+          /></label>
+          <button class="button" type="submit">Sign Up</button>
+        </form>
+      </dialog>
+      <hr />
+      <h2>CSS Animation</h2>
+      <!-- Elemento HTML que tendrá el efecto -->
+      <div class="boxes">
+        <div class="box">
+          <p>Animations<br />Fade Color</p>
+        </div>
+        <div class="box2">
+          <p>Animations<br />Fade In</p>
+        </div>
+        <div class="box3">
+          <p>Transition <br />hover</p>
+        </div>
+        <div class="box4">
+          <p>Transition <br />Hover with Delay</p>
+        </div>
+        <div class="box5">
+          <p>Transform</p>
+        </div>
+      </div>
+      <hr />
+      <!-- Elemento HTML donde se muestra el cargador -->
+      <h2>Loader Animated</h2>
+      <div id="loader"></div>
+      <h2>Loader with Hover</h2>
+      <div class="loader-t" id="loader-t"></div>
+    </main>
+  </body>
+</html>
