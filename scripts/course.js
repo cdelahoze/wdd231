@@ -1,39 +1,73 @@
-const dataSource = 'scripts/data.json';
-const filterButtons = document.querySelectorAll('.course-tags button[data-filter]');
-const courseList = document.querySelector('.course-list');
-const creditsNote = document.querySelector('.credits-note');
+const dataSource = "scripts/data.json";
+const filterButtons = document.querySelectorAll(
+  ".course-tags button[data-filter]",
+);
+const courseList = document.querySelector(".course-list");
+const creditsNote = document.querySelector(".credits-note");
 
 let allCourses = [];
 
 function getPrefix(code) {
-	const match = String(code).trim().toUpperCase().match(/^[A-Z]+/);
-	return match ? match[0] : '';
+  const match = String(code)
+    .trim()
+    .toUpperCase()
+    .match(/^[A-Z]+/);
+  return match ? match[0] : "";
 }
 
 function updateCreditsText(courses) {
-	if (!creditsNote) {
-		return;
-	}
+  if (!creditsNote) {
+    return;
+  }
 
-	const plannedCredits = courses.reduce((total, course) => total + Number(course.credits_planned || 0), 0);
-	const earnedCredits = courses.reduce((total, course) => total + Number(course.credits_earned || 0), 0);
+  const plannedCredits = courses.reduce(
+    (total, course) => total + Number(course.credits_planned || 0),
+    0,
+  );
+  const earnedCredits = courses.reduce(
+    (total, course) => total + Number(course.credits_earned || 0),
+    0,
+  );
 
-	creditsNote.textContent = `Credits planned: ${plannedCredits} | Credits earned: ${earnedCredits}`;
+  creditsNote.textContent = `Credits planned: ${plannedCredits} | Credits earned: ${earnedCredits}`;
 }
 
-function createCourseCard(course) {
+function createCourseCard(course, index) {
+	const popoverId = `course-popover-${index}`;
+
+	// 1. Crear el botón desencadenador
+	const triggerBtn = document.createElement('button');
+	triggerBtn.className = 'course-card__title-btn';
+	triggerBtn.textContent = course.course_code;
+	triggerBtn.setAttribute('popovertarget', popoverId);
+	triggerBtn.setAttribute('popovertargetaction', 'toggle');
+
+	// -----------------------------------------------------------------
+	// AQUÍ VAN LAS CLASES DINÁMICAS:
+	// -----------------------------------------------------------------
+	const statusLower = String(course.status || '').toLowerCase();
+	if (statusLower) {
+		triggerBtn.classList.add(`status-${statusLower}`);
+	}
+	// -----------------------------------------------------------------
+
+	// 2. Contenedor modal (Popover)
 	const card = document.createElement('article');
 	card.className = 'course-card';
-	card.setAttribute('role', 'listitem');
+	card.id = popoverId;
+	card.setAttribute('popover', 'auto');
+
 	const isCompleted = Boolean(course.completed ?? Number(course.credits_earned || 0) > 0);
 	if (isCompleted) {
 		card.classList.add('is-completed');
 	}
 
+	// Título interno
 	const title = document.createElement('h3');
 	title.className = 'course-card__title';
 	title.textContent = course.course_code;
 
+	// Detalles de la tarjeta
 	const status = document.createElement('p');
 	status.className = 'course-card__detail';
 	status.textContent = `Status: ${course.status}`;
@@ -54,78 +88,94 @@ function createCourseCard(course) {
 	earned.className = 'course-card__detail';
 	earned.textContent = `Credits earned: ${course.credits_earned}`;
 
-	card.append(title, status, code, name, planned, earned);
-	return card;
+	// 4. Botón inferior de Aceptar
+	const bottomAcceptBtn = document.createElement('button');
+	bottomAcceptBtn.className = 'accept-button';
+	bottomAcceptBtn.textContent = 'Accept';
+	bottomAcceptBtn.setAttribute('popovertarget', popoverId);
+	bottomAcceptBtn.setAttribute('popovertargetaction', 'hide');
+
+	// Ensamblar todo
+	card.append(title, status, code, name, planned, earned, bottomAcceptBtn);
+
+	const container = document.createElement('div');
+	container.className = 'course-item';
+	container.setAttribute('role', 'listitem');
+	container.append(triggerBtn, card);
+
+	return container;
 }
 
 function renderCourses(filter) {
-	if (!courseList) {
-		return;
-	}
+  if (!courseList) {
+    return;
+  }
 
-	const filteredCourses =
-		filter === 'ALL'
-			? allCourses
-			: allCourses.filter((course) => getPrefix(course.course_code) === filter);
+  const filteredCourses =
+    filter === "ALL"
+      ? allCourses
+      : allCourses.filter((course) => getPrefix(course.course_code) === filter);
 
-	courseList.innerHTML = '';
+  courseList.innerHTML = "";
 
-	if (!filteredCourses.length) {
-		const emptyState = document.createElement('p');
-		emptyState.setAttribute('role', 'listitem');
-		emptyState.textContent = 'No courses found for this filter.';
-		courseList.append(emptyState);
-		updateCreditsText([]);
-		return;
-	}
+  if (!filteredCourses.length) {
+    const emptyState = document.createElement("p");
+    emptyState.setAttribute("role", "listitem");
+    emptyState.textContent = "No courses found for this filter.";
+    courseList.append(emptyState);
+    updateCreditsText([]);
+    return;
+  }
 
-	const cards = filteredCourses.map(createCourseCard);
-	courseList.append(...cards);
-	updateCreditsText(filteredCourses);
+  const cards = filteredCourses.map((course, index) =>
+    createCourseCard(course, index),
+  );
+  courseList.append(...cards);
+  updateCreditsText(filteredCourses);
 }
 
 function setActiveFilter(button) {
-	filterButtons.forEach((item) => item.classList.remove('is-active'));
-	button.classList.add('is-active');
+  filterButtons.forEach((item) => item.classList.remove("is-active"));
+  button.classList.add("is-active");
 }
 
 async function loadCourses() {
-	if (!courseList) {
-		return;
-	}
+  if (!courseList) {
+    return;
+  }
 
-	try {
-		const response = await fetch(dataSource);
-		if (!response.ok) {
-			throw new Error(`Could not fetch course data (${response.status})`);
-		}
+  try {
+    const response = await fetch(dataSource);
+    if (!response.ok) {
+      throw new Error(`Could not fetch course data (${response.status})`);
+    }
 
-		const data = await response.json();
-		if (!Array.isArray(data)) {
-			throw new Error('Course data format is invalid. Expected an array.');
-		}
+    const data = await response.json();
+    if (!Array.isArray(data)) {
+      throw new Error("Course data format is invalid. Expected an array.");
+    }
 
-		allCourses = data;
-		renderCourses('ALL');
-	} catch (error) {
-		courseList.innerHTML = '';
-		const errorMessage = document.createElement('p');
-		errorMessage.setAttribute('role', 'listitem');
-		errorMessage.textContent = 'Could not load course data from data.json.';
-		courseList.append(errorMessage);
-		if (creditsNote) {
-			creditsNote.textContent = 'Credits unavailable.';
-		}
-		console.error('Error loading courses:', error);
-	}
+    allCourses = data;
+    renderCourses("ALL");
+  } catch (error) {
+    courseList.innerHTML = "";
+    const errorMessage = document.createElement("p");
+    errorMessage.setAttribute("role", "listitem");
+    errorMessage.textContent = "Could not load course data from data.json.";
+    courseList.append(errorMessage);
+    if (creditsNote) {
+      creditsNote.textContent = "Credits unavailable.";
+    }
+    console.error("Error loading courses:", error);
+  }
 }
 
 filterButtons.forEach((button) => {
-	button.addEventListener('click', () => {
-		const filter = button.dataset.filter || 'ALL';
-		setActiveFilter(button);
-		renderCourses(filter);
-	});
+  button.addEventListener("click", () => {
+    const filter = button.dataset.filter || "ALL";
+    setActiveFilter(button);
+    renderCourses(filter);
+  });
 });
 
 loadCourses();

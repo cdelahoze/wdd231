@@ -173,6 +173,11 @@ main h1 {
   color: var(--text-light);
 }
 
+.course-item button.is-active {
+  background-color: var(--nav-active);
+  color: var(--text-light);
+}
+
 .course-list {
   grid-template-columns: 1fr;
   min-height: 26rem;
@@ -212,6 +217,33 @@ main h1 {
 .course-tags button {
   cursor: pointer;
   font-weight: 600;
+}
+
+.course-item button:hover,
+.course-item button:focus-visible {
+  background-color: #e0f4ee;
+}
+
+.course-item button {
+  cursor: pointer;
+  font-weight: 600;
+  width: 220px;
+  max-width: 90%;
+}
+
+.course-card__title-btn.status-fulfilled {
+  border-color: #14564a;
+  background-color: #3a7b60;
+  color: white;
+}
+
+.course-card__title-btn.status-current {
+  border: 1px solid var(--border-main);
+  background-color: #c8f4e7;
+}
+
+.course-card__title-btn.status-future {
+  background-color: #ffffff;
 }
 
 .credits-note {
@@ -411,10 +443,17 @@ footer {
   }
 
   .course-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 0.3rem;
     padding: 0 0.4rem 0.4rem;
     min-height: 32rem;
+  }
+
+  .course-item button {
+    font-size: 1.6rem;
+    padding: 0.35rem 0.2rem;
+    border-radius: 8px;
+    width: 110px;
   }
 
   .course-list span {
@@ -422,10 +461,6 @@ footer {
     background-color: var(--surface-soft);
     font-size: 1.45rem;
     padding: 0.2rem;
-  }
-
-  .course-list {
-    grid-template-columns: 1fr;
   }
 
   .course-card {
