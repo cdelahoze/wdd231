@@ -191,6 +191,10 @@ main h1 {
   padding: 0.5rem;
 }
 
+::backdrop {
+  background-color: rgb(0 0 0 / 50%);
+}
+
 .course-card.is-completed {
   border-color: #14564a;
   background-color: #d9f1e7;
