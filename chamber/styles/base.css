@@ -564,11 +564,11 @@ form input.submitBtn {
 }
 
 form label.top input:required {
-  border-left: red solid 6px;
+  border-left: 6px red solid !important;
 }
 
 form label.top input:required:valid {
-  border-left: green solid 6px;
+  border-left: 6px green solid !important;
 }
 
 .top1 {

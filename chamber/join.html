@@ -111,7 +111,7 @@
           <dialog class="modal" id="newsletter" popover>
             <div class="form-container" id="myFormContainer">
               <form id="joinForm" method="get" action="thankyou.html">
-                <legend>Applicant Information</legend>
+                <p>Applicant Information</p>
 
                 <!-- First Name -->
                 <label class="top">
@@ -179,7 +179,7 @@
                   />
                 </label>
 
-                <legend>Business Information</legend>
+                <p>Business Information</p>
 
                 <!-- Organization Name (Business Name) -->
                 <label class="top">
@@ -195,17 +195,29 @@
                 </label>
 
                 <!-- Organization Title (Business Position) -->
-                <label class="top">
+                <label class="top" for="position">
                   Organization Title
                   <input
                     id="position"
                     type="text"
                     name="position"
+                    list="position-options"
                     autocomplete="organization-title"
                     title="Please enter your title or position in the organization"
                     placeholder="e.g. Manager, President, Member"
+                    pattern="[A-Za-z0-9\s\-]{2,50}"
+                    title="Please enter a valid organization title." required
                   />
                 </label>
+
+                <datalist id="position-options">
+                  <option value="Business Professional"></option>
+                  <option value="Legal representative"></option>
+                  <option value="Manager"></option>
+                  <option value="President"></option>
+                  <option value="Partner"></option>
+                  <option value="Secretary"></option>
+                </datalist>
 
                 <!-- Membership Level (4 opciones requeridas: np, bronze, silver, gold) -->
                 <label class="top">
@@ -224,28 +236,28 @@
                 <div class="membership-container">
                   <div
                     class="medal np"
-                    data-value="np"
+                    data-value="NP Membership (Non-Profit / No Fee)"
                     title="NP Membership (Non-Profit / No Fee)"
                   >
                     <p>NP</p>
                   </div>
                   <div
                     class="medal bronze"
-                    data-value="bronze"
+                    data-value="Bronze Membership"
                     title="Bronze Membership"
                   >
                     <p>BR</p>
                   </div>
                   <div
                     class="medal silver"
-                    data-value="silver"
+                    data-value="Silver Membership"
                     title="Silver Membership"
                   >
                     <p>SL</p>
                   </div>
                   <div
                     class="medal gold"
-                    data-value="gold"
+                    data-value="Gold Membership"
                     title="Gold Membership"
                   >
                     <p>GD</p>
@@ -259,7 +271,7 @@
                     id="businessAdress"
                     type="text"
                     name="businessAdress"
-                    autocomplete="street-address"
+                    autocomplete="address-line1"
                   />
                 </label>
 
