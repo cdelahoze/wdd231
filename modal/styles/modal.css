@@ -244,3 +244,97 @@ code {
 .loader-t:hover::after {
   transform: translate(-50%, -50%) scale(1.5);
 }
+
+/* Contenedor principal para alinearlas horizontalmente */
+.membership-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  padding: 2rem;
+  align-items: center;
+}
+
+.membership-container p {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Estilo base de todas las medallas (heredado del loader) */
+.medal {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border: 5px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  /* Transición para la rotación suave de 0 a 360deg */
+  transition: transform 1.2s ease-in-out;
+}
+
+/* Estilo base del icono/texto interior (inicialmente invisible/pequeño) */
+.medal::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 1.8rem;
+  font-weight: bold;
+  /* Se mantiene centrado y en escala 0 */
+  transform: translate(-50%, -50%) scale(0);
+  /* Transición para que crezca progresivamente */
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* --- ESTILOS ESPECÍFICOS SEGÚN CADA MEMBRESÍA --- */
+
+/* 1. NP (Non-Profit - Sin costo) */
+.medal.np {
+  border-color: #6c757d transparent #6c757d transparent;
+  box-shadow: 0 0 1rem rgba(108, 117, 125, 0.4);
+}
+.medal.np::after {
+  content: "🤝"; /* O puedes poner 'NP' */
+}
+
+/* 2. Bronze */
+.medal.bronze {
+  border-color: #cd7f32 transparent #cd7f32 transparent;
+  box-shadow: 0 0 1rem rgba(205, 127, 50, 0.4);
+}
+.medal.bronze::after {
+  content: "🥉";
+}
+
+/* 3. Silver */
+.medal.silver {
+  border-color: #c0c0c0 transparent #c0c0c0 transparent;
+  box-shadow: 0 0 1rem rgba(192, 192, 192, 0.5);
+}
+.medal.silver::after {
+  content: "🥈";
+}
+
+/* 4. Gold */
+.medal.gold {
+  border-color: #ffd700 transparent #ffd700 transparent;
+  box-shadow: 0 0 1rem rgba(255, 215, 0, 0.6);
+}
+.medal.gold::after {
+  content: "🥇";
+}
+
+/* --- EFECTO HOVER (Rueda gira + icono crece) --- */
+
+/* El aro exterior de la medalla gira 360 grados */
+.medal:hover {
+  transform: rotate(360deg);
+}
+
+/* El icono del centro aparece y se escala a 1.4x */
+.medal:hover::after {
+  transform: translate(-50%, -50%) scale(1.4);
+}
+
+.medal:hover p {
+  color: transparent;
+}

@@ -473,6 +473,170 @@ p {
   text-align: center;
 }
 
+/* --- FORMULARIO DE CONTACTO --- */
+
+/* join us css */
+#joinForm {
+  background-color: var(--paragraph-background-color);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.join-container p {
+  line-height: 36px;
+  max-width: 75%;
+  padding: 0.5em;
+  margin: 0 auto 1.5em auto;
+  color: var(--headline-color-on-white);
+  font-size: 1.3rem;
+  font-family: var(--heading-font);
+}
+
+.join-container h1 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+input[class="top"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 4px;
+  resize: vertical;
+  font-family: var(--heading-font);
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  font-family: var(--heading-font);
+}
+
+input[class="sbs"] {
+  background-color: var(--accent1-color);
+  color: var(--headline-color-on-color);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  font-family: var(--heading-font);
+}
+
+input[type="submit"]:hover {
+  background-color: var(--accent1-color);
+}
+
+fieldset {
+  margin: 2rem 0;
+  border: 1px solid var(--secondary-color);
+  border-radius: 10px;
+  padding: 0.5rem 2rem;
+}
+
+form legend {
+  color: var(--paragraph-color-on-white);
+  margin: 0 1rem;
+  padding: 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+label.sbs {
+  display: block;
+  padding: 0.75rem 0;
+  color: var(--paragraph-color-on-white);
+}
+
+form input.submitBtn {
+  border: none;
+  background-color: var(--headline-color-on-white);
+  color: var(--headline-color-on-color);
+  border-radius: 1rem;
+  padding: 0.75rem 1.5rem;
+  margin: 0 0 2rem 2%;
+  width: 96%;
+  max-width: 20rem;
+  font-size: 1.2rem;
+}
+
+form label.top input:required {
+  border-left: red solid 6px;
+}
+
+form label.top input:required:valid {
+  border-left: green solid 6px;
+}
+
+.top1 {
+  width: 100%;
+  height: 150px;
+  align-items: center;
+  padding-top: 1rem;
+  color: var(--headline-color-on-white);
+  font-size: 1.3rem;
+  padding-bottom: 1rem;
+  padding-left: 0rem;
+  font-family: var(--heading-font);
+}
+
+form label.top1 textarea {
+  font-size: 1em;
+  border: solid 1px var(--secondary-color);
+  border-radius: 10px;
+  padding: 15px 0px 15px 5px;
+  color: var(--paragraph-color-on-white);
+  width: 100%;
+  background-color: var(--accent2-color);
+  font-family: var(--heading-font);
+}
+
+#subject {
+  height: 200px;
+  width: 100%;
+  align-items: center;
+}
+
+/* Clear floats after the columns */
+.top:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+form label.top,
+form div {
+  display: block;
+  padding-top: 0rem;
+  color: var(--headline-color-on-white);
+  font-size: 1.3rem;
+  padding-bottom: 1rem;
+  font-family: var(--heading-font);
+}
+
+form label.top input,
+form label.top select,
+form label.top textarea {
+  display: block;
+  font-size: 0.8em;
+  border: solid 1px var(--secondary-color);
+  border-radius: 10px;
+  padding: 10px 10px 10px 10px;
+  color: var(--paragraph-color-on-white);
+  width: 95%;
+  max-width: 95%;
+  background-color: var(--accent2-color);
+  font-family: var(--heading-font);
+}
+
 /* this is the footer css control */
 
 footer {
@@ -988,148 +1152,6 @@ footer p {
   }
 }
 
-/* join us css */
-
-input[class="top"],
-select,
-textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid var(--secondary-color);
-  border-radius: 4px;
-  resize: vertical;
-  font-family: var(--heading-font);
-}
-
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-  font-family: var(--heading-font);
-}
-
-input[class="sbs"] {
-  background-color: var(--accent1-color);
-  color: var(--headline-color-on-color);
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
-  font-family: var(--heading-font);
-}
-
-input[type="submit"]:hover {
-  background-color: var(--secondary-color);
-}
-
-form fieldset {
-  margin: 2rem 0;
-  border: 1px solid var(--secondary-color);
-  border-radius: 10px;
-  padding: 0.5rem 2rem;
-}
-
-form legend {
-  color: var(--secondary-color);
-  margin: 0 1rem;
-  padding: 0 0.5rem;
-}
-
-form label.sbs {
-  display: block;
-  padding: 0.75rem 0;
-  color: var(--paragraph-color-on-white);
-}
-
-form input.submitBtn {
-  border: none;
-  background-color: var(--accent2-color);
-  color: var(--headline-color-on-color);
-  border-radius: 1rem;
-  padding: 0.75rem 1.5rem;
-  margin: 0 0 2rem 2%;
-  width: 96%;
-  max-width: 20rem;
-}
-
-form label.top input:required {
-  border-left: red solid 6px;
-}
-
-form label.top input:required:valid {
-  border-left: green solid 6px;
-}
-
-.top1 {
-  width: 100%;
-  height: 150px;
-  align-items: center;
-  padding-top: 1rem;
-  color: var(--accent2-color);
-  font-size: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 2rem;
-  font-family: var(--heading-font);
-}
-
-form label.top1 textarea {
-  font-size: 1em;
-  border: solid 1px var(--secondary-color);
-  border-radius: 10px;
-  padding: 15px 0px 15px 5px;
-  color: var(--paragraph-color-on-white);
-  width: 100%;
-  background-color: var(--paragraph-background-color);
-  font-family: var(--heading-font);
-}
-
-#subject {
-  height: 200px;
-  width: 100%;
-  align-items: center;
-}
-
-/* Clear floats after the columns */
-.top:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 47.9375em) {
-  input[type="submit"] {
-    width: 50%;
-    margin-top: 5px;
-  }
-
-  form label.top,
-  form div {
-    display: block;
-    padding-top: 1rem;
-    color: var(--accent2-color);
-    font-size: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 2rem;
-    font-family: var(--heading-font);
-  }
-
-  form label.top input,
-  form label.top select,
-  form label.top textarea {
-    display: block;
-    font-size: 1.2em;
-    border: solid 1px var(--secondary-color);
-    border-radius: 10px;
-    padding: 15px 10px 15px 5px;
-    color: var(--paragraph-color-on-white);
-    width: 95%;
-    max-width: 95%;
-    background-color: var(--paragraph-background-color);
-    font-family: var(--heading-font);
-  }
-}
-
 /* table */
 
 table {
@@ -1228,25 +1250,36 @@ caption {
   display: block;
   padding-top: 1rem;
   color: var(--primary-color);
-  font-size: 2.5vw;
+  font-size: 2rem;
+  line-height: 38px;
   padding-bottom: 2rem;
   padding-left: 2rem;
   font-family: var(--heading-font);
+  text-align: center;
+}
+
+@media only screen and (max-width: 47.9375em) {
+  .thankyou-message h3 {
+    font-size: 1.2rem;
+    line-height: 38px;
+  }
 }
 
 .thankyou-message p {
-  padding-top: 1rem;
+  padding-top: 0.5rem;
   color: var(--primary-color);
   font-size: 1rem;
-  padding-bottom: 2rem;
+  padding-bottom: 0.5rem;
   padding-left: 2rem;
   font-family: var(--heading-font);
   font-weight: bold;
+  line-height: 0px;
+  text-align: left;
 }
 
 .thankyou-message p span {
   padding-top: 1rem;
-  color: var(--secondary-color);
+  color: var(--paragraph-color-on-white);
   font-size: 0.8rem;
   padding-bottom: 2rem;
   padding-left: 2rem;

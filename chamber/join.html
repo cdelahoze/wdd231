@@ -52,8 +52,10 @@
     <link rel="stylesheet" href="styles/directory.css" />
     <link rel="stylesheet" href="styles/medium.css" media="(min-width: 48em)" />
     <link rel="stylesheet" href="styles/large.css" media="(min-width: 64em)" />
+    <link rel="stylesheet" href="styles/modal.css" />
     <script src="scripts/date.js" defer></script>
     <script src="scripts/directory.js" defer></script>
+    <script src="scripts/modal.js" defer></script>
   </head>
   <body>
     <header>
@@ -94,6 +96,319 @@
       </p>
     </header>
     <main>
+      <!-- <main> -->
+      <div class="join-container">
+        <h1>Join the Facatativá Chamber of Commerce</h1>
+        <p>
+          Become a member of the Facatativá Chamber of Commerce and gain access
+          to a network of local businesses, entrepreneurs, and services. Fill
+          out the form below to apply for membership.
+        </p>
+        <center>
+          <button class="button open-button">Sign Up Now!</button>
+        </center>
+        <fieldset>
+          <dialog class="modal" id="newsletter" popover>
+            <div class="form-container" id="myFormContainer">
+              <form id="joinForm" method="get" action="thankyou.html">
+                <legend>Applicant Information</legend>
+                <label class="top"
+                  >First Name* <input type="text" name="fname" required
+                /></label>
+                <label class="top"
+                  >Last Name* <input type="text" name="lname" required
+                /></label>
+                <label class="top"
+                  >Cell Phone
+                  <input type="tel" name="phone" placeholder="1235551234"
+                /></label>
+                <label class="top"
+                  >Email*
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="someone@gmail.com"
+                    required
+                /></label>
+                <label class="top"
+                  >Website <input type="url" name="url" placeholder="http://"
+                /></label>
+
+                <legend>Business information</legend>
+                <label class="top"
+                  >Business Name*<input
+                    id="business"
+                    type="text"
+                    name="business"
+                    required
+                /></label>
+                <!-- Input HTML (donde se guardará la membresía elegida) -->
+                <label class="top">
+                  Membership Type*
+                  <input
+                    id="membership"
+                    type="text"
+                    name="membership"
+                    placeholder="Click on a medal below..."
+                    readonly
+                    required
+                  />
+                </label>
+                <div class="membership-container">
+                  <!-- Non-Profit -->
+                  <div
+                    class="medal np"
+                    data-value="Non Profit Membership"
+                    title="NP Membership (Non-Profit / No Fee)"
+                  >
+                    <p>NP</p>
+                  </div>
+
+                  <!-- Bronze -->
+                  <div
+                    class="medal bronze"
+                    data-value="Bronze Membership"
+                    title="Bronze Membership"
+                  >
+                    <p>BR</p>
+                  </div>
+
+                  <!-- Silver -->
+                  <div
+                    class="medal silver"
+                    data-value="Silver Membership"
+                    title="Silver Membership"
+                  >
+                    <p>SL</p>
+                  </div>
+
+                  <!-- Gold -->
+                  <div
+                    class="medal gold"
+                    data-value="Gold Membership"
+                    title="Gold Membership"
+                  >
+                    <p>GD</p>
+                  </div>
+                </div>
+                <label class="top"
+                  >Business Adress<input
+                    id="businessAdress"
+                    type="text"
+                    name="businessAdress"
+                /></label>
+                <label class="top"
+                  >Business Position
+                  <select name="position" id="position">
+                    <option value="">Please Select</option>
+                    <option value="Business Professional">
+                      Business Professional
+                    </option>
+                    <option value="Legal representative">
+                      Legal representative
+                    </option>
+                    <option value="Manager">Manager</option>
+                    <option value="President">President</option>
+                    <option value="Partner">Partner</option>
+                    <option value="Secretary">Secretary</option>
+                    <option value="Other">other</option>
+                  </select>
+                </label>
+                <label class="top"
+                  >Current Date<input
+                    id="current-date"
+                    type="date"
+                    name="current-date"
+                /></label>
+                <label class="top1"
+                  >Business Description<textarea
+                    id="description"
+                    name="description"
+                    placeholder="Write something.."
+                  ></textarea>
+                </label>
+                <!-- </fieldset> -->
+                 <input type="hidden" id="current-time" name="current-time" />
+                <input
+                  type="submit"
+                  value="Propose My Course"
+                  class="submitBtn"
+                />
+              </form>
+            </div>
+          </dialog>
+        </fieldset>
+        <fieldset>
+          <legend>Membership options</legend>
+          <table>
+            <thead>
+              <tr>
+                <th colspan="6" scope="colgroup">
+                  Subscription Type Membership
+                </th>
+              </tr>
+              <tr>
+                <th scope="col">Benefist</th>
+                <th scope="col">Non-profit</th>
+                <th scope="col">Bronze</th>
+                <th scope="col">Silver</th>
+                <th scope="col">Gold</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-column">Inclusion in our business directory</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td class="text-column">
+                  Publication of events in the online calendar
+                </td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td class="text-column">
+                  Publication in our monthly newsletter
+                </td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td class="text-column">
+                  Specialized services for macro sectors
+                </td>
+                <td>--</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td class="text-column">Training in business strengthening</td>
+                <td>--</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td class="text-column">
+                  General advice on business development
+                </td>
+                <td>--</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td class="text-column">
+                  Specialized advice and consultancies
+                </td>
+                <td>--</td>
+                <td>--</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td class="text-column">
+                  Fairs, business roundtables, networking spaces, <br />
+                  and commercial appointments
+                </td>
+                <td>--</td>
+                <td>--</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td class="text-column">
+                  Studies and research, commercial or business information
+                </td>
+                <td>--</td>
+                <td>--</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td class="text-column">
+                  Advisory service on arbitration and conflict resolution
+                </td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td class="text-column">
+                  International Markets and Cooperation for companies
+                </td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td class="text-column">Databases and business information</td>
+                <td>--</td>
+                <td>--</td>
+                <td>--</td>
+                <td>✅</td>
+              </tr>
+              <tr></tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>Annual Costs</td>
+                <td>
+                  <label
+                    ><input
+                      type="radio"
+                      name="audience"
+                      value="Non Profit Membership"
+                    />
+                    Free</label
+                  >
+                </td>
+                <td>
+                  <label
+                    ><input
+                      type="radio"
+                      name="audience"
+                      value="Bronze Membership"
+                    />
+                    US $200</label
+                  >
+                </td>
+                <td>
+                  <label
+                    ><input
+                      type="radio"
+                      name="audience"
+                      value="Silver Membership"
+                    />
+                    US $300</label
+                  >
+                </td>
+                <td>
+                  <label
+                    ><input
+                      type="radio"
+                      name="audience"
+                      value="Gold Membership"
+                    />
+                    US $500</label
+                  >
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </fieldset>
+      </div>
     </main>
     <footer>
       <img

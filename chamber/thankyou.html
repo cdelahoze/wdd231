@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Facatativá Chamber of Commerce | Join</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Join the Facatativá Chamber of Commerce and connect with local businesses, entrepreneurs, and services."
+    />
+    <meta name="author" content="Cristian Moises De La Hoz Escorcia" />
+    <!-- Open Graph meta tags for social media sharing -->
+    <meta property="og:title" content="Facatativá Chamber of Commerce" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://cdelahoze.github.io/wdd231/chamber/images/logo-footer.svg"
+    />
+    <meta
+      property="og:url"
+      content="https://cdelahoze.github.io/wdd231/chamber/directory"
+    />
+    <meta
+      property="og:description"
+      content="Explore the official Facatativá Chamber of Commerce Directory. Connect with local businesses, entrepreneurs, and services."
+    />
+    <!-- favicon -->
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
+    <!-- Google Fonts Preconnect y Hojas de Estilo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700&display=swap"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700&display=swap"
+      />
+    </noscript>
+    <!-- Carga condicional según el tamaño de pantalla -->
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/directory.css" />
+    <link rel="stylesheet" href="styles/medium.css" media="(min-width: 48em)" />
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 64em)" />
+    <link rel="stylesheet" href="styles/modal.css" />
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/directory.js" defer></script>
+    <script src="scripts/modal.js" defer></script>
+    <script src="scripts/thankyou.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <div class="logo-image">
+          <img
+            class="img-log"
+            src="images/logo.svg"
+            alt="Facatativá Chamber of Commerce Logo"
+            fetchpriority="high"
+          />
+        </div>
+        <div class="chamber">
+          <h2>Facatativá</h2>
+          <h3>Chamber of Commerce</h3>
+        </div>
+        <div class="top-nav">
+          <nav class="topnav" id="myTopnav">
+            <a href="index.html">Home </a>
+            <a href="discover.html">Discover</a>
+            <a href="directory.html">Directory</a>
+            <a href="join.html">Join</a>
+            <a href="typography.html">Typography</a>
+            <button
+              type="button"
+              class="icon"
+              id="demo"
+              aria-label="Toggle navigation menu"
+            >
+              <span aria-hidden="true">&#9776;</span>
+            </button>
+          </nav>
+        </div>
+      </div>
+      <span id="updateFormatted"></span>
+      <p id="banner">
+        Come join us for the chamber meet and greet Wednesday at 7:00 p.m.
+      </p>
+    </header>
+
+    <main>
+      <div class="thankyou-message">
+        <h3>Thank you for joining our Facatativá Chamber of Commerce!</h3>
+        <div class="membership-details">
+          <p>First name: <span id="name-form"></span></p>
+          <p>Last name: <span id="lastName-form"></span></p>
+          <p>Cellphone name: <span id="cellphone-form"></span></p>
+          <p>Email: <span id="email-form"></span></p>
+          <p>
+            Url: <a href="url-form"><span id="url-form"></span></a>
+          </p>
+          <p>Business name: <span id="business-form"></span></p>
+          <p>Business adress: <span id="business-adress"></span></p>
+          <p>Business position: <span id="business-position"></span></p>
+          <p>Description: <span id="description-form"></span></p>
+
+          <p>Membership: <span id="membership-form"></span></p>
+          <p>Date: <span id="date-form"></span></p>
+          <p>Time: <span id="time-form"></span></p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <img
+        class="logo-footer"
+        src="images/logo-footer.svg"
+        alt="Logo de Facatativá Chamber of Commerce"
+        width="300"
+        height="100"
+        fetchpriority="high"
+        decoding="async"
+      />
+      <div class="social-links" role="navigation" aria-label="Social links">
+        <!-- Enlace a LinkedIn -->
+        <a
+          href="https://www.linkedin.com/in/cristian-moises-de-la-hoz-escorcia-189a07317"
+          aria-label="LinkedIn"
+        >
+          <img
+            src="images/linkedin.svg"
+            alt="LinkedIn"
+            class="social-icon-img"
+            width="32"
+            height="32"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+        <!-- Enlace a GitHub -->
+        <a href="https://cdelahoze.github.io/introduction/" aria-label="GitHub">
+          <img
+            src="images/github.svg"
+            alt="GitHub"
+            class="social-icon-img"
+            width="32"
+            height="32"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+        <!-- Enlace a X (anteriormente Twitter) -->
+        <a
+          href="https://x.com/cride78?s=11&t=48RJdiLeyvtcvkTPRfRHIw"
+          aria-label="X"
+        >
+          <img
+            src="images/equis.svg"
+            alt="X"
+            class="social-icon-img"
+            width="32"
+            height="32"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+      </div>
+      <div class="contact">
+        <h2>Facatativa Chamber of Commerce</h2>
+        <address>
+          <p>Calle 23C #70 50</p>
+          <p>Facatativá, Cundinamarca</p>
+        </address>
+      </div>
+      <p class="info-contact">
+        info@facacc.org <br />+(57) 301-494-1963 <br />📍Location Map
+      </p>
+      <p class="copyright">
+        &copy; <span id="year"></span> Facatativá Chamber | Cristian De La Hoz
+        Escorcia | WD 231 Project | Last Modification: <span id="update"></span>
+      </p>
+    </footer>
+  </body>
+</html>
