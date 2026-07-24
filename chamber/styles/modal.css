@@ -1,10 +1,7 @@
 /* Styles for dialog elements with IDs #signup or #newsletter */
 
-#newsletter {
-  /* Style for the backdrop when the dialog is modal */
-  &::backdrop {
-    background: rgb(0 0 0 / 70%);
-  }
+#newsletter::backdrop {
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .form-container {
@@ -22,8 +19,18 @@
   text-align: center;
 }
 
+.button-container {
+  display: flex;
+  justify-content: center; /* Centra el botón horizontalmente */
+  align-items: center;     /* Centra verticalmente si hay una altura definida */
+  margin: 1.5rem 0;        /* Añade espacio arriba y abajo */
+}
+
 /* General button styles */
 .open-button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   border: 0;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -32,12 +39,11 @@
   font-weight: 700;
   padding: 0.75rem 1rem;
   font-size: 2rem;
+}
 
-  /* Hover and focus states for buttons */
-  &:hover,
-  &:focus {
-    background: rgb(40, 142, 244);
-  }
+.open-button:hover,
+.open-button:focus {
+  background: rgb(40, 142, 244);
 }
 
 /* Styles for any 'dialog' element when it's open */

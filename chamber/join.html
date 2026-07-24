@@ -104,45 +104,110 @@
           to a network of local businesses, entrepreneurs, and services. Fill
           out the form below to apply for membership.
         </p>
-        <center>
+        <div class="button-container">
           <button class="button open-button">Sign Up Now!</button>
-        </center>
+        </div>
         <fieldset>
           <dialog class="modal" id="newsletter" popover>
             <div class="form-container" id="myFormContainer">
               <form id="joinForm" method="get" action="thankyou.html">
                 <legend>Applicant Information</legend>
-                <label class="top"
-                  >First Name* <input type="text" name="fname" required
-                /></label>
-                <label class="top"
-                  >Last Name* <input type="text" name="lname" required
-                /></label>
-                <label class="top"
-                  >Cell Phone
-                  <input type="tel" name="phone" placeholder="1235551234"
-                /></label>
-                <label class="top"
-                  >Email*
+
+                <!-- First Name -->
+                <label class="top">
+                  First Name*
+                  <input
+                    type="text"
+                    name="fname"
+                    id="fname"
+                    autocomplete="given-name"
+                    title="Please enter your first name"
+                    required
+                  />
+                </label>
+
+                <!-- Last Name -->
+                <label class="top">
+                  Last Name*
+                  <input
+                    type="text"
+                    name="lname"
+                    id="lname"
+                    autocomplete="family-name"
+                    title="Please enter your last name"
+                    required
+                  />
+                </label>
+
+                <!-- Mobile Phone -->
+                <label class="top">
+                  Cell Phone*
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    placeholder="1235551234"
+                    autocomplete="tel"
+                    title="Please enter a valid 10-digit phone number"
+                    required
+                  />
+                </label>
+
+                <!-- Email Address -->
+                <label class="top">
+                  Email*
                   <input
                     type="email"
                     name="email"
+                    id="email"
                     placeholder="someone@gmail.com"
+                    autocomplete="email"
+                    title="Please enter a valid email address"
                     required
-                /></label>
-                <label class="top"
-                  >Website <input type="url" name="url" placeholder="http://"
-                /></label>
+                  />
+                </label>
 
-                <legend>Business information</legend>
-                <label class="top"
-                  >Business Name*<input
+                <!-- Website -->
+                <label class="top">
+                  Website
+                  <input
+                    type="url"
+                    name="url"
+                    id="url"
+                    placeholder="https://"
+                    autocomplete="url"
+                  />
+                </label>
+
+                <legend>Business Information</legend>
+
+                <!-- Organization Name (Business Name) -->
+                <label class="top">
+                  Organization Name*
+                  <input
                     id="business"
                     type="text"
                     name="business"
+                    autocomplete="organization"
+                    title="Please enter your business or organization name"
                     required
-                /></label>
-                <!-- Input HTML (donde se guardará la membresía elegida) -->
+                  />
+                </label>
+
+                <!-- Organization Title (Business Position) -->
+                <label class="top">
+                  Organization Title
+                  <input
+                    id="position"
+                    type="text"
+                    name="position"
+                    autocomplete="organization-title"
+                    title="Please enter your title or position in the organization"
+                    placeholder="e.g. Manager, President, Member"
+                  />
+                </label>
+
+                <!-- Membership Level (4 opciones requeridas: np, bronze, silver, gold) -->
                 <label class="top">
                   Membership Type*
                   <input
@@ -150,85 +215,74 @@
                     type="text"
                     name="membership"
                     placeholder="Click on a medal below..."
+                    title="Please select a membership level by clicking on a medal"
                     readonly
                     required
                   />
                 </label>
+
                 <div class="membership-container">
-                  <!-- Non-Profit -->
                   <div
                     class="medal np"
-                    data-value="Non Profit Membership"
+                    data-value="np"
                     title="NP Membership (Non-Profit / No Fee)"
                   >
                     <p>NP</p>
                   </div>
-
-                  <!-- Bronze -->
                   <div
                     class="medal bronze"
-                    data-value="Bronze Membership"
+                    data-value="bronze"
                     title="Bronze Membership"
                   >
                     <p>BR</p>
                   </div>
-
-                  <!-- Silver -->
                   <div
                     class="medal silver"
-                    data-value="Silver Membership"
+                    data-value="silver"
                     title="Silver Membership"
                   >
                     <p>SL</p>
                   </div>
-
-                  <!-- Gold -->
                   <div
                     class="medal gold"
-                    data-value="Gold Membership"
+                    data-value="gold"
                     title="Gold Membership"
                   >
                     <p>GD</p>
                   </div>
                 </div>
-                <label class="top"
-                  >Business Adress<input
+
+                <!-- Business Address -->
+                <label class="top">
+                  Business Address
+                  <input
                     id="businessAdress"
                     type="text"
                     name="businessAdress"
-                /></label>
-                <label class="top"
-                  >Business Position
-                  <select name="position" id="position">
-                    <option value="">Please Select</option>
-                    <option value="Business Professional">
-                      Business Professional
-                    </option>
-                    <option value="Legal representative">
-                      Legal representative
-                    </option>
-                    <option value="Manager">Manager</option>
-                    <option value="President">President</option>
-                    <option value="Partner">Partner</option>
-                    <option value="Secretary">Secretary</option>
-                    <option value="Other">other</option>
-                  </select>
+                    autocomplete="street-address"
+                  />
                 </label>
-                <label class="top"
-                  >Current Date<input
-                    id="current-date"
-                    type="date"
-                    name="current-date"
-                /></label>
-                <label class="top1"
-                  >Business Description<textarea
+
+                <!-- Current Date -->
+                <label class="top">
+                  Current Date
+                  <input id="current-date" type="date" name="current-date" />
+                </label>
+
+                <!-- Campo oculto para la hora de envio -->
+                <input type="hidden" id="current-time" name="current-time" />
+
+                <!-- Organization Description -->
+                <label class="top1">
+                  Organization Description
+                  <textarea
                     id="description"
                     name="description"
                     placeholder="Write something.."
+                    title="Please enter a brief description of your organization"
                   ></textarea>
                 </label>
-                <!-- </fieldset> -->
-                 <input type="hidden" id="current-time" name="current-time" />
+
                 <input
                   type="submit"
                   value="Propose My Course"
@@ -239,11 +293,11 @@
           </dialog>
         </fieldset>
         <fieldset>
-          <legend>Membership options</legend>
+          <p>Membership options</p>
           <table>
             <thead>
               <tr>
-                <th colspan="6" scope="colgroup">
+                <th colspan="5" scope="colgroup">
                   Subscription Type Membership
                 </th>
               </tr>
@@ -359,7 +413,6 @@
                 <td>--</td>
                 <td>✅</td>
               </tr>
-              <tr></tr>
             </tbody>
             <tfoot>
               <tr>
