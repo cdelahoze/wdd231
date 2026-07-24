@@ -61,3 +61,23 @@ if (joinForm) {
     document.getElementById("current-time").value = timeString;
   });
 }
+
+// Cierre al hacer clic en el backdrop (fuera del modal)
+const modal = document.querySelector("#newsletter");
+
+if (modal) {
+  modal.addEventListener("click", (e) => {
+    // Calculamos el área delimitada por el propio dialog
+    const dialogDimensions = modal.getBoundingClientRect();
+    
+    // Si el clic ocurrió fuera de sus bordes, significa que tocó el backdrop
+    if (
+      e.clientX < dialogDimensions.left ||
+      e.clientX > dialogDimensions.right ||
+      e.clientY < dialogDimensions.top ||
+      e.clientY > dialogDimensions.bottom
+    ) {
+      modal.close();
+    }
+  });
+}
