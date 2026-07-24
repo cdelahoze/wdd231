@@ -203,10 +203,10 @@
                     name="position"
                     list="position-options"
                     autocomplete="organization-title"
-                    title="Please enter your title or position in the organization"
                     placeholder="e.g. Manager, President, Member"
-                    pattern="[A-Za-z0-9\s\-]{2,50}"
-                    title="Please enter a valid organization title." required
+                    pattern="[A-Za-z\s\-]{7,}"
+                    title="Please enter at least 7 characters (only letters, spaces, and hyphens allowed)."
+                    required
                   />
                 </label>
 
@@ -236,28 +236,28 @@
                 <div class="membership-container">
                   <div
                     class="medal np"
-                    data-value="NP Membership (Non-Profit / No Fee)"
+                    data-value="np"
                     title="NP Membership (Non-Profit / No Fee)"
                   >
                     <p>NP</p>
                   </div>
                   <div
                     class="medal bronze"
-                    data-value="Bronze Membership"
+                    data-value="bronze"
                     title="Bronze Membership"
                   >
                     <p>BR</p>
                   </div>
                   <div
                     class="medal silver"
-                    data-value="Silver Membership"
+                    data-value="silver"
                     title="Silver Membership"
                   >
                     <p>SL</p>
                   </div>
                   <div
                     class="medal gold"
-                    data-value="Gold Membership"
+                    data-value="gold"
                     title="Gold Membership"
                   >
                     <p>GD</p>
