@@ -1,355 +1,117 @@
 @media only screen and (min-width: 64em) {
-  .container {
+.container {
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto; 
+    gap: 20px;
     width: 100%;
-    height: 60vw;
-    color: rgb(193, 145, 2);
-    font-size: 25px;
-    font-weight: bold;
+    align-items: stretch; /* Obliga a que la imagen y los spotlights midan lo mismo de alto */
   }
 
-  .container p {
-    font-size: 18px;
-    font-weight: 600;
-  }
-
-  /* Ribbon */
-  .forecast-main-card {
-    grid-column: 1 / 3;
-    grid-row: 1 / 5;
-    background-color: #5acfff63;
-    padding: 10px;
-    border: 1px solid #c1c1c1;
-    border-radius: 1em;
-    height: 98%;
-    width: 94%;
+  /* FILA 1: Imagen Principal y Spotlights */
+.hero-image {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
     position: relative;
-    display: inline-block;
-    text-align: center;
-    color: var(--primary-color);
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 15px;
+    width: 100%;
+    height: 100%; /* Forzar a ocupar todo el alto de la fila */
+    overflow: hidden; /* Evita bordes sobrantes */
+    border-radius: 1em;
   }
 
-  /* ==========================================
-   REEMPLAZA ESTA SECCIÓN EN TU CSS DE DESKTOP
-   ========================================== */
+  /* La imagen llena completamente el espacio sin deformarse */
+  .hero-image img,
+  .landscape {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta proporcionalmente para cubrir todo el rectángulo sin dejar espacios */
+    display: block;
+    margin: 0;
+  }
+
+  .spotlights {
+    grid-column: 4 / 5; /* Ocupa únicamente la columna 4 al lado de la imagen */
+    grid-row: 1 / 2;    /* Queda restringido SOLO a la Fila 1 para no empujar nada abajo */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: var(--secondary-color);
+    padding: 15px;
+    border-radius: 1em;
+  }
+
+  /* FILA 2: Las 4 tarjetas alineadas horizontalmente y con EL MISMO ALTO */
+  .forecast-main-card {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
 
   .weather {
-    grid-column: 1 / 3;
-    grid-row: 5 / 9;
-    background-color: var(--headline-color-on-white);
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .news-release {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    background-color: var(--paragraph-color-on-white);
     padding: 20px;
-    border: 1px solid var(--headline-color-on-white);
     border-radius: 1em;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
 
-    height: 96%;
-    min-height: 93%;
-    width: 94%;
+  .join {
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
 
+  /* Estilos internos adicionales */
+  .spotlights .right2,
+  .spotlights .right3,
+  .spotlights .right4 {
+    background-color: #3481fe0f;
+    padding: 15px;
+    border-radius: 1em;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
-    color: var(--secondary-color);
-
-    margin: 13px 0px 0px 10px;
-    box-sizing: border-box;
-
-    /* Evita que cualquier contenido desbordado sea visible */
-    overflow: hidden;
+    border: 1px solid var(--accent1-color);
   }
-
-  /* Tamaño fluido: Mínimo 1.5rem, ideal 3vw, Máximo 2.2rem */
-  .weather .weather_title {
-    font-size: clamp(1.5vw, 3vw, 2.2vw);
-    margin: 0px 0px -17px;
-    width: 100%;
-  }
-
-  .weather figure {
-    margin: 2px 0 15px 0;
-  }
-
-  .weather #weather-icon {
-    width: clamp(
-      3.5vw,
-      8vw,
-      6.5vw
-    ); /* El icono también se encoge en pantallas medianas */
-    height: clamp(3.5vw, 8vw, 6.5vw);
-    margin: 0 auto;
-    object-fit: contain;
-  }
-
-  /* Tamaño fluido para la temperatura */
-  .weather .temp {
-    position: static;
-    font-size: clamp(2vw, 5vw, 2vw);
-    font-weight: 800;
-    margin: 5px 0;
-    width: 100%;
-  }
-
-  .weather .cloudy {
-    position: static;
-    font-size: clamp(1vw, 1.5vw, 1vw);
-    margin: 2px 0 15px 0;
-    width: 100%;
-  }
-
-  /* Contenedor Flex para los datos de viento: si no cabe el número al lado, baja ordenadamente */
-  .weather .wind,
-  .weather .wind-ch {
-    position: static;
-    font-size: clamp(0.65vw, 1.2vw, 0.8vw);
-    margin: 4px 0;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap; /* TRUCO CLAVE: rompe la línea si falta espacio */
-    justify-content: center;
-    gap: 4px; /* Pequeño espacio entre el texto y el valor span */
-  }
-
-  /* Asegura que los valores internos no se peguen feo si se rompe la línea */
-  .weather .wind span,
-  .weather .wind-ch span {
-    font-weight: bold;
-  }
-
-  .forecast-days-container {
-    color: var(--paragraph-color-on-white);
-    font-size: 1.2vw;
-    font-weight: 600;
-  }
-
-  .forecast-day-item {
-    padding: 1px 4px;
-    border-bottom: 1px solid rgb(233, 236, 239);
-  }
-
-  .forcast-title {
-    font-size: 2vw;
-    margin: 3.5vw 1vw 2vw 1vw;
-  }
-
-  /* Join */
-  .join {
-    grid-column: 1 / 3;
-    grid-row: 9 / 13;
-    margin: 5px;
-    background-color: var(--accent1-color);
-    border: none;
-    color: white;
-    padding: 5px 50px;
-    text-align: center;
-    display: inline-block;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 1em;
-  }
-
-  .join-us .text-1 {
-    border: none;
-    color: white;
-    text-align: center;
-    font-size: 15px;
-    font-weight: 300;
-  }
-
-  /* Image */
 
   .hero-image .welcome {
+    font-size: 2rem;
+    top: 15%;
+    left: 50%;
+    display: block;
     position: absolute;
-    top: 6px;
-    left: 250px;
-    color: var(--paragraph-color-on-white);
-    font-weight: bold;
-    border-color: transparent;
-    font-size: 30px;
   }
 
-  .hero-image {
-    grid-column: 3 / 8; /* Mantiene sus dimensiones originales en la grilla */
-    grid-row: 1 / 9;
-    position: relative; /* Crucial para que el botón no se salga */
-    display: inline-block;
-  }
+.news-release .text-1 {
+  color: white;
+  text-align: center;
+  font-size: 14px; /* Un tamaño de fuente ligeramente más pequeño para adaptarse al alto estándar */
+  line-height: 1.4;
+  font-weight: 300;
+}
+
   .hero-image .button {
-    font-size: 20px; /* Solo escalamos la fuente, hereda los % de base.css */
-  }
-
-  .landscape {
-    max-height: 100%;
-    max-width: 100%;
-  }
-
-  /* News Relase */
-  .news-release {
-    grid-column: 3 / 8;
-    grid-row: 9 / 13;
-    background-color: var(--paragraph-color-on-white);
-    padding: 10px;
-    border: 1px solid var(--paragraph-color-on-white);
-    border-radius: 1em;
-    margin: 5px;
-  }
-
-  .news-release .text-1 {
-    border: none;
-    color: white;
-    text-align: center;
     font-size: 20px;
-    font-weight: 300;
   }
 
-  /* Spot Light */
-  .container div:nth-of-type(6) {
-    grid-column: 8 / 10;
-    grid-row: 1 / 13;
-    background-color: var(--secondary-color);
-    padding: 10px;
-    border: 1px solid var(--secondary-color);
-    border-radius: 1em;
-  }
 
-  .container div:nth-of-type(6) {
-    display: flex;
-    flex-direction: column;
-  }
 
-  .container div:nth-of-type(6) .right2 {
-    order: 1;
-    width: 95%;
-    background-color: var(--accent1-color);
-    padding: 10px;
-    border: 1px solid var(--accent1-color);
-    border-radius: 1em;
-    height: 33%;
-    width: 100%;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    color: var(--primary-color);
-  }
-
-  .spotlights .right4 {
-    background-color: rgba(64, 134, 204, 0);
-    padding: 0px;
-    border: 1px solid rgba(204, 204, 204, 0);
-    border-radius: 1em;
-    height: 0%;
-    width: 0%;
-    color: #ffffff00;
-    margin: 0%;
-    position: relative;
-    display: inline-block;
-    text-align: center;
-  }
-
-  .spotlights .right4 .img-spotlight {
-    width: 0%;
-    position: absolute;
-    top: 0%;
-    left: 0%;
-  }
-  
-  .container div:nth-of-type(6) .right2 .img-spotlight {
-    width: 30%;
-    position: absolute;
-    top: 40%;
-    left: 10px;
-  }
-
-  .container div:nth-of-type(6) .right2 .text-1 {
-    border: none;
-    color: black;
-    text-align: center;
-    font-size: 15px;
-    font-weight: 500;
-    top: 20%;
-    left: 10px;
-  }
-  .container div:nth-of-type(6) .right3 {
-    order: 2;
-    width: 95%;
-    background-color: var(--accent1-color);
-    padding: 10px;
-    border: 1px solid var(--accent1-color);
-    border-radius: 1em;
-    height: 33%;
-    width: 100%;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    color: var(--primary-color);
-  }
-
-  .container div:nth-of-type(6) .right3 .img-spotlight {
-    width: 30%;
-    position: absolute;
-    top: 40%;
-    left: 10px;
-  }
-
-  .container div:nth-of-type(6) .right3 .text-1 {
-    border: none;
-    color: black;
-    text-align: center;
-    font-size: 15px;
-    font-weight: 500;
-    top: 20%;
-    left: 10px;
-  }
-
-  .container div:nth-of-type(6) .right4 {
-    order: 3;
-    width: 95%;
-    background-color: var(--accent1-color);
-    padding: 10px;
-    border: 1px solid var(--accent1-color);
-    border-radius: 1em;
-    height: 32%;
-    width: 100%;
-    color: var(--primary-color);
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    display: inline-block;
-    text-align: center;
-  }
-
-  .container div:nth-of-type(6) .right4 .img-spotlight {
-    width: 40%;
-    position: absolute;
-    top: 40%;
-    left: 10px;
-  }
-
-  .container div:nth-of-type(6) .right4 .text-1 {
-    border: none;
-    color: black;
-    text-align: center;
-    font-size: 15px;
-    font-weight: 500;
-    top: 20%;
-    left: 10px;
-  }
 
   /* discovery page css */
 
@@ -483,6 +245,4 @@
     padding-top: 1.5em;
     padding-left: 1.6em;
   }
-
-
 }

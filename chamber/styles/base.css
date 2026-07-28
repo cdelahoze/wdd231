@@ -322,19 +322,21 @@ p {
   font-size: 20px;
   text-align: center;
   width: 95%;
+  flex-direction: column;
 }
 
 /* Asegura que el contenedor de la imagen sirva de ancla */
 .hero-image {
   position: relative;
   display: inline-block;
+  width: 100%;
 }
 
 /* Fuerza a la imagen a llenar el espacio asignado por el Grid */
 .hero-image img,
 .landscape {
   width: 100%;
-  height: 96%;
+  height: auto;
   object-fit: cover; /* Mantiene la proporción de la foto sin deformarla */
   display: block;
   border-radius: 0.5em;
@@ -345,21 +347,16 @@ p {
 /* El botón responsivo se mantiene con porcentajes */
 .hero-image .button {
   background-color: var(--paragraph-color-on-color);
-  border: none;
   color: var(--primary-color);
-  padding: 9px 11px;
+  padding: 9px 15px;
   text-align: center;
-  display: inline-block;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: bold;
-  margin: 4px 2px;
   cursor: pointer;
-
   position: absolute;
-  top: 75%; /* Ajusta este % si quieres subir o bajar el botón */
-  right: 8%; /* Ajusta este % si lo quieres más al centro o a la orilla */
-  transform: translateY(-50%);
-
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
   border: 1px solid var(--accent1-color);
   border-radius: 1em;
 }
@@ -375,8 +372,9 @@ p {
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
   max-width: 500px;
-  margin: 0 auto;
+  margin: 10px auto;
   text-align: center;
 }
 
@@ -385,8 +383,9 @@ p {
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
   max-width: 500px;
-  margin: 20px auto;
+  margin: 15px auto;
   text-align: center;
 }
 
@@ -408,13 +407,23 @@ p {
 }
 
 /* Cada fila correspondiente a un día */
+.forecast-days-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--paragraph-color-on-white);
+  font-size: 20px;
+  font-weight: 600;
+}
+
 .forecast-day-item {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Separa los textos uniformemente en la línea */
+  justify-content: space-between;
   padding: 8px 0;
   border-bottom: 1px solid #e9ecef;
 }
+
 
 .forecast-day-item:last-child {
   border-bottom: none; /* Quita la línea divisoria al último elemento */
@@ -430,12 +439,14 @@ p {
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
   max-width: 500px;
+  margin: 10px auto;
   text-align: center;
 }
 
 .weather .weather_title {
-  font-size: 1.8rem; /* Controlado para que no rompa la estructura */
+  font-size: 1.8rem;
   text-align: center;
   color: var(--secondary-color);
   font-weight: 600;
@@ -443,13 +454,10 @@ p {
 }
 
 .weather .temp {
-  width: 40%;
-  position: absolute;
-  top: calc(1rem + 2vh);
-  right: 1vw;
-  font-size: 5vw;
-  font-weight: 1000;
+  font-size: 2rem;
+  font-weight: bold;
   color: var(--secondary-color);
+  margin: 10px 0;
 }
 
 .weather .cloudy,
@@ -459,8 +467,9 @@ p {
 }
 
 .weather #weather-icon {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
 }
 
 .spotlights h4 {
@@ -862,9 +871,10 @@ footer p {
   }
 
   .spotlights .right2 {
-    background-color: var(--accent1-color);
+    background-color: #3481fe0f;
     height: 235px;
     margin-left: auto;
+    border: 1px solid var(--accent1-color);
     width: 100%;
     margin-bottom: 10px;
     color: var(--primary-color);
@@ -872,52 +882,21 @@ footer p {
     display: inline-block;
     text-align: center;
     border-radius: 1em;
-  }
-
-  .spotlights .right2 .img-spotlight {
-    width: 25%;
-    position: absolute;
-    top: 40%;
-    left: 10px;
-  }
-
-  .spotlights .right2 .text-1 {
-    border: none;
-    color: var(--paragraph-color-on-color);
-    text-align: center;
-    font-size: 15px;
-    font-weight: 300;
-    top: 20%;
-    left: 10px;
+    padding-top: 10px;
   }
 
   .spotlights .right3 {
-    background-color: var(--accent1-color);
+    background-color: #3481fe0f;
     height: 235px;
     margin-right: auto;
     width: 100%;
+    border: 1px solid var(--accent1-color);
     color: var(--primary-color);
     position: relative;
     display: inline-block;
     text-align: center;
     border-radius: 1em;
-  }
-
-  .spotlights .right3 .img-spotlight {
-    width: 25%;
-    position: absolute;
-    top: 40%;
-    left: 10px;
-  }
-
-  .spotlights .right3 .text-1 {
-    border: none;
-    color: var(--paragraph-color-on-color);
-    text-align: center;
-    font-size: 15px;
-    font-weight: 300;
-    top: 20%;
-    left: 10px;
+    padding-top: 10px;
   }
 
   .spotlights .right4 {

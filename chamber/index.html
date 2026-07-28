@@ -97,18 +97,20 @@
     <main>
       <div class="container">
         <div class="forecast-main-card">
-                <div id="forecast-container"></div>
+          <div id="forecast-container"></div>
         </div>
         <div class="weather">
           <p class="weather_title">Weather</p>
 
-            <img
-              src="images/weather.webp"
-              alt="Chamber of Facatativá images"
-              id="weather-icon"
-            />
-  
-          <figcaption class="cloudy"></figcaption>
+          <img
+            src="images/weather.webp"
+            alt="Current weather condition icon for Facatativá"
+            id="weather-icon"
+          />
+
+          <!-- ✔️ Solucionado: Cambiado a <p> manteniendo la clase 'cloudy' -->
+          <p class="cloudy"></p>
+
           <p class="temp"><span id="current-temp"></span> &deg;C</p>
           <p class="wind">Wind Speed:<span id="wind"></span></p>
           <p class="wind-ch">Wind Chill: <span id="wind-ch"></span></p>
@@ -147,7 +149,7 @@
           <button class="button">Join the Chamber</button>
         </div>
         <div class="news-release">
-          <h3>News Release</h3>
+          <h3>Current Events</h3>
           <p class="text-1">
             The Director of the Chamber of Commerce will inaugurate on June 6
             the new service center in the El Rincón village. The event will be
@@ -156,35 +158,19 @@
             sending an email to customers@facacc.org
           </p>
         </div>
-        <div class="spotlights">
-          <div class="right2">
-            <h4>Clothes Shop</h4>
-            <img
-              src="images/clothes.webp"
-              alt="Clothing Shop in the Chamber of Comerce"
-              class="img-spotlight"
-            />
-            <p class="text-1">The best clothes at a lower price</p>
-          </div>
-          <div class="right3">
-            <h4>Fast Supermarket</h4>
-            <img
-              src="images/market.webp"
-              alt="Supermarket in the Chamber of Comerce"
-              class="img-spotlight"
-            />
-            <p class="text-1">The best food delivery service</p>
-          </div>
-          <div class="right4">
-            <h4>Organic Agriculture</h4>
-            <img
-              src="images/agriculture.webp"
-              alt="Agiculture in the Chamber of Comerce"
-              class="img-spotlight"
-            />
-            <p class="text-1">Your organic products from farm to table</p>
-          </div>
-        </div>
+<div class="spotlights">
+  <div class="right2">
+    <!-- Aquí JavaScript insertará la tarjeta del 1er miembro Gold -->
+  </div>
+
+  <div class="right3">
+    <!-- Aquí JavaScript insertará la tarjeta del 2do miembro Gold -->
+  </div>
+
+  <div class="right4">
+    <!-- Aquí JavaScript insertará la tarjeta del 3er miembro Gold -->
+  </div>
+</div>
       </div>
     </main>
     <footer>
