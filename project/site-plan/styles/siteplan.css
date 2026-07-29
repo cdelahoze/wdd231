@@ -3,7 +3,7 @@
        ========================================================== */
 :root {
   /* Selected Color Palette */
-  --primary-blue: #3160ce; /* Primary interactive elements, accents, links */
+  --primary-blue: #185dff; /* Primary interactive elements, accents, links */
   --dark-navy: #1a202c; /* Headings, strong contrast text */
   --slate-gray: #4a5568; /* Subtitles, secondary text, borders */
   --off-white: #f7fafc; /* Card backgrounds, wireframe blocks */
