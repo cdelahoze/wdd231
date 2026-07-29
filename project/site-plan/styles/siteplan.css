@@ -1,0 +1,165 @@
+/* ==========================================================
+       COLOR SCHEME & TYPOGRAPHY VARIABLES
+       ========================================================== */
+:root {
+  /* Selected Color Palette */
+  --primary-blue: #3182ce; /* Primary interactive elements, accents, links */
+  --dark-navy: #1a202c; /* Headings, strong contrast text */
+  --slate-gray: #4a5568; /* Subtitles, secondary text, borders */
+  --off-white: #f7fafc; /* Card backgrounds, wireframe blocks */
+  --body-bg: #edf2f7; /* Document main background */
+
+  /* Selected Fonts */
+  --heading-font: "Poppins", sans-serif;
+  --body-font: "Open Sans", sans-serif;
+}
+
+/* Global Base Styling using defined typography and colors */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  color: var(--dark-navy);
+  background-color: var(--body-bg);
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.plan-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Headings using Poppins */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--heading-font);
+  color: var(--dark-navy);
+}
+
+header {
+  border-bottom: 4px solid var(--primary-blue);
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  color: var(--primary-blue);
+}
+
+header p {
+  color: var(--slate-gray);
+  font-weight: 600;
+}
+
+.wrapper {
+  display: flex;
+  align-items: stretch;
+  background-color: var(--off-white);
+}
+
+.wrapper img {
+  max-height: 110px;
+  margin-right: 20px;
+}
+
+section {
+  margin-bottom: 35px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: var(--dark-navy);
+  border-bottom: 2px solid var(--body-bg);
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 1.1rem;
+  color: var(--primary-blue);
+  margin: 15px 0 8px 0;
+}
+
+p,
+li {
+  font-size: 1rem;
+  color: var(--dark-navy);
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* Color Palette Swatches */
+.color-swatches {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 15px 0;
+}
+
+.swatch {
+  flex: 1;
+  min-width: 150px;
+  padding: 15px;
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.swatch-primary {
+  background-color: var(--primary-blue);
+}
+.swatch-navy {
+  background-color: var(--dark-navy);
+}
+.swatch-slate {
+  background-color: var(--slate-gray);
+}
+.swatch-offwhite {
+  background-color: var(--off-white);
+  color: var(--dark-navy);
+  border: 1px solid var(--slate-gray);
+  text-shadow: none;
+}
+
+/* Wireframe Placeholder Section */
+.wireframe-container {
+  background-color: var(--off-white);
+  border: 2px dashed var(--slate-gray);
+  padding: 25px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.wireframe-placeholder {
+  background-color: #ffffff;
+  border: 1px solid var(--slate-gray);
+  padding: 40px 20px;
+  margin: 15px 0;
+  border-radius: 6px;
+}
+
+.wireframe-placeholder p {
+  color: var(--slate-gray);
+  font-style: italic;
+}

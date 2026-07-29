@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 620" width="100%" height="100%" style="background-color: #ffffff; font-family: 'Courier New', Courier, monospace;">
+  
+  <style>
+    .stroke-box { fill: #ffffff; stroke: #000000; stroke-width: 2; }
+    .stroke-dashed { fill: #ffffff; stroke: #000000; stroke-dasharray: 4; stroke-width: 1.5; }
+    .title-text { font-weight: bold; font-size: 15px; fill: #000000; }
+    .label-text { font-size: 12px; fill: #333333; }
+    .sub-text { font-size: 11px; fill: #666666; }
+    .btn-box { fill: #f0f0f0; stroke: #000000; stroke-width: 1.5; }
+    .chip-box { fill: #ffffff; stroke: #000000; stroke-width: 1; rx: 8; ry: 8; }
+  </style>
+
+  <!-- Mobile Screen Frame -->
+  <rect x="0" y="0" width="380" height="620" class="stroke-box" rx="12"/>
+
+  <!-- Header Banner -->
+  <rect x="15" y="15" width="350" height="40" class="stroke-box"/>
+  <text x="65" y="40" class="title-text">TAKTAIM READER (MOBILE)</text>
+
+  <!-- SECTION 1: TEXT EDITOR -->
+  <rect x="15" y="65" width="350" height="235" class="stroke-dashed"/>
+  <text x="25" y="85" class="title-text">1. Text Editor</text>
+  
+  <rect x="25" y="95" width="330" height="150" class="stroke-box"/>
+  <text x="35" y="115" class="sub-text">Type or paste text here...</text>
+  <text x="35" y="140" class="label-text">Learning software development...</text>
+  <text x="35" y="160" class="label-text">Highlight <tspan font-weight="bold" text-decoration="underline">software</tspan> to lookup.</text>
+
+  <rect x="25" y="255" width="110" height="30" class="btn-box"/>
+  <text x="38" y="275" class="sub-text" font-weight="bold">[ Save ]</text>
+
+  <rect x="145" y="255" width="110" height="30" class="btn-box"/>
+  <text x="158" y="275" class="sub-text">[ Clear ]</text>
+
+  <!-- SECTION 2: DYNAMIC DICTIONARY -->
+  <rect x="15" y="310" width="350" height="295" class="stroke-dashed"/>
+  <text x="25" y="330" class="title-text">2. Dynamic Dictionary</text>
+  
+  <!-- Search Field -->
+  <rect x="25" y="340" width="240" height="30" class="stroke-box"/>
+  <text x="35" y="360" class="sub-text">software</text>
+  <rect x="275" y="340" width="80" height="30" class="btn-box"/>
+  <text x="290" y="360" class="sub-text">Search</text>
+
+  <!-- History -->
+  <text x="25" y="388" class="sub-text">History: [code] [learn]</text>
+
+  <!-- Dictionary Card -->
+  <rect x="25" y="400" width="330" height="190" class="stroke-box"/>
+  <text x="35" y="425" class="title-text" font-size="18">software</text>
+  <text x="140" y="425" class="sub-text">/ˈsɔftˌwɛr/</text>
+  <circle cx="330" cy="420" r="10" class="btn-box"/>
+  <text x="325" y="424" class="sub-text">🔊</text>
+
+  <text x="35" y="450" class="sub-text" font-style="italic">noun</text>
+  <text x="35" y="470" class="label-text">• Programs used by a computer.</text>
+
+  <!-- Synonyms -->
+  <text x="35" y="505" class="title-text" font-size="12">Synonyms:</text>
+  
+  <rect x="35" y="520" width="55" height="22" class="chip-box"/>
+  <text x="50" y="535" class="sub-text">app</text>
+
+  <rect x="100" y="520" width="65" height="22" class="chip-box"/>
+  <text x="108" y="535" class="sub-text">program</text>
+
+  <rect x="175" y="520" width="55" height="22" class="chip-box"/>
+  <text x="190" y="535" class="sub-text">code</text>
+
+</svg>

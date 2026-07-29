@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Site Plan - TakTaim Reader</title>
+
+    <!-- Typography Imports from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/siteplan.css" />
+  </head>
+  <body>
+    <div class="plan-container">
+      <header>
+        <div class="wrapper">
+          <div><img src="./images/logo_taktime.svg" alt="logo-taktime" /></div>
+          <div>
+            <h1>Individual Project Site Plan</h1>
+            <p>Assisted English Reading Tool</p>
+          </div>
+        </div>
+      </header>
+      <main>
+        <!-- 1. SITE NAME -->
+        <section>
+          <h2>Site Name</h2>
+          <p><strong>Site Name:</strong> TakTaim Reader</p>
+          <p>
+            <strong>Reason for Selection:</strong> The name originates from
+            "Talk Time" (rendered phonetically as TakTaim), representing
+            dedicated time for oral practice, reading, and active vocabulary
+            building. It signifies an interactive space designed specifically
+            for English language learning.
+          </p>
+          <p>
+            <strong>Optional domain availability:</strong>
+            https://talktimeinstitute.com/
+          </p>
+          <p><strong>Logo Version:</strong></p>
+          <img src="./images/logo_taktime.svg" alt="logo of site" />
+        </section>
+        <!-- 2. SITE PURPOSE -->
+        <section>
+          <h2>Site Purpose</h2>
+          <p>
+            The site provides an interactive, two-panel web application for
+            reading assistance. It provides a text editor where users can paste
+            English articles, stories, or study materials on the left, alongside
+            an integrated dynamic dictionary on the right.
+          </p>
+          <p>
+            The service enables instant lookup of highlighted words through
+            selection, offering definitions, IPA phonetic transcriptions,
+            interactive clickable synonyms, and audio pronunciation without
+            breaking reading flow or requiring external browser tabs.
+          </p>
+        </section>
+        <!-- 3. SCENARIOS -->
+        <section>
+          <h2>Target Audience Scenarios</h2>
+          <ul>
+            <li>
+              <strong>Scenario 1:</strong> How can I listen to the correct
+              native pronunciation of an unfamiliar word while reading an
+              article without leaving my current page?
+            </li>
+            <li>
+              <strong>Scenario 2:</strong> Is there a way to select a word in my
+              text and automatically discover its synonyms to expand my writing
+              vocabulary?
+            </li>
+            <li>
+              <strong>Scenario 3:</strong> How can I save the text I am
+              currently reading and my word search history so that I don't lose
+              my progress when I close my browser?
+            </li>
+          </ul>
+        </section>
+        <!-- 4. COLOR SCHEME -->
+        <section>
+          <h2>Color Scheme</h2>
+          <p>
+            The selected color scheme balances high contrast for extended
+            reading comfort with vibrant blue accents for interactive elements.
+            This exact HTML document exclusively applies these defined colors:
+          </p>
+          <div class="color-swatches">
+            <div class="swatch swatch-primary">Primary Blue<br />#3182ce</div>
+            <div class="swatch swatch-navy">Dark Navy<br />#1a202c</div>
+            <div class="swatch swatch-slate">Slate Gray<br />#4a5568</div>
+            <div class="swatch swatch-offwhite">Off-White<br />#f7fafc</div>
+          </div>
+          <ul>
+            <li>
+              <strong>Primary Blue (#3182ce):</strong> Used for primary buttons,
+              highlighted active words, clickable synonym chips, link elements,
+              and section subheadings.
+            </li>
+            <li>
+              <strong>Dark Navy (#1a202c):</strong> Used for main headings (H1,
+              H2) and primary body text to guarantee maximum contrast and
+              readability (WCAG compliance).
+            </li>
+            <li>
+              <strong>Slate Gray (#4a5568):</strong> Used for secondary text,
+              labels, border outlines, and metadata information.
+            </li>
+            <li>
+              <strong>Off-White (#f7fafc):</strong> Used for background panels,
+              card containers, input fields, and wireframe containers to
+              visually separate the text editor from the dictionary section.
+            </li>
+          </ul>
+        </section>
+        <!-- 5. TYPOGRAPHY -->
+        <section>
+          <h2>Typography</h2>
+          <p>The project utilizes two web fonts loaded from Google Fonts:</p>
+          <ul>
+            <li>
+              <strong>Poppins (Sans-Serif, Bold/Semi-Bold):</strong> Selected
+              for all major headings (H1, H2, H3). Its modern geometric
+              structure gives titles clarity and visual hierarchy.
+            </li>
+            <li>
+              <strong>Open Sans (Sans-Serif, Regular/Semi-Bold):</strong>
+              Selected for body text, paragraph content, dictionary definitions,
+              input fields, and button labels. It is optimized for high
+              legibility across print and web viewports.
+            </li>
+          </ul>
+        </section>
+        <!-- 6. WIREFRAME -->
+<!-- 6. WIREFRAME -->
+      <section>
+        <h2>Wireframe</h2>
+        <p>
+          Below are the responsive layouts for both small (mobile) and large (desktop/tablet) viewports designed as black and white wireframe sketches.
+        </p>
+
+        <div class="wireframe-container">
+          <h3>Small Viewport (Mobile Layout)</h3>
+          <div class="wireframe-placeholder">
+            <img src="./images/wireframe-mobile.svg" alt="TakTaim Reader Mobile Wireframe" style="max-width: 380px; width: 100%; height: auto;">
+            <p>
+              <small>Stacked single-column view: Header &gt; Text Editor &gt; Dynamic Dictionary</small>
+            </p>
+          </div>
+
+          <h3>Large Viewport (Desktop/Tablet Layout)</h3>
+          <div class="wireframe-placeholder">
+            <img src="./images/wireframe-desktop.svg" alt="TakTaim Reader Desktop Wireframe" style="max-width: 980px; width: 100%; height: auto;">
+            <p>
+              <small>Two-column layout: Text Editor (Left 50%) | Dynamic Dictionary (Right 50%)</small>
+            </p>
+          </div>
+        </div>
+      </section>
+      </main>
+    </div>
+  </body>
+</html>
