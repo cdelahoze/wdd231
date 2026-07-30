@@ -1,16 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Manejo del Modal (<dialog>)
-  const modal = document.querySelector("#newsletter");
-  const openModal = document.querySelector(".open-button");
-  const closeModal = document.querySelector(".close-button");
+  // --- 1. MANEJO DEL MODAL DEL FORMULARIO (<dialog>) ---
+  const formModal = document.querySelector("#newsletter");
+  const openFormBtn = document.querySelector(".open-button");
+  const closeFormBtn = document.querySelector(".close-button");
   const container = document.getElementById("myFormContainer");
 
-  if (openModal && modal) {
-    openModal.addEventListener("click", () => {
-      if (typeof modal.showModal === "function") {
-        modal.showModal();
-
-        // Mover el foco y scroll AL ABRIR el modal (no al cargar la página)
+  if (openFormBtn && formModal) {
+    openFormBtn.addEventListener("click", () => {
+      if (typeof formModal.showModal === "function") {
+        formModal.showModal();
         if (container) {
           container.scrollTop = 0;
           const firstInput = container.querySelector("input");
@@ -20,76 +18,94 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (closeModal && modal) {
-    closeModal.addEventListener("click", () => {
-      if (typeof modal.close === "function") {
-        modal.close();
+  if (closeFormBtn && formModal) {
+    closeFormBtn.addEventListener("click", () => {
+      formModal.close();
+    });
+  }
+
+  // Cierre al hacer clic en el backdrop del <dialog>
+  if (formModal) {
+    formModal.addEventListener("click", (e) => {
+      const dialogDimensions = formModal.getBoundingClientRect();
+      if (
+        e.clientX < dialogDimensions.left ||
+        e.clientX > dialogDimensions.right ||
+        e.clientY < dialogDimensions.top ||
+        e.clientY > dialogDimensions.bottom
+      ) {
+        formModal.close();
       }
     });
   }
 
-  // 2. Selección de Medallas y Asignación al Input #membership
+  // --- 2. SELECCIÓN DE MEDALLAS EN EL FORMULARIO ---
   const medals = document.querySelectorAll(".medal");
   const membershipInput = document.getElementById("membership");
 
   if (medals.length > 0 && membershipInput) {
     medals.forEach((medal) => {
       medal.addEventListener("click", () => {
-        // 1. Obtiene el valor de data-value (con fallback si viene vacío)
         const selectedValue = medal.dataset.value || "";
-        // 2. Asignar el valor al input
-        membershipInput.value = selectedValue;
+        membershipInput.value = selectedValue.toUpperCase();
 
-        // 3. Modificar el style directamente desde JavaScript
         if (membershipInput.value === "") {
-          membershipInput.style.setProperty(
-            "border-left",
-            "6px solid red",
-            "important",
-          );
+          membershipInput.style.setProperty("border-left", "6px solid red", "important");
         } else {
-          membershipInput.style.setProperty(
-            "border-left",
-            "6px solid green",
-            "important",
-          );
+          membershipInput.style.setProperty("border-left", "6px solid green", "important");
         }
-        // Cambia la clase visual
+        
         medals.forEach((m) => m.classList.remove("selected"));
         medal.classList.add("selected");
       });
     });
   }
+
+  // Captura de hora al enviar
+  const joinForm = document.getElementById("joinForm");
+  if (joinForm) {
+    joinForm.addEventListener("submit", () => {
+      const now = new Date();
+      const timeString = now.toTimeString().split(" ")[0];
+      const timeInput = document.getElementById("current-time");
+      if (timeInput) timeInput.value = timeString;
+    });
+  }
+
+  // --- 3. MANEJO DE MODALES DE BENEFICIOS (.info-modal) ---
+  const openInfoButtons = document.querySelectorAll(".btn-more-info");
+  const closeInfoButtons = document.querySelectorAll(".close-info-modal");
+  const infoModals = document.querySelectorAll(".info-modal");
+
+  openInfoButtons.forEach((button) => {
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      const modalId = this.getAttribute("data-modal");
+      const targetModal = document.getElementById(modalId);
+
+      if (targetModal) {
+        targetModal.style.display = "block";
+        document.body.style.overflow = "hidden";
+      }
+    });
+  });
+
+  closeInfoButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const modal = this.closest(".info-modal");
+      if (modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+    });
+  });
+
+  window.addEventListener("click", function (e) {
+    infoModals.forEach((modal) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+    });
+  });
 });
-
-// 4. Captura de la Hora Actual al Enviar el Formulario
-
-const joinForm = document.getElementById("joinForm");
-if (joinForm) {
-  joinForm.addEventListener("submit", () => {
-    const now = new Date();
-    // Obtiene la hora en formato legible (ej: 18:35:20)
-    const timeString = now.toTimeString().split(" ")[0];
-    document.getElementById("current-time").value = timeString;
-  });
-}
-
-// Cierre al hacer clic en el backdrop (fuera del modal)
-const modal = document.querySelector("#newsletter");
-
-if (modal) {
-  modal.addEventListener("click", (e) => {
-    // Calculamos el área delimitada por el propio dialog
-    const dialogDimensions = modal.getBoundingClientRect();
-
-    // Si el clic ocurrió fuera de sus bordes, significa que tocó el backdrop
-    if (
-      e.clientX < dialogDimensions.left ||
-      e.clientX > dialogDimensions.right ||
-      e.clientY < dialogDimensions.top ||
-      e.clientY > dialogDimensions.bottom
-    ) {
-      modal.close();
-    }
-  });
-}

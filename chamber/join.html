@@ -78,7 +78,6 @@
             <a href="discover.html">Discover</a>
             <a href="directory.html">Directory</a>
             <a href="join.html">Join</a>
-            <a href="typography.html">Typography</a>
             <button
               type="button"
               class="icon"
@@ -95,8 +94,7 @@
         Come join us for the chamber meet and greet Wednesday at 7:00 p.m.
       </p>
     </header>
-    <main>
-      <!-- <main> -->
+<main>
       <div class="join-container">
         <h1>Join the Facatativá Chamber of Commerce</h1>
         <p>
@@ -104,376 +102,245 @@
           to a network of local businesses, entrepreneurs, and services. Fill
           out the form below to apply for membership.
         </p>
+
         <div class="button-container">
           <button class="button open-button">Sign Up Now!</button>
         </div>
-        <fieldset>
-          <dialog class="modal" id="newsletter" popover>
-            <div class="form-container" id="myFormContainer">
-              <form id="joinForm" method="get" action="thankyou.html">
-                <p>Applicant Information</p>
 
-                <!-- First Name -->
-                <label class="top">
-                  First Name*
-                  <input
-                    type="text"
-                    name="fname"
-                    id="fname"
-                    autocomplete="given-name"
-                    title="Please enter your first name"
-                    required
-                  />
-                </label>
+        <!-- FORM MODAL (<dialog>) -->
+        <dialog class="modal" id="newsletter">
+          <div class="form-container" id="myFormContainer">
+            <button type="button" class="close-button" aria-label="Close modal">&times;</button>
+            <form id="joinForm" method="get" action="thankyou.html">
+              <p>Applicant Information</p>
 
-                <!-- Last Name -->
-                <label class="top">
-                  Last Name*
-                  <input
-                    type="text"
-                    name="lname"
-                    id="lname"
-                    autocomplete="family-name"
-                    title="Please enter your last name"
-                    required
-                  />
-                </label>
+              <label class="top">
+                First Name*
+                <input type="text" name="fname" id="fname" autocomplete="given-name" required />
+              </label>
 
-                <!-- Mobile Phone -->
-                <label class="top">
-                  Cell Phone*
-                  <input
-                    type="tel"
-                    name="phone"
-                    id="phone"
-                    placeholder="1235551234"
-                    autocomplete="tel"
-                    title="Please enter a valid 10-digit phone number"
-                    required
-                  />
-                </label>
+              <label class="top">
+                Last Name*
+                <input type="text" name="lname" id="lname" autocomplete="family-name" required />
+              </label>
 
-                <!-- Email Address -->
-                <label class="top">
-                  Email*
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="someone@gmail.com"
-                    autocomplete="email"
-                    title="Please enter a valid email address"
-                    required
-                  />
-                </label>
+              <label class="top">
+                Cell Phone*
+                <input type="tel" name="phone" id="phone" placeholder="1235551234" autocomplete="tel" required />
+              </label>
 
-                <!-- Website -->
-                <label class="top">
-                  Website
-                  <input
-                    type="url"
-                    name="url"
-                    id="url"
-                    placeholder="https://"
-                    autocomplete="url"
-                  />
-                </label>
+              <label class="top">
+                Email*
+                <input type="email" name="email" id="email" placeholder="someone@gmail.com" autocomplete="email" required />
+              </label>
 
-                <p>Business Information</p>
+              <label class="top">
+                Website
+                <input type="url" name="url" id="url" placeholder="https://" autocomplete="url" />
+              </label>
 
-                <!-- Organization Name (Business Name) -->
-                <label class="top">
-                  Organization Name*
-                  <input
-                    id="business"
-                    type="text"
-                    name="business"
-                    autocomplete="organization"
-                    title="Please enter your business or organization name"
-                    required
-                  />
-                </label>
+              <p>Business Information</p>
 
-                <!-- Organization Title (Business Position) -->
-                <label class="top" for="position">
-                  Organization Title
-                  <input
-                    id="position"
-                    type="text"
-                    name="position"
-                    list="position-options"
-                    autocomplete="organization-title"
-                    placeholder="e.g. Manager, President, Member"
-                    pattern="[A-Za-z\s\-]{7,}"
-                    title="Please enter at least 7 characters (only letters, spaces, and hyphens allowed)."
-                    required
-                  />
-                </label>
+              <label class="top">
+                Organization Name*
+                <input id="business" type="text" name="business" autocomplete="organization" required />
+              </label>
 
-                <datalist id="position-options">
-                  <option value="Business Professional"></option>
-                  <option value="Legal representative"></option>
-                  <option value="Manager"></option>
-                  <option value="President"></option>
-                  <option value="Partner"></option>
-                  <option value="Secretary"></option>
-                </datalist>
+              <label class="top" for="position">
+                Organization Title
+                <input
+                  id="position"
+                  type="text"
+                  name="position"
+                  list="position-options"
+                  autocomplete="organization-title"
+                  placeholder="e.g. Manager, President, Member"
+                  pattern="[A-Za-z\s\-]{7,}"
+                  required
+                />
+              </label>
 
-                <!-- Membership Level (4 opciones requeridas: np, bronze, silver, gold) -->
-                <label class="top">
-                  Membership Type*
-                  <input
-                    id="membership"
-                    type="text"
-                    name="membership"
-                    placeholder="Click on a medal below..."
-                    title="Please select a membership level by clicking on a medal"
-                    readonly
-                    required
-                  />
-                </label>
+              <datalist id="position-options">
+                <option value="Business Professional"></option>
+                <option value="Legal representative"></option>
+                <option value="Manager"></option>
+                <option value="President"></option>
+                <option value="Partner"></option>
+                <option value="Secretary"></option>
+              </datalist>
 
-                <div class="membership-container">
-                  <div
-                    class="medal np"
-                    data-value="np"
-                    title="NP Membership (Non-Profit / No Fee)"
-                  >
-                    <p>NP</p>
+              <label class="top">
+                Membership Type*
+                <input
+                  id="membership"
+                  type="text"
+                  name="membership"
+                  placeholder="Click on a medal below..."
+                  readonly
+                  required
+                />
+              </label>
+
+              <div class="membership-container">
+                <div class="medal np" data-value="np" title="NP Membership"><p>NP</p></div>
+                <div class="medal bronze" data-value="bronze" title="Bronze Membership"><p>BR</p></div>
+                <div class="medal silver" data-value="silver" title="Silver Membership"><p>SL</p></div>
+                <div class="medal gold" data-value="gold" title="Gold Membership"><p>GD</p></div>
+              </div>
+
+              <label class="top">
+                Business Address
+                <input id="businessAdress" type="text" name="businessAdress" autocomplete="address-line1" />
+              </label>
+
+              <label class="top">
+                Current Date
+                <input id="current-date" type="date" name="current-date" />
+              </label>
+
+              <input type="hidden" id="current-time" name="current-time" />
+
+              <label class="top1">
+                Organization Description
+                <textarea id="description" name="description" placeholder="Write something.."></textarea>
+              </label>
+
+              <input type="submit" value="Submit Application" class="submitBtn" />
+            </form>
+          </div>
+        </dialog>
+
+        <!-- SECCIÓN DE TARJETAS DE MEMBRESÍA -->
+        <div class="main-container">
+          <div class="content-wrapper">
+            <section class="membership-section">
+              <h2>Membership Levels</h2>
+              <div class="cards-container">
+                <!-- Non-profit Card -->
+                <div class="membership-card non-profit">
+                  <div class="card-header"><h3>Non-profit</h3></div>
+                  <div class="card-content">
+                    <p class="cost">Annual Cost: Free</p>
+                    <p>Essential benefits for non-profit organizations.</p>
                   </div>
-                  <div
-                    class="medal bronze"
-                    data-value="bronze"
-                    title="Bronze Membership"
-                  >
-                    <p>BR</p>
-                  </div>
-                  <div
-                    class="medal silver"
-                    data-value="silver"
-                    title="Silver Membership"
-                  >
-                    <p>SL</p>
-                  </div>
-                  <div
-                    class="medal gold"
-                    data-value="gold"
-                    title="Gold Membership"
-                  >
-                    <p>GD</p>
+                  <div class="card-footer">
+                    <a href="#" class="btn-more-info" data-modal="modal-non-profit">Get Info</a>
                   </div>
                 </div>
 
-                <!-- Business Address -->
-                <label class="top">
-                  Business Address
-                  <input
-                    id="businessAdress"
-                    type="text"
-                    name="businessAdress"
-                    autocomplete="address-line1"
-                  />
-                </label>
+                <!-- Bronze Card -->
+                <div class="membership-card bronze">
+                  <div class="card-header"><h3>Bronze</h3></div>
+                  <div class="card-content">
+                    <p class="cost">Annual Cost: US $200</p>
+                    <p>Great value for small businesses and startups.</p>
+                  </div>
+                  <div class="card-footer">
+                    <a href="#" class="btn-more-info" data-modal="modal-bronze">Get Info</a>
+                  </div>
+                </div>
 
-                <!-- Current Date -->
-                <label class="top">
-                  Current Date
-                  <input id="current-date" type="date" name="current-date" />
-                </label>
+                <!-- Silver Card -->
+                <div class="membership-card silver">
+                  <div class="card-header"><h3>Silver</h3></div>
+                  <div class="card-content">
+                    <p class="cost">Annual Cost: US $300</p>
+                    <p>Advanced services for growing enterprises.</p>
+                  </div>
+                  <div class="card-footer">
+                    <a href="#" class="btn-more-info" data-modal="modal-silver">Get Info</a>
+                  </div>
+                </div>
 
-                <!-- Campo oculto para la hora de envio -->
-                <input type="hidden" id="current-time" name="current-time" />
+                <!-- Gold Card -->
+                <div class="membership-card gold">
+                  <div class="card-header"><h3>Gold</h3></div>
+                  <div class="card-content">
+                    <p class="cost">Annual Cost: US $500</p>
+                    <p>Full suite of premium benefits and advisory services.</p>
+                  </div>
+                  <div class="card-footer">
+                    <a href="#" class="btn-more-info" data-modal="modal-gold">Get Info</a>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
 
-                <!-- Organization Description -->
-                <label class="top1">
-                  Organization Description
-                  <textarea
-                    id="description"
-                    name="description"
-                    placeholder="Write something.."
-                    title="Please enter a brief description of your organization"
-                  ></textarea>
-                </label>
-
-                <input
-                  type="submit"
-                  value="Propose My Course"
-                  class="submitBtn"
-                />
-              </form>
-            </div>
-          </dialog>
-        </fieldset>
-        <fieldset>
-          <p>Membership options</p>
-          <table>
-            <thead>
-              <tr>
-                <th colspan="5" scope="colgroup">
-                  Subscription Type Membership
-                </th>
-              </tr>
-              <tr>
-                <th scope="col">Benefist</th>
-                <th scope="col">Non-profit</th>
-                <th scope="col">Bronze</th>
-                <th scope="col">Silver</th>
-                <th scope="col">Gold</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="text-column">Inclusion in our business directory</td>
-                <td>✅</td>
-                <td>✅</td>
-                <td>✅</td>
-                <td>✅</td>
-              </tr>
-              <tr>
-                <td class="text-column">
-                  Publication of events in the online calendar
-                </td>
-                <td>✅</td>
-                <td>✅</td>
-                <td>✅</td>
-                <td>✅</td>
-              </tr>
-              <tr>
-                <td class="text-column">
-                  Publication in our monthly newsletter
-                </td>
-                <td>✅</td>
-                <td>✅</td>
-                <td>✅</td>
-                <td>✅</td>
-              </tr>
-              <tr>
-                <td class="text-column">
-                  Specialized services for macro sectors
-                </td>
-                <td>--</td>
-                <td>✅</td>
-                <td>✅</td>
-                <td>✅</td>
-              </tr>
-              <tr>
-                <td class="text-column">Training in business strengthening</td>
-                <td>--</td>
-                <td>✅</td>
-                <td>✅</td>
-                <td>✅</td>
-              </tr>
-              <tr>
-                <td class="text-column">
-                  General advice on business development
-                </td>
-                <td>--</td>
-                <td>✅</td>
-                <td>✅</td>
-                <td>✅</td>
-              </tr>
-              <tr>
-                <td class="text-column">
-                  Specialized advice and consultancies
-                </td>
-                <td>--</td>
-                <td>--</td>
-                <td>✅</td>
-                <td>✅</td>
-              </tr>
-              <tr>
-                <td class="text-column">
-                  Fairs, business roundtables, networking spaces, <br />
-                  and commercial appointments
-                </td>
-                <td>--</td>
-                <td>--</td>
-                <td>✅</td>
-                <td>✅</td>
-              </tr>
-              <tr>
-                <td class="text-column">
-                  Studies and research, commercial or business information
-                </td>
-                <td>--</td>
-                <td>--</td>
-                <td>✅</td>
-                <td>✅</td>
-              </tr>
-              <tr>
-                <td class="text-column">
-                  Advisory service on arbitration and conflict resolution
-                </td>
-                <td>--</td>
-                <td>--</td>
-                <td>--</td>
-                <td>✅</td>
-              </tr>
-              <tr>
-                <td class="text-column">
-                  International Markets and Cooperation for companies
-                </td>
-                <td>--</td>
-                <td>--</td>
-                <td>--</td>
-                <td>✅</td>
-              </tr>
-              <tr>
-                <td class="text-column">Databases and business information</td>
-                <td>--</td>
-                <td>--</td>
-                <td>--</td>
-                <td>✅</td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td>Annual Costs</td>
-                <td>
-                  <label
-                    ><input
-                      type="radio"
-                      name="audience"
-                      value="Non Profit Membership"
-                    />
-                    Free</label
-                  >
-                </td>
-                <td>
-                  <label
-                    ><input
-                      type="radio"
-                      name="audience"
-                      value="Bronze Membership"
-                    />
-                    US $200</label
-                  >
-                </td>
-                <td>
-                  <label
-                    ><input
-                      type="radio"
-                      name="audience"
-                      value="Silver Membership"
-                    />
-                    US $300</label
-                  >
-                </td>
-                <td>
-                  <label
-                    ><input
-                      type="radio"
-                      name="audience"
-                      value="Gold Membership"
-                    />
-                    US $500</label
-                  >
-                </td>
-              </tr>
-            </tfoot>
-          </table>
-        </fieldset>
       </div>
+    </main>
+
+    <!-- MODALES DE BENEFICIOS (clase diferenciada: info-modal) -->
+    <div id="modal-non-profit" class="info-modal">
+      <div class="info-modal-content">
+        <span class="close-info-modal">&times;</span>
+        <h2>Non-profit Benefits</h2>
+        <ul>
+          <li><span class="check-icon">&#10004;</span> Inclusion in our business directory</li>
+          <li><span class="check-icon">&#10004;</span> Publication of events in the online calendar</li>
+          <li><span class="check-icon">&#10004;</span> Publication in our monthly newsletter</li>
+        </ul>
+        <div class="modal-cost">Annual Cost: <strong>Free</strong></div>
+      </div>
+    </div>
+
+    <div id="modal-bronze" class="info-modal">
+      <div class="info-modal-content">
+        <span class="close-info-modal">&times;</span>
+        <h2>Bronze Benefits</h2>
+        <ul>
+          <li><span class="check-icon">&#10004;</span> Inclusion in our business directory</li>
+          <li><span class="check-icon">&#10004;</span> Publication of events in the online calendar</li>
+          <li><span class="check-icon">&#10004;</span> Publication in our monthly newsletter</li>
+          <li><span class="check-icon">&#10004;</span> Specialized services for macro sectors</li>
+          <li><span class="check-icon">&#10004;</span> Training in business strengthening</li>
+          <li><span class="check-icon">&#10004;</span> General advice on business development</li>
+        </ul>
+        <div class="modal-cost">Annual Cost: <strong>US $200</strong></div>
+      </div>
+    </div>
+
+    <div id="modal-silver" class="info-modal">
+      <div class="info-modal-content">
+        <span class="close-info-modal">&times;</span>
+        <h2>Silver Benefits</h2>
+        <ul>
+          <li><span class="check-icon">&#10004;</span> Inclusion in our business directory</li>
+          <li><span class="check-icon">&#10004;</span> Publication of events in the online calendar</li>
+          <li><span class="check-icon">&#10004;</span> Publication in our monthly newsletter</li>
+          <li><span class="check-icon">&#10004;</span> Specialized services for macro sectors</li>
+          <li><span class="check-icon">&#10004;</span> Training in business strengthening</li>
+          <li><span class="check-icon">&#10004;</span> General advice on business development</li>
+          <li><span class="check-icon">&#10004;</span> Specialized advice and consultancies</li>
+          <li><span class="check-icon">&#10004;</span> Fairs, business roundtables, networking spaces, and commercial appointments</li>
+          <li><span class="check-icon">&#10004;</span> Studies and research, commercial or business information</li>
+        </ul>
+        <div class="modal-cost">Annual Cost: <strong>US $300</strong></div>
+      </div>
+    </div>
+
+    <div id="modal-gold" class="info-modal">
+      <div class="info-modal-content">
+        <span class="close-info-modal">&times;</span>
+        <h2>Gold Benefits</h2>
+        <ul>
+          <li><span class="check-icon">&#10004;</span> Inclusion in our business directory</li>
+          <li><span class="check-icon">&#10004;</span> Publication of events in the online calendar</li>
+          <li><span class="check-icon">&#10004;</span> Publication in our monthly newsletter</li>
+          <li><span class="check-icon">&#10004;</span> Specialized services for macro sectors</li>
+          <li><span class="check-icon">&#10004;</span> Training in business strengthening</li>
+          <li><span class="check-icon">&#10004;</span> General advice on business development</li>
+          <li><span class="check-icon">&#10004;</span> Specialized advice and consultancies</li>
+          <li><span class="check-icon">&#10004;</span> Fairs, business roundtables, networking spaces, and commercial appointments</li>
+          <li><span class="check-icon">&#10004;</span> Studies and research, commercial or business information</li>
+          <li><span class="check-icon">&#10004;</span> Advisory service on arbitration and conflict resolution</li>
+          <li><span class="check-icon">&#10004;</span> International Markets and Cooperation for companies</li>
+          <li><span class="check-icon">&#10004;</span> Databases and business information</li>
+        </ul>
+        <div class="modal-cost">Annual Cost: <strong>US $500</strong></div>
+      </div>
+    </div>
     </main>
     <footer>
       <img
