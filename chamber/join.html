@@ -78,6 +78,7 @@
             <a href="discover.html">Discover</a>
             <a href="directory.html">Directory</a>
             <a href="join.html">Join</a>
+            <a href="typography.html">Typography</a>
             <button
               type="button"
               class="icon"
@@ -94,7 +95,8 @@
         Come join us for the chamber meet and greet Wednesday at 7:00 p.m.
       </p>
     </header>
-<main>
+    <main>
+      <!-- <main> -->
       <div class="join-container">
         <h1>Join the Facatativá Chamber of Commerce</h1>
         <p>
@@ -102,115 +104,209 @@
           to a network of local businesses, entrepreneurs, and services. Fill
           out the form below to apply for membership.
         </p>
-
         <div class="button-container">
           <button class="button open-button">Sign Up Now!</button>
         </div>
+        <fieldset>
+          <dialog class="modal" id="newsletter" popover>
+            <div class="form-container" id="myFormContainer">
+              <form id="joinForm" method="get" action="thankyou.html">
+                <p>Applicant Information</p>
 
-        <!-- FORM MODAL (<dialog>) -->
-        <dialog class="modal" id="newsletter">
-          <div class="form-container" id="myFormContainer">
-            <button type="button" class="close-button" aria-label="Close modal">&times;</button>
-            <form id="joinForm" method="get" action="thankyou.html">
-              <p>Applicant Information</p>
+                <!-- First Name -->
+                <label class="top">
+                  First Name*
+                  <input
+                    type="text"
+                    name="fname"
+                    id="fname"
+                    autocomplete="given-name"
+                    title="Please enter your first name"
+                    required
+                  />
+                </label>
 
-              <label class="top">
-                First Name*
-                <input type="text" name="fname" id="fname" autocomplete="given-name" required />
-              </label>
+                <!-- Last Name -->
+                <label class="top">
+                  Last Name*
+                  <input
+                    type="text"
+                    name="lname"
+                    id="lname"
+                    autocomplete="family-name"
+                    title="Please enter your last name"
+                    required
+                  />
+                </label>
 
-              <label class="top">
-                Last Name*
-                <input type="text" name="lname" id="lname" autocomplete="family-name" required />
-              </label>
+                <!-- Mobile Phone -->
+                <label class="top">
+                  Cell Phone*
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    placeholder="1235551234"
+                    autocomplete="tel"
+                    title="Please enter a valid 10-digit phone number"
+                    required
+                  />
+                </label>
 
-              <label class="top">
-                Cell Phone*
-                <input type="tel" name="phone" id="phone" placeholder="1235551234" autocomplete="tel" required />
-              </label>
+                <!-- Email Address -->
+                <label class="top">
+                  Email*
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="someone@gmail.com"
+                    autocomplete="email"
+                    title="Please enter a valid email address"
+                    required
+                  />
+                </label>
 
-              <label class="top">
-                Email*
-                <input type="email" name="email" id="email" placeholder="someone@gmail.com" autocomplete="email" required />
-              </label>
+                <!-- Website -->
+                <label class="top">
+                  Website
+                  <input
+                    type="url"
+                    name="url"
+                    id="url"
+                    placeholder="https://"
+                    autocomplete="url"
+                  />
+                </label>
 
-              <label class="top">
-                Website
-                <input type="url" name="url" id="url" placeholder="https://" autocomplete="url" />
-              </label>
+                <p>Business Information</p>
 
-              <p>Business Information</p>
+                <!-- Organization Name (Business Name) -->
+                <label class="top">
+                  Organization Name*
+                  <input
+                    id="business"
+                    type="text"
+                    name="business"
+                    autocomplete="organization"
+                    title="Please enter your business or organization name"
+                    required
+                  />
+                </label>
 
-              <label class="top">
-                Organization Name*
-                <input id="business" type="text" name="business" autocomplete="organization" required />
-              </label>
+                <!-- Organization Title (Business Position) -->
+                <label class="top" for="position">
+                  Organization Title
+                  <input
+                    id="position"
+                    type="text"
+                    name="position"
+                    list="position-options"
+                    autocomplete="organization-title"
+                    placeholder="e.g. Manager, President, Member"
+                    pattern="[A-Za-z\s\-]{7,}"
+                    title="Please enter at least 7 characters (only letters, spaces, and hyphens allowed)."
+                    required
+                  />
+                </label>
 
-              <label class="top" for="position">
-                Organization Title
+                <datalist id="position-options">
+                  <option value="Business Professional"></option>
+                  <option value="Legal representative"></option>
+                  <option value="Manager"></option>
+                  <option value="President"></option>
+                  <option value="Partner"></option>
+                  <option value="Secretary"></option>
+                </datalist>
+
+                <!-- Membership Level (4 opciones requeridas: np, bronze, silver, gold) -->
+                <label class="top">
+                  Membership Type*
+                  <input
+                    id="membership"
+                    type="text"
+                    name="membership"
+                    placeholder="Click on a medal below..."
+                    title="Please select a membership level by clicking on a medal"
+                    readonly
+                    required
+                  />
+                </label>
+
+                <div class="membership-container">
+                  <div
+                    class="medal np"
+                    data-value="np"
+                    title="NP Membership (Non-Profit / No Fee)"
+                  >
+                    <p>NP</p>
+                  </div>
+                  <div
+                    class="medal bronze"
+                    data-value="bronze"
+                    title="Bronze Membership"
+                  >
+                    <p>BR</p>
+                  </div>
+                  <div
+                    class="medal silver"
+                    data-value="silver"
+                    title="Silver Membership"
+                  >
+                    <p>SL</p>
+                  </div>
+                  <div
+                    class="medal gold"
+                    data-value="gold"
+                    title="Gold Membership"
+                  >
+                    <p>GD</p>
+                  </div>
+                </div>
+
+                <!-- Business Address -->
+                <label class="top">
+                  Business Address
+                  <input
+                    id="businessAdress"
+                    type="text"
+                    name="businessAdress"
+                    autocomplete="address-line1"
+                  />
+                </label>
+
+                <!-- Current Date -->
+                <label class="top">
+                  Current Date
+                  <input id="current-date" type="date" name="current-date" />
+                </label>
+
+                <!-- Campo oculto para la hora de envio -->
+                <input type="hidden" id="current-time" name="current-time" />
+
+                <!-- Organization Description -->
+                <label class="top1">
+                  Organization Description
+                  <textarea
+                    id="description"
+                    name="description"
+                    placeholder="Write something.."
+                    title="Please enter a brief description of your organization"
+                  ></textarea>
+                </label>
+
                 <input
-                  id="position"
-                  type="text"
-                  name="position"
-                  list="position-options"
-                  autocomplete="organization-title"
-                  placeholder="e.g. Manager, President, Member"
-                  pattern="[A-Za-z\s\-]{7,}"
-                  required
+                  type="submit"
+                  value="Propose My Course"
+                  class="submitBtn"
                 />
-              </label>
+              </form>
+            </div>
+          </dialog>
+        </fieldset>
+        <fieldset>
 
-              <datalist id="position-options">
-                <option value="Business Professional"></option>
-                <option value="Legal representative"></option>
-                <option value="Manager"></option>
-                <option value="President"></option>
-                <option value="Partner"></option>
-                <option value="Secretary"></option>
-              </datalist>
-
-              <label class="top">
-                Membership Type*
-                <input
-                  id="membership"
-                  type="text"
-                  name="membership"
-                  placeholder="Click on a medal below..."
-                  readonly
-                  required
-                />
-              </label>
-
-              <div class="membership-container">
-                <div class="medal np" data-value="np" title="NP Membership"><p>NP</p></div>
-                <div class="medal bronze" data-value="bronze" title="Bronze Membership"><p>BR</p></div>
-                <div class="medal silver" data-value="silver" title="Silver Membership"><p>SL</p></div>
-                <div class="medal gold" data-value="gold" title="Gold Membership"><p>GD</p></div>
-              </div>
-
-              <label class="top">
-                Business Address
-                <input id="businessAdress" type="text" name="businessAdress" autocomplete="address-line1" />
-              </label>
-
-              <label class="top">
-                Current Date
-                <input id="current-date" type="date" name="current-date" />
-              </label>
-
-              <input type="hidden" id="current-time" name="current-time" />
-
-              <label class="top1">
-                Organization Description
-                <textarea id="description" name="description" placeholder="Write something.."></textarea>
-              </label>
-
-              <input type="submit" value="Submit Application" class="submitBtn" />
-            </form>
-          </div>
-        </dialog>
-
-        <!-- SECCIÓN DE TARJETAS DE MEMBRESÍA -->
+<!-- SECCIÓN DE TARJETAS DE MEMBRESÍA -->
         <div class="main-container">
           <div class="content-wrapper">
             <section class="membership-section">
@@ -268,8 +364,8 @@
           </div>
         </div>
 
-      </div>
-    </main>
+
+
 
     <!-- MODALES DE BENEFICIOS (clase diferenciada: info-modal) -->
     <div id="modal-non-profit" class="info-modal">
@@ -341,6 +437,11 @@
         <div class="modal-cost">Annual Cost: <strong>US $500</strong></div>
       </div>
     </div>
+
+
+
+        </fieldset>
+      </div>
     </main>
     <footer>
       <img
