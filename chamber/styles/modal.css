@@ -250,3 +250,80 @@ section.membership-section h2 {
     gap: 15px;
   }
 }
+
+/* --- Definición de las animaciones cíclicas --- */
+
+@keyframes pulseBorderNonProfit {
+  0%, 100% {
+    border-color: transparent;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+  50% {
+    border-color: #4caf50; /* Verde */
+    box-shadow: 0 0 12px rgba(76, 175, 80, 0.4);
+  }
+}
+
+@keyframes pulseBorderBronze {
+  0%, 100% {
+    border-color: transparent;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+  50% {
+    border-color: #cd7f32; /* Bronce */
+    box-shadow: 0 0 12px rgba(205, 127, 50, 0.4);
+  }
+}
+
+@keyframes pulseBorderSilver {
+  0%, 100% {
+    border-color: transparent;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+  50% {
+    border-color: #a0a0a0; /* Plata */
+    box-shadow: 0 0 12px rgba(160, 160, 160, 0.4);
+  }
+}
+
+@keyframes pulseBorderGold {
+  0%, 100% {
+    border-color: transparent;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+  50% {
+    border-color: #ffd700; /* Oro */
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.5);
+  }
+}
+
+/* --- Base de las tarjetas --- */
+.membership-card {
+  background-color: white;
+  border: 3px solid transparent; 
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+
+/* --- Asignación de animaciones infinitas --- */
+.membership-card.non-profit {
+  animation: pulseBorderNonProfit 3s infinite ease-in-out;
+}
+
+.membership-card.bronze {
+  animation: pulseBorderBronze 3s infinite ease-in-out;
+  animation-delay: 0.5s; /* Desfase opcional para efecto visual */
+}
+
+.membership-card.silver {
+  animation: pulseBorderSilver 3s infinite ease-in-out;
+  animation-delay: 1s;
+}
+
+.membership-card.gold {
+  animation: pulseBorderGold 3s infinite ease-in-out;
+  animation-delay: 1.5s;
+}
