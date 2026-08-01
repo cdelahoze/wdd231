@@ -1,0 +1,179 @@
+/* =========================================================
+   1. ANULACIÓN DE MAIN FLEX & STRUCTURAL CONTAINER
+   ========================================================= */
+main {
+  display: block !important; /* Desactiva el display: flex de base.css que rompe la estructura */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.discover-container {
+  width: 100%;
+}
+
+.discover-header h1 {
+  color: var(--primary-color, #004c9e);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.discover-header p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: var(--paragraph-color-on-white, #1a1a1a);
+}
+
+/* =========================================================
+   2. VISITOR MESSAGE BANNER
+   ========================================================= */
+.visit-banner {
+  background-color: var(--secondary-color, #f0f4f8);
+  border-left: 5px solid var(--accent1-color, #3481fe);
+  color: var(--primary-color, #004c9e);
+  padding: 1rem;
+  margin: 1rem 0;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 4px;
+  font-family: var(--heading-font, sans-serif);
+}
+
+/* =========================================================
+   3. BASE CARD STYLES
+   ========================================================= */
+.discover-grid {
+  display: grid;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid var(--accent2-color, #e2e8f0);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: var(--primary-color, #004c9e);
+  text-align: left;
+}
+
+.card figure {
+  margin: 0 0 1rem 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.card figure img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card address {
+  font-style: normal;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  flex-grow: 1;
+  color: var(--paragraph-color-on-white, #1a1a1a);
+  padding: 0;
+}
+
+.card button {
+  background-color: var(--accent1-color, #3481fe);
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: start;
+  margin-top: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.card button:hover {
+  background-color: var(--primary-color, #004c9e);
+}
+
+/* Mapeo de áreas Grid */
+.card-1 { grid-area: card1; }
+.card-2 { grid-area: card2; }
+.card-3 { grid-area: card3; }
+.card-4 { grid-area: card4; }
+.card-5 { grid-area: card5; }
+.card-6 { grid-area: card6; }
+.card-7 { grid-area: card7; }
+.card-8 { grid-area: card8; }
+
+/* =========================================================
+   4. RESPONSIVE NAMED GRID-TEMPLATE-AREAS
+   ========================================================= */
+
+/* PANTALLAS PEQUEÑAS (Por defecto / Mobile First: 0px - 640px) */
+.discover-grid {
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "card1"
+    "card2"
+    "card3"
+    "card4"
+    "card5"
+    "card6"
+    "card7"
+    "card8";
+}
+
+/* PANTALLAS MEDIANAS: 641px a 1024px */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .discover-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "card1 card1"
+      "card2 card3"
+      "card4 card5"
+      "card6 card7"
+      "card8 card8";
+  }
+}
+
+/* PANTALLAS GRANDES: 1025px en adelante */
+@media (min-width: 1025px) {
+  .discover-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "card1 card1 card2"
+      "card1 card1 card2"
+      "card3 card4 card5"
+      "card6 card7 card8";
+  }
+
+  /* Efecto Hover solo en pantallas grandes con ratón */
+  @media (hover: hover) {
+    .card figure img:hover {
+      transform: scale(1.04);
+      filter: brightness(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+  }
+}

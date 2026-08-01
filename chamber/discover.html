@@ -49,12 +49,9 @@
     <!-- Carga condicional según el tamaño de pantalla -->
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/base.css" />
-    <link rel="stylesheet" href="styles/directory.css" />
-    <link rel="stylesheet" href="styles/medium.css" media="(min-width: 48em)" />
-    <link rel="stylesheet" href="styles/large.css" media="(min-width: 64em)" />
+    <link rel="stylesheet" href="styles/discover.css" />
     <script src="scripts/date.js" defer></script>
-    <script src="scripts/directory.js" defer></script>
-    <script src="scripts/windchill.js" defer></script>
+    <script type="module" src="scripts/discover.js"></script>
   </head>
   <body>
     <header>
@@ -94,6 +91,20 @@
       </p>
     </header>
     <main>
+<div class="discover-container">
+    <!-- Visitor Message Banner -->
+    <div id="visit-message" class="visit-banner" aria-live="polite"></div>
+
+    <div class="discover-header">
+      <h1>Discover Our Community</h1>
+      <p>Explore top attractions, landmarks, and cultural hubs within our region.</p>
+    </div>
+
+    <!-- Target container for the dynamic grid cards -->
+    <section id="discover-cards" class="discover-grid">
+      <!-- Generated via discover.js -->
+    </section>
+  </div>
     </main>
     <footer>
       <img
