@@ -46,10 +46,20 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700&display=swap"
       />
     </noscript>
+    <link rel="modulepreload" href="scripts/discover.js" />
+    <link rel="modulepreload" href="data/discover.mjs" />
+    <link
+      rel="preload"
+      href="data/disc_central_park.webp"
+      as="image"
+      type="image/webp"
+      fetchpriority="high"
+    />
     <!-- Carga condicional según el tamaño de pantalla -->
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/base.css" />
     <link rel="stylesheet" href="styles/discover.css" />
+
     <script src="scripts/date.js" defer></script>
     <script type="module" src="scripts/discover.js"></script>
   </head>
@@ -61,6 +71,8 @@
             class="img-log"
             src="images/logo.svg"
             alt="Facatativá Chamber of Commerce Logo"
+            width="100"
+            height="100"
             fetchpriority="high"
           />
         </div>

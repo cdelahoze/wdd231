@@ -17,10 +17,14 @@ function renderDiscoverCards() {
     const card = document.createElement("section");
     card.classList.add("card", `card-${index + 1}`);
 
+    // Si es la primera imagen (LCP), se carga prioritariamente sin lazy loading.
+    const isLCP = index === 0;
+    const loadingAttr = isLCP ? 'fetchpriority="high"' : 'loading="lazy"';
+
     card.innerHTML = `
       <h2>${item.name}</h2>
       <figure>
-        <img src="${item.image}" alt="${item.alt}" width="300" height="200" loading="lazy">
+        <img src="${item.image}" alt="${item.alt}" width="300" height="200" ${loadingAttr}>
       </figure>
       <address>${item.address}</address>
       <p>${item.description}</p>
