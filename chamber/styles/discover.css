@@ -1,16 +1,13 @@
 /* =========================================================
    1. ANULACIÓN DE MAIN FLEX & STRUCTURAL CONTAINER
    ========================================================= */
-main {
+
+.discover-container {
   display: block !important; /* Desactiva el display: flex de base.css que rompe la estructura */
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
-}
-
-.discover-container {
-  width: 100%;
 }
 
 .discover-header h1 {
@@ -48,6 +45,16 @@ main {
   display: grid;
   gap: 1.5rem;
   width: 100%;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "card1"
+    "card2"
+    "card3"
+    "card4"
+    "card5"
+    "card6"
+    "card7"
+    "card8";
 }
 
 .card {
@@ -80,7 +87,10 @@ main {
   aspect-ratio: 3 / 2;
   object-fit: cover;
   display: block;
-  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .card address {
@@ -117,32 +127,37 @@ main {
 }
 
 /* Mapeo de áreas Grid */
-.card-1 { grid-area: card1; }
-.card-2 { grid-area: card2; }
-.card-3 { grid-area: card3; }
-.card-4 { grid-area: card4; }
-.card-5 { grid-area: card5; }
-.card-6 { grid-area: card6; }
-.card-7 { grid-area: card7; }
-.card-8 { grid-area: card8; }
+.card-1 {
+  grid-area: card1;
+}
+.card-2 {
+  grid-area: card2;
+}
+.card-3 {
+  grid-area: card3;
+}
+.card-4 {
+  grid-area: card4;
+}
+.card-5 {
+  grid-area: card5;
+}
+.card-6 {
+  grid-area: card6;
+}
+.card-7 {
+  grid-area: card7;
+}
+.card-8 {
+  grid-area: card8;
+}
 
 /* =========================================================
    4. RESPONSIVE NAMED GRID-TEMPLATE-AREAS
    ========================================================= */
 
 /* PANTALLAS PEQUEÑAS (Por defecto / Mobile First: 0px - 640px) */
-.discover-grid {
-  grid-template-columns: 1fr;
-  grid-template-areas:
-    "card1"
-    "card2"
-    "card3"
-    "card4"
-    "card5"
-    "card6"
-    "card7"
-    "card8";
-}
+/*.discover-grid */
 
 /* PANTALLAS MEDIANAS: 641px a 1024px */
 @media (min-width: 641px) and (max-width: 1024px) {
