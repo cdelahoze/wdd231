@@ -1,0 +1,131 @@
+/* ==========================================================
+   INTEGRACIÓN NAVEGACIÓN (TOPNAV) CON CSS ORIGINAL
+   ========================================================== */
+
+/* Ajuste del contenedor interno del wrapper */
+header .wrapper {
+  display: flex;
+  align-items: center; /* Alinea verticalmente al centro el logo, texto y menú */
+  justify-content: space-between; /* Empuja el menú a la derecha como en la imagen */
+  padding: 10px 15px;
+  background-color: var(--off-white);
+}
+
+header .wrapper img {
+  max-height: 90px;
+  width: auto;
+  margin-right: 15px;
+}
+
+.brand-info {
+  margin-right: auto; /* Mantiene el título pegado al logo y empuja el menú */
+}
+
+/* Control del contenedor de la navegación */
+.top-nav {
+  display: flex;
+  align-items: center;
+}
+
+.topnav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: transparent;
+}
+
+/* Estilos de los enlaces principales */
+.topnav a {
+  display: inline-block;
+  color: var(--dark-navy);
+  text-align: center;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-family: var(--body-font);
+  font-size: 1.25rem; /* Tamaño proporcional a la imagen */
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover suave en los enlaces */
+.topnav a:hover {
+  color: var(--primary-blue);
+  background-color: rgba(0, 54, 181, 0.05);
+}
+
+/* Estilo para la página activa */
+.topnav a.active {
+  color: var(--primary-blue);
+  font-weight: 700;
+}
+
+/* Ocultar el botón de menú hamburguesa en pantallas grandes */
+.topnav .icon,
+button.icon {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--dark-navy);
+  cursor: pointer;
+  padding: 8px 12px;
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+button.icon:hover {
+  color: var(--primary-blue);
+}
+
+/* --- VISTA MÓVIL (Menú Hamburguesa) --- */
+@media screen and (max-width: 47.9375em) {
+  header .wrapper {
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .top-nav {
+    width: 100%;
+  }
+
+  .topnav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0;
+  }
+
+  .topnav .icon,
+  button.icon {
+    display: block; /* Muestra el botón hamburguesa en móvil */
+    margin-left: auto;
+    order: -1;
+  }
+
+  /* Ocultar los enlaces en móvil si no está la clase .responsive */
+  .topnav a {
+    display: none;
+  }
+
+  /* Cuando el menú se abre (.responsive) */
+  .topnav.responsive {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    padding-top: 10px;
+  }
+
+  .topnav.responsive .icon,
+  .topnav.responsive button.icon {
+    align-self: flex-end;
+  }
+
+  .topnav.responsive a {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid var(--body-bg);
+  }
+}

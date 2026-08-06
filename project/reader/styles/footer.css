@@ -1,0 +1,148 @@
+footer {
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+    background-color: var(--off-white);
+}
+
+
+footer p {
+
+  padding: 0em;
+  font-size: 1rem;
+}
+
+.contact {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  padding-top: 2em;
+  width: 96%;
+    text-align: center;
+    font-weight: 700;
+}
+
+.contact p {
+  font-size: 1rem;
+  line-height: 1.4; /* Ajusta la altura de línea para un interlineado cómodo */
+}
+
+.info-contact {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  text-align: center;
+  padding: 2em;
+  width: 96%;
+
+}
+
+.copyright {
+  grid-column: 1 / 4;
+  grid-row: 2 / 3;
+  font-family: paragraph-font;
+  text-align: center;
+  font-size: 1.2rem;
+  width: 96%;
+  padding: 0.5rem;
+  margin: 0;
+}
+
+.contact address p {
+  margin: 0; /* Elimina la separación superior e inferior entre los párrafos */
+  line-height: 1.4; /* Ajusta la altura de línea para un interlineado cómodo */
+}
+
+.contact address {
+  font-style: normal; /* Opcional: quita la cursiva predeterminada del elemento address */
+  margin-top: 5px; /* Un pequeño espacio opcional respecto al h2 */
+}
+
+/* Control global para los iconos de redes sociales */
+.social-links {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; /* Espaciado limpio entre iconos */
+  margin: 10px 0;
+
+}
+
+.social-links a {
+  display: inline-block;
+  width: 32px; /* Tamaño ideal para producción */
+  height: 32px;
+}
+
+.social-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media only screen and (max-width: 53.125em) {
+    /* this is the footer css control */
+
+  footer {
+    display: grid;
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    row-gap: 0.5rem;
+    background-color: var(--off-white);
+    padding: 0.75rem 0.5rem;
+  }
+
+  .contact {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    text-align: center;
+    font-size: 1em;
+    padding-top: 0;
+    width: 100%;
+  }
+
+
+  .info-contact {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    text-align: center;
+    font-size: 1em;
+    width: 100%;
+    padding: 0;
+  }
+
+
+  .social-links {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    margin: 0.5rem 0;
+    padding-top: 0rem;
+  }
+
+  .social-links a {
+    display: inline-block;
+    width: 44px; /* Tamaño adecuado para móviles */
+    height: 44px;
+    border-radius: 50%;
+  }
+
+  .name {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  .copyright {
+    display: block;
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+  }
+}

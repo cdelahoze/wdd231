@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Home - TakTaim Reader</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore TakTaim Reader, an interactive assisted English reading tool. Improve reading comprehension, vocabulary, and pronunciation with integrated dynamic dictionary and real-time audio features."
+    />
+    <meta name="author" content="Cristian Moises De La Hoz Escorcia" />
+    <!-- Open Graph meta tags for social media sharing -->
+    <meta property="og:title" content="TakTaim Reader" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://cdelahoze.github.io/wdd231/project/reader/images/logo-footer.svg"
+    />
+    <meta
+      property="og:url"
+      content="https://cdelahoze.github.io/wdd231/project/reader/index.html"
+    />
+    <meta
+      property="og:description"
+      content="Explore TakTaim Reader, an interactive assisted English reading tool. Improve reading comprehension, vocabulary, and pronunciation with integrated dynamic dictionary and real-time audio features."
+    />
+    <!-- favicon -->
+    <link href="./images/TakTaim.ico" rel="icon" type="image/x-icon" />
+    <!-- Google Fonts Preconnect y Hojas de Estilo -->
+    <!-- Typography Imports from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/topnav.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/home.css" />
+    <script src="./scripts/topnav.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <img src="./images/logo_taktime.svg" alt="logo-taktime" />
+        <div class="brand-info">
+          <h1>TakTaim Reader</h1>
+          <p>Assisted English Reading Tool</p>
+        </div>
+        <div class="top-nav">
+          <nav class="topnav" id="myTopnav">
+            <a href="./index.html">Home</a>
+            <a href="./dictionary.html">Reader</a>
+            <a href="./editor.html">Editor</a>
+            <button
+              type="button"
+              class="icon"
+              id="demo"
+              aria-label="Toggle navigation menu"
+            >
+              <span aria-hidden="true">&#9776;</span>
+            </button>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <h2>Master English Reading Without Distractions</h2>
+        <p class="hero-subtitle">
+          TakTaim Reader connects customized texts with a dynamic lookup panel
+          to bridge the gap between reading, listening, and active vocabulary
+          acquisition.
+        </p>
+        <!-- Responsive Image Component -->
+        <div class="responsive-img-container">
+          <img
+            src="./images/marco-art-1024w.webp"
+            srcset="
+              ./images/marco-art-480w.webp   480w,
+              ./images/marco-art-1024w.webp 1024w,
+              ./images/marco-art-1920w.webp 1920w
+            "
+            sizes="(max-width: 480px) 480px,
+                     (max-width: 1024px) 1024px,
+                     1920px"
+            alt="TakTaim Reader interface illustration"
+            loading="lazy"
+            decoding="async"
+            width="1024"
+            height="682"
+          />
+        </div>
+      </section>
+
+      <!-- How It Works Section -->
+      <section>
+        <h2>How It Works</h2>
+        <ol class="instructions-list">
+          <li>
+            <strong>Choose or Insert Your Text:</strong> Open the
+            <em>Reader</em> tab and select a pre-loaded text from your catalog
+            or navigate to the <em>Editor</em> tab to create your own formatted
+            article.
+          </li>
+          <li>
+            <strong>Highlight Any Word:</strong> While reading, simply click and
+            highlight any unfamiliar English word directly inside the text box.
+          </li>
+          <li>
+            <strong>Instant Lookup:</strong> The dynamic dictionary on the right
+            automatically searches the word using the
+            <em>Free Dictionary API</em> and <em>MyMemory Translation API</em>.
+          </li>
+          <li>
+            <strong>Listen & Explore:</strong> Click the speaker icon (🔊) to
+            hear authentic pronunciation via Web Speech Synthesis, review
+            definitions, and click on synonyms to explore related vocabulary
+            instantly.
+          </li>
+        </ol>
+      </section>
+
+      <!-- Key Benefits Section -->
+      <section>
+        <h2>Key Learning Benefits</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <h3>Reading Comprehension</h3>
+            <p>
+              Eliminate friction and maintain narrative flow. You never have to
+              leave your reading tab or open external search engines to look up
+              meanings.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3>Vocabulary Acquisition</h3>
+            <p>
+              Discover words in context along with interactive synonym chips
+              that allow you to explore connected vocabulary with a single
+              click.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3>Listening & Pronunciation</h3>
+            <p>
+              Train your ear with native browser speech playback and learn
+              international phonetic transcriptions (IPA) to refine your oral
+              fluency.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3>Spanish Translation</h3>
+            <p>
+              Get instant Spanish equivalents alongside full English definitions
+              to solidify comprehension while preserving total immersion.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action -->
+      <div class="cta-container">
+        <a href="./dictionary.html" class="cta-button">Launch Reader Tool</a>
+      </div>
+    </main>
+    <footer>
+      <div class="social-links" role="navigation" aria-label="Social links">
+        <!-- Enlace a LinkedIn -->
+        <a
+          href="https://www.linkedin.com/in/cristian-moises-de-la-hoz-escorcia-189a07317"
+          aria-label="LinkedIn"
+        >
+          <img
+            src="images/linkedin.svg"
+            alt="LinkedIn"
+            class="social-icon-img"
+            width="32"
+            height="32"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+        <!-- Enlace a GitHub -->
+        <a href="https://cdelahoze.github.io/introduction/" aria-label="GitHub">
+          <img
+            src="images/github.svg"
+            alt="GitHub"
+            class="social-icon-img"
+            width="32"
+            height="32"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+        <!-- Enlace a X (anteriormente Twitter) -->
+        <a
+          href="https://x.com/cride78?s=11&t=48RJdiLeyvtcvkTPRfRHIw"
+          aria-label="X"
+        >
+          <img
+            src="images/equis.svg"
+            alt="X"
+            class="social-icon-img"
+            width="32"
+            height="32"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+      </div>
+      <div class="contact">
+        <p>Talk Time Institute</p>
+        <address>
+          <p>Calle 23C #70 50</p>
+          <p>Bogotá, D.C.</p>
+        </address>
+      </div>
+      <p class="info-contact">
+        info@talktimeinstitute.com <br />+(57) 301-494-1963 <br />📍Location Map
+      </p>
+      <p class="copyright">
+        &copy; <span id="year"></span> TakTaim Reader | Cristian De La Hoz
+        Escorcia | WD 231 Project | Last Modification: <span id="update"></span>
+      </p>
+    </footer>
+  </body>
+</html>
