@@ -5,44 +5,52 @@ const resultContainer = document.getElementById('resultContainer');
 const historyList = document.getElementById('historyList');
 const historySection = document.getElementById('historySection');
 const clearHistoryBtn = document.getElementById('clearHistoryBtn');
+const readingArea = document.getElementById('readingArea'); // Contenedor del texto a leer
 
-// Cargar historial inicial desde LocalStorage (o array vacío si no existe)
+// Historial cargado desde LocalStorage (Browser API)
 let searchHistory = JSON.parse(localStorage.getItem('dict_history')) || [];
 
-// Evento al enviar el formulario
+// 1. EVENTOS DE BÚSQUEDA
 searchForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const word = wordInput.value.trim().toLowerCase();
-  if (word) {
-    executeSearch(word);
-  }
+  if (word) executeSearch(word);
 });
 
-// Evento para borrar historial
 clearHistoryBtn.addEventListener('click', () => {
   searchHistory = [];
   localStorage.removeItem('dict_history');
   renderHistory();
 });
 
-// Función central para coordinar la búsqueda y el historial
+// 2. DETECCIÓN AUTOMÁTICA DE PALABRA SELECCIONADA (Selection API)
+if (readingArea) {
+  readingArea.addEventListener('mouseup', () => {
+    const selectedText = window.getSelection().toString().trim().toLowerCase();
+    
+    // Validar que sea una sola palabra (sin espacios ni caracteres especiales)
+    if (selectedText && /^[a-zA-Z]+$/.test(selectedText)) {
+      executeSearch(selectedText);
+    }
+  });
+}
+
+// 3. FUNCIÓN CENTRAL DE BÚSQUEDA E HISTORIAL
 function executeSearch(word) {
   wordInput.value = word;
   saveToHistory(word);
-  fetchDefinition(word);
+  fetchWordData(word);
 }
 
-// 1. Guardar palabra en LocalStorage (sin duplicados y máximo 5 elementos)
 function saveToHistory(word) {
-  searchHistory = searchHistory.filter(item => item !== word); // Quitar si ya existía
-  searchHistory.unshift(word); // Insertar al inicio
-  if (searchHistory.length > 5) searchHistory.pop(); // Limitar a las últimas 5
+  searchHistory = searchHistory.filter(item => item !== word);
+  searchHistory.unshift(word);
+  if (searchHistory.length > 5) searchHistory.pop();
 
   localStorage.setItem('dict_history', JSON.stringify(searchHistory));
   renderHistory();
 }
 
-// 2. Mostrar el historial en pantalla
 function renderHistory() {
   if (searchHistory.length === 0) {
     historySection.style.display = 'none';
@@ -57,24 +65,44 @@ function renderHistory() {
   `).join('');
 }
 
-// 3. Consultar la API
-async function fetchDefinition(word) {
-  resultContainer.innerHTML = '<p class="placeholder-text">Buscando definición...</p>';
+// 4. CONSULTA A AMBAS APIS EN PARALELO (Dictionary API + Translation API)
+async function fetchWordData(word) {
+  resultContainer.innerHTML = '<p class="placeholder-text">Cargando definición y traducción...</p>';
 
   try {
-    const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+    // Peticiones simultáneas a ambas APIs remotas
+    const [dictRes, transRes] = await Promise.all([
+      fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`),
+      fetch(`https://api.mymemory.translated.net/get?q=${word}&langpair=en|es`)
+    ]);
 
-    if (!response.ok) throw new Error('No se encontró la palabra solicitada.');
+    let dictData = null;
+    let spanishTranslation = 'Traducción no disponible';
 
-    const data = await response.json();
-    displayResult(data[0]);
+    if (dictRes.ok) {
+      dictData = await dictRes.json();
+    }
+
+    if (transRes.ok) {
+      const transJson = await transRes.json();
+      if (transJson.responseData && transJson.responseData.translatedText) {
+        spanishTranslation = transJson.responseData.translatedText.toLowerCase();
+      }
+    }
+
+    if (!dictData) {
+      throw new Error(`No se encontraron detalles en inglés para "${word}".`);
+    }
+
+    displayResult(dictData[0], spanishTranslation);
+
   } catch (error) {
     resultContainer.innerHTML = `<p class="error-msg">⚠️ ${error.message}</p>`;
   }
 }
 
-// 4. Renderizar el resultado con Sinónimos e Interacción
-function displayResult(entry) {
+// 5. RENDERIZADO DE RESULTADOS EN EL DOM
+function displayResult(entry, translation) {
   const phoneticText = entry.phonetic || (entry.phonetics.find(p => p.text)?.text) || '';
   const audioObj = entry.phonetics.find(p => p.audio && p.audio.length > 0);
   const audioUrl = audioObj ? audioObj.audio : null;
@@ -87,14 +115,12 @@ function displayResult(entry) {
       </li>
     `).join('');
 
-    // Extraer sinónimos
     let synonyms = meaning.synonyms || [];
     meaning.definitions.forEach(def => {
       if (def.synonyms) synonyms = synonyms.concat(def.synonyms);
     });
-    synonyms = [...new Set(synonyms)].slice(0, 5); // Sin duplicados, máx 5
+    synonyms = [...new Set(synonyms)].slice(0, 5);
 
-    // Plantilla de sinónimos (se busca automáticamente al hacer clic)
     const synonymsHTML = synonyms.length > 0 ? `
       <div class="synonyms-container">
         <span class="synonyms-label">Sinónimos:</span>
@@ -121,10 +147,11 @@ function displayResult(entry) {
     <div class="word-header">
       <div class="word-title">
         <h2>${entry.word}</h2>
+        <p class="translation-tag">Español: <strong>${translation}</strong></p>
         ${phoneticText ? `<p class="phonetic">${phoneticText}</p>` : ''}
       </div>
       ${audioUrl ? `
-        <button class="btn-audio" onclick="playAudio('${audioUrl}')" title="Escuchar pronunciación">
+        <button type="button" class="btn-audio" onclick="playAudio('${audioUrl}')" title="Escuchar pronunciación">
           🔊
         </button>
       ` : ''}
@@ -135,8 +162,89 @@ function displayResult(entry) {
   `;
 }
 
-function playAudio(url) {
-  new Audio(url).play().catch(e => console.error("Error de audio:", e));
+// Web Audio API
+// 1. Modificación dentro de displayResult()
+// RENDERIZADO DE RESULTADOS EN EL DOM
+function displayResult(entry, translation) {
+  const phoneticText = entry.phonetic || (entry.phonetics.find(p => p.text)?.text) || '';
+  const wordToSpeak = entry.word;
+
+  // 1. CONSTRUCCIÓN DE LA VARIABLE meaningsHTML (Aseguramos que esté definida aquí)
+  const meaningsHTML = entry.meanings.map(meaning => {
+    // Extraer hasta 3 definiciones
+    const definitionsList = meaning.definitions.slice(0, 3).map(def => `
+      <li>
+        ${def.definition}
+        ${def.example ? `<span class="example">"${def.example}"</span>` : ''}
+      </li>
+    `).join('');
+
+    // Extraer sinónimos
+    let synonyms = meaning.synonyms || [];
+    meaning.definitions.forEach(def => {
+      if (def.synonyms) synonyms = synonyms.concat(def.synonyms);
+    });
+    synonyms = [...new Set(synonyms)].slice(0, 5); // Sin duplicados, máximo 5
+
+    // Plantilla HTML de sinónimos
+    const synonymsHTML = synonyms.length > 0 ? `
+      <div class="synonyms-container">
+        <span class="synonyms-label">Sinónimos:</span>
+        ${synonyms.map(syn => `
+          <button type="button" class="synonym-chip" onclick="executeSearch('${syn}')">
+            ${syn}
+          </button>
+        `).join('')}
+      </div>
+    ` : '';
+
+    return `
+      <div class="meaning-block">
+        <p class="part-of-speech">${meaning.partOfSpeech}</p>
+        <ul class="definitions-list">
+          ${definitionsList}
+        </ul>
+        ${synonymsHTML}
+      </div>
+    `;
+  }).join('');
+
+  // 2. INYECCIÓN EN EL DOM (Aquí se usa meaningsHTML ya definida arriba)
+  resultContainer.innerHTML = `
+    <div class="word-header">
+      <div class="word-title">
+        <h2>${entry.word}</h2>
+        <p class="translation-tag">Español: <strong>${translation}</strong></p>
+        ${phoneticText ? `<p class="phonetic">${phoneticText}</p>` : ''}
+      </div>
+      <button type="button" class="btn-audio" onclick="speakWord('${wordToSpeak}')" title="Escuchar pronunciación">
+        🔊
+      </button>
+    </div>
+    <div class="word-body">
+      ${meaningsHTML}
+    </div>
+  `;
+}
+
+// 2. Nueva función de voz usando la Web Speech API (Nativa del Navegador)
+function speakWord(text) {
+  if (!('speechSynthesis' in window)) {
+    alert("Tu navegador no soporta la reproducción de voz.");
+    return;
+  }
+
+  // Cancelar cualquier audio en curso
+  window.speechSynthesis.cancel();
+
+  const utterance = new SpeechSynthesisUtterance(text);
+  
+  // Configurar idioma a Inglés (Estados Unidos o Reino Unido)
+  utterance.lang = 'en-US';
+  utterance.rate = 0.9; // Velocidad ligeramente pausada para mejor claridad de aprendizaje
+
+  // Reproducir voz
+  window.speechSynthesis.speak(utterance);
 }
 
 // Inicialización

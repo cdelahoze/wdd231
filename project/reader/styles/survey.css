@@ -1,0 +1,173 @@
+/* Estilos para el formulario de encuesta y el Modal Dialog */
+/* Estilos para el formulario de encuesta */
+
+.survey-section {
+  margin-top: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.survey-intro {
+  margin-bottom: 25px;
+  color: var(--slate-gray);
+}
+
+.survey-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-group-fieldset {
+  border: 1px solid var(--body-bg);
+  background-color: var(--off-white);
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group-fieldset legend {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  color: var(--primary-blue);
+  padding: 0 8px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field label {
+  font-weight: 600;
+  color: var(--dark-navy);
+}
+
+.required-asterisk {
+  color: #e53e3e;
+}
+
+.form-field input[type="text"],
+.form-field input[type="email"],
+.form-field input[type="tel"],
+.form-field select,
+.form-field textarea {
+  padding: 10px 14px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-family: var(--body-font);
+  font-size: 1rem;
+  outline: none;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(0, 54, 181, 0.15);
+}
+
+.rating-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+.rating-options label {
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.btn-submit {
+  background-color: var(--primary-blue);
+  color: #ffffff;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--heading-font);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+  background-color: #002580;
+}
+
+/* ==========================================================
+   PURE CSS MODAL DIALOG (Técnica :target)
+   ========================================================== */
+
+.css-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Estado inicial: Oculto e invisible */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+/* Cuando el ID #confirmationModal es llamado en la URL, activa el modal */
+.css-modal-overlay:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.css-modal-box {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 480px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+  transform: translateY(-20px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.css-modal-overlay:target .css-modal-box {
+  transform: translateY(0);
+}
+
+.css-modal-box h3 {
+  color: var(--primary-blue);
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+}
+
+.css-modal-box p {
+  color: var(--dark-navy);
+  margin-bottom: 20px;
+}
+
+.btn-modal-close {
+  display: inline-block;
+  background-color: var(--dark-navy);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.btn-modal-close:hover {
+  background-color: #2d3748;
+}
