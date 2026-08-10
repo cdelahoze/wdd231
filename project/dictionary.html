@@ -3,13 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- favicon -->
     <link href="./images/TakTaim.ico" rel="icon" type="image/x-icon" />
-    <title>Editor de Texto Enriquecido - TakTaim Reader</title>
-    <link rel="stylesheet" href="./styles/editor-style.css" />
+    <title>Diccionario Dinámico</title>
+    <link rel="stylesheet" href="styles/dictionary.css" />
     <link rel="stylesheet" href="./styles/base.css" />
     <link rel="stylesheet" href="./styles/topnav.css" />
     <link rel="stylesheet" href="./styles/footer.css" />
-    <script src="./scripts/editor.js" defer></script>
+    <script src="scripts/dictionary.js" defer></script>
+    <script src="scripts/reader.js" defer></script>
     <script src="./scripts/topnav.js" defer></script>
   </head>
   <body>
@@ -17,7 +19,7 @@
       <div class="wrapper">
         <img src="./images/logo_taktime.svg" alt="logo-taktime" />
         <div class="brand-info">
-          <h1>TakTaim Reader</h1>
+          <p>TakTaim Reader</p>
           <p>Assisted English Reading Tool</p>
         </div>
         <div class="top-nav">
@@ -38,105 +40,59 @@
         </div>
       </div>
     </header>
-    <main >
-      <div class="editor-container">
-      <h1>Editor y Gestor de Textos</h1>
-      <p class="subtitle">
-        Ingresa o edita el texto en inglés dando formato de procesador de texto.
-      </p>
-      <form id="textForm" class="editor-form">
-        <div class="form-group">
-          <label for="textTitle">Título del Texto:</label>
+    <main>
+      <h1>Reader and Dictionary</h1>
+      <br>
+      <div class="app-layout">
+      <!-- PANEL IZQUIERDO: Lector de Texto -->
+      <section class="panel-reader">
+        <div class="panel-header">
+          <h2>TEXT TO READ</h2>
+          <div class="text-selector">
+            <select id="savedTextsSelect">
+              <option value="">-- Select a text from the catalog--</option>
+            </select>
+          </div>
+        </div>
+        <div id="readingArea" class="reading-box">
+          <p id="textContentDisplay">
+            Learning software development requires consistent daily practice.
+            When you highlight any word in this text (e.g.,
+            <strong>software</strong>), it will be automatically queried in the
+            right dictionary panel.
+          </p>
+        </div>
+      </section>
+      <!-- PANEL DERECHO: Diccionario Dinámico -->
+      <section class="panel-dictionary">
+        <div class="panel-header">
+          <h2>DYNAMIC DICTIONARY</h2>
+        </div>
+        <!-- Buscador -->
+        <form id="searchForm" class="search-box">
           <input
             type="text"
-            id="textTitle"
-            placeholder="Ej. Article about Software Engineering..."
+            id="wordInput"
+            placeholder="Search for a word..."
             required
             autocomplete="off"
           />
-        </div>
-        <!-- EDITOR WYSIWYG -->
-        <div class="form-group">
-          <label>Contenido del Texto (Inglés):</label>
-          <!-- Barra de Herramientas (Toolbar) -->
-          <div class="editor-toolbar">
-            <select id="fontSizeSelect" title="Tamaño de Letra">
-              <option value="3">Normal (12pt)</option>
-              <option value="1">Pequeño (10pt)</option>
-              <option value="4">Mediano (14pt)</option>
-              <option value="5">Grande (18pt)</option>
-              <option value="6">Muy Grande (24pt)</option>
-            </select>
-            <div class="separator"></div>
-            <button
-              type="button"
-              class="tool-btn"
-              data-cmd="bold"
-              title="Negrilla (Bold)"
-            >
-              <b>B</b>
-            </button>
-            <button
-              type="button"
-              class="tool-btn"
-              data-cmd="italic"
-              title="Cursiva (Italic)"
-            >
-              <i>I</i>
-            </button>
-            <button
-              type="button"
-              class="tool-btn"
-              data-cmd="underline"
-              title="Subrayado"
-            >
-              <u>U</u>
-            </button>
-            <div class="separator"></div>
-            <button
-              type="button"
-              class="tool-btn"
-              data-cmd="insertUnorderedList"
-              title="Viñetas"
-            >
-              • Lista
-            </button>
-            <button
-              type="button"
-              class="tool-btn"
-              data-cmd="insertOrderedList"
-              title="Lista Numerada"
-            >
-              1. Lista
-            </button>
-            <button
-              type="button"
-              class="tool-btn"
-              data-cmd="removeFormat"
-              title="Limpiar Formato"
-            >
-              Tx
-            </button>
+          <button type="submit">Search</button>
+        </form>
+        <!-- Historial -->
+        <div id="historySection" class="history-container">
+          <div class="history-header">
+            <span>Recent:</span>
+            <button id="clearHistoryBtn" class="btn-clear">Clear</button>
           </div>
-          <!-- Área de Edición Enriquecida -->
-          <div
-            id="editorContent"
-            class="rich-editor"
-            contenteditable="true"
-            role="textbox"
-          ></div>
+          <div id="historyList" class="history-list"></div>
         </div>
-        <div class="button-group">
-          <button type="submit" id="submitBtn">Guardar Texto (POST)</button>
-          <button type="button" id="downloadJsonBtn" class="btn-secondary">
-            Descargar texts.json
-          </button>
+        <!-- Resultados del Diccionario -->
+        <div id="resultContainer" class="result-box">
+          <p class="placeholder-text">
+            Select a word from the text on the left to see its definition.
+          </p>
         </div>
-      </form>
-      <div id="statusMessage" class="status-message"></div>
-      <section class="json-preview-section">
-        <h2>Estructura del JSON Almacenado</h2>
-        <pre id="jsonPreview"><code>[ ]</code></pre>
       </section>
       </div>
     </main>

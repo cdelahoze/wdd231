@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./images/TakTaim.ico" rel="icon" type="image/x-icon" />
+    <title>Editor de Texto Enriquecido - TakTaim Reader</title>
+    <link rel="stylesheet" href="./styles/editor-style.css" />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/topnav.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <script src="./scripts/editor.js" defer></script>
+    <script src="./scripts/topnav.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <img src="./images/logo_taktime.svg" alt="logo-taktime" />
+        <div class="brand-info">
+          <p>TakTaim Reader</p>
+          <p>Assisted English Reading Tool</p>
+        </div>
+        <div class="top-nav">
+          <nav class="topnav" id="myTopnav">
+            <a href="./index.html">Home</a>
+            <a href="./dictionary.html">Reader</a>
+            <a href="./editor.html">Editor</a>
+            <a href="./survey.html">Survey</a>
+            <button
+              type="button"
+              class="icon"
+              id="demo"
+              aria-label="Toggle navigation menu"
+            >
+              <span aria-hidden="true">&#9776;</span>
+            </button>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <h1>Text Editor and Manager</h1>
+      <div class="main-container">
+        <div class="editor-container">
+          <p class="subtitle">
+            Enter or edit the text in English using word processor formatting.
+          </p>
+          <form id="textForm" class="editor-form">
+            <div class="form-group">
+              <label for="textTitle">Title of the Text:</label>
+              <input
+                type="text"
+                id="textTitle"
+                placeholder="E.g. Article about Software Engineering..."
+                required
+                autocomplete="off"
+              />
+            </div>
+            <!-- EDITOR WYSIWYG -->
+            <div class="form-group">
+              <label>Content of the Text (English):</label>
+              <!-- Barra de Herramientas (Toolbar) -->
+              <div class="editor-toolbar">
+                <select id="fontSizeSelect" title="Tamaño de Letra">
+                  <option value="3">Normal (12pt)</option>
+                  <option value="1">Pequeño (10pt)</option>
+                  <option value="4">Mediano (14pt)</option>
+                  <option value="5">Grande (18pt)</option>
+                  <option value="6">Muy Grande (24pt)</option>
+                </select>
+                <div class="separator"></div>
+                <button
+                  type="button"
+                  class="tool-btn"
+                  data-cmd="bold"
+                  title="Negrilla (Bold)"
+                >
+                  <b>B</b>
+                </button>
+                <button
+                  type="button"
+                  class="tool-btn"
+                  data-cmd="italic"
+                  title="Cursiva (Italic)"
+                >
+                  <i>I</i>
+                </button>
+                <button
+                  type="button"
+                  class="tool-btn"
+                  data-cmd="underline"
+                  title="Subrayado"
+                >
+                  <u>U</u>
+                </button>
+                <div class="separator"></div>
+                <button
+                  type="button"
+                  class="tool-btn"
+                  data-cmd="insertUnorderedList"
+                  title="Viñetas"
+                >
+                  • Lista
+                </button>
+                <button
+                  type="button"
+                  class="tool-btn"
+                  data-cmd="insertOrderedList"
+                  title="Lista Numerada"
+                >
+                  1. Lista
+                </button>
+                <button
+                  type="button"
+                  class="tool-btn"
+                  data-cmd="removeFormat"
+                  title="Limpiar Formato"
+                >
+                  Tx
+                </button>
+              </div>
+              <!-- Área de Edición Enriquecida -->
+              <div
+                id="editorContent"
+                class="rich-editor"
+                contenteditable="true"
+                role="textbox"
+              ></div>
+            </div>
+            <div class="button-group">
+              <button type="submit" id="submitBtn">Save Text (POST)</button>
+              <button type="button" id="downloadJsonBtn" class="btn-secondary">
+                Download texts.json
+              </button>
+            </div>
+          </form>
+          <div id="statusMessage" class="status-message"></div>
+          <section class="json-preview-section">
+            <h2>Stored JSON Structure</h2>
+            <pre id="jsonPreview"><code>[ ]</code></pre>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="social-links" role="navigation" aria-label="Social links">
+        <!-- Enlace a LinkedIn -->
+        <a
+          href="https://www.linkedin.com/in/cristian-moises-de-la-hoz-escorcia-189a07317"
+          aria-label="LinkedIn"
+        >
+          <img
+            src="images/linkedin.svg"
+            alt="LinkedIn"
+            class="social-icon-img"
+            width="32"
+            height="32"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+        <!-- Enlace a GitHub -->
+        <a href="https://cdelahoze.github.io/introduction/" aria-label="GitHub">
+          <img
+            src="images/github.svg"
+            alt="GitHub"
+            class="social-icon-img"
+            width="32"
+            height="32"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+        <!-- Enlace a X (anteriormente Twitter) -->
+        <a
+          href="https://x.com/cride78?s=11&t=48RJdiLeyvtcvkTPRfRHIw"
+          aria-label="X"
+        >
+          <img
+            src="images/equis.svg"
+            alt="X"
+            class="social-icon-img"
+            width="32"
+            height="32"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+        <!-- Enlace a YouTube -->
+        <a
+          href="https://www.youtube.com/watch?v=9gYxspmg2GY"
+          aria-label="YouTube"
+        >
+          <img
+            src="images/youtube.svg"
+            alt="YouTube"
+            class="social-icon-img"
+            width="32"
+            height="32"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+      </div>
+      <div class="contact">
+        <p>Talk Time Institute</p>
+        <address>
+          <p>Calle 23C #70 50</p>
+          <p>Bogotá, D.C.</p>
+        </address>
+      </div>
+      <p class="info-contact">
+        info@talktimeinstitute.com <br />+(57) 301-494-1963 <br />📍Location Map
+      </p>
+      <p class="copyright">
+        &copy; <span id="year"></span> TakTaim Reader | Cristian De La Hoz
+        Escorcia | WD 231 Project | Last Modification: <span id="update"></span>
+      </p>
+    </footer>
+  </body>
+</html>

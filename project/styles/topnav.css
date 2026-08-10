@@ -14,7 +14,8 @@ header .wrapper {
 header .wrapper img {
   max-height: 90px;
   width: auto;
-  margin-right: 15px;
+  margin-right: 10px;
+  margin-left: auto;
 }
 
 .brand-info {
@@ -25,6 +26,7 @@ header .wrapper img {
 .top-nav {
   display: flex;
   align-items: center;
+  margin-right: auto;
 }
 
 .topnav {

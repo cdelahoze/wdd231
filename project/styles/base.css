@@ -15,11 +15,6 @@
 }
 
 /* Global Base Styling using defined typography and colors */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
 body {
   font-family: var(--body-font);
@@ -27,6 +22,9 @@ body {
   background-color: var(--body-bg);
   line-height: 1.6;
   padding: 20px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .plan-container {
@@ -47,20 +45,32 @@ h4 {
   color: var(--dark-navy);
 }
 
+h1 {
+  font-size: 2rem;
+  color: var(--primary-blue);
+  text-align: center;
+}
+
 header {
   border-bottom: 4px solid var(--primary-blue);
   padding-bottom: 20px;
   margin-bottom: 30px;
 }
 
-header h1 {
+header p:first-of-type {
   font-size: 2.2rem;
   color: var(--primary-blue);
+  font-weight: 700;
+  font-family: var(--heading-font);
+  margin-bottom: 5px;
+  margin-left: 10px;
 }
 
-header p {
+header p:last-of-type {
   color: var(--slate-gray);
   font-weight: 600;
+  margin-top: 0;
+  margin-left: 16px;
 }
 
 .wrapper {
@@ -76,6 +86,8 @@ header p {
 
 section {
   margin-bottom: 35px;
+  margin-left: 80px;
+  margin-right: 80px;
 }
 
 h2 {
@@ -162,4 +174,12 @@ li {
 .wireframe-placeholder p {
   color: var(--slate-gray);
   font-style: italic;
+}
+
+/* --- VISTA MÓVIL (Menú Hamburguesa) --- */
+@media screen and (max-width: 47.9375em) {
+  section {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
