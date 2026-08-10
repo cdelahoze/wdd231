@@ -1,14 +1,14 @@
 
 .main-container {
-  background-color: #f0f2f5;
-  color: #2d3748;
+  background-color: var(--body-bg);
+  color: var(--dark-navy);
   display: flex;
   justify-content: center;
   padding: 40px 20px;
 }
 
 .editor-container {
-  background: #ffffff;
+  background: var(--off-white);
   width: 100%;
   max-width: 800px;
   padding: 30px;
@@ -19,13 +19,14 @@
 h1 {
   text-align: center;
   margin-bottom: 8px;
-  color: #1a202c;
+  color: var(--dark-navy);
 }
 
 .subtitle {
   text-align: center;
-  color: #718096;
-  font-size: 0.95rem;
+  color: var(--dark-navy);
+  font-weight: 600;
+  font-size: 1.1rem;
   margin-bottom: 24px;
 }
 
@@ -67,7 +68,7 @@ input[type="text"]:focus {
   align-items: center;
   gap: 6px;
   padding: 8px 12px;
-  background-color: #f7fafc;
+  background-color: var(--off-white);
   border: 2px solid #e2e8f0;
   border-bottom: none;
   border-radius: 8px 8px 0 0;
@@ -75,7 +76,7 @@ input[type="text"]:focus {
 }
 
 .tool-btn {
-  background: #ffffff;
+  background: var(--off-white);
   border: 1px solid #cbd5e0;
   border-radius: 4px;
   padding: 6px 12px;
@@ -98,7 +99,7 @@ input[type="text"]:focus {
   padding: 6px 10px;
   border: 1px solid #cbd5e0;
   border-radius: 4px;
-  background-color: #ffffff;
+  background-color: var(--off-white);
   font-size: 0.85rem;
   outline: none;
 }
@@ -118,7 +119,7 @@ input[type="text"]:focus {
   padding: 16px;
   border: 2px solid #e2e8f0;
   border-radius: 0 0 8px 8px;
-  background-color: #ffffff;
+  background-color: var(--off-white);
   outline: none;
   line-height: 1.6;
 }
