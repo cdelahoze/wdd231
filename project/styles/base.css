@@ -2,6 +2,10 @@
        COLOR SCHEME & TYPOGRAPHY VARIABLES
        ========================================================== */
 :root {
+  /* Fuentes con alternativas del sistema que ocupan un espacio similar */
+  --heading-font:
+    "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --body-font: "Open Sans", Arial, Helvetica, sans-serif;
   /* Selected Color Palette */
   --primary-blue: #0036b5; /* Primary interactive elements, accents, links */
   --dark-navy: #1a202c; /* Headings, strong contrast text */
@@ -24,6 +28,10 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+  /* Ajuste de renderizado de texto para reducir variaciones */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 .plan-container {
@@ -181,4 +189,19 @@ li {
     margin-left: 10px;
     margin-right: 10px;
   }
+
+  main {
+    min-height: 50vh; /* Reserva el 50% de la altura de la pantalla desde el primer render */
+    contain: layout; /* Evita que los cambios dentro del main afecten al resto del documento */
+  }
+
+  header .wrapper img,
+  .logo {
+    max-height: 90px;
+    width: auto; /* Mantiene la proporción correcta basada en el height/width del HTML */
+    height: auto;
+    display: block;
+  }
 }
+
+

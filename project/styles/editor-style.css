@@ -140,7 +140,7 @@ input[type="text"]:focus {
 button[type="submit"] {
   flex: 1;
   padding: 14px 24px;
-  background-color: #3182ce;
+  background-color: var(--primary-blue);
   color: white;
   border: none;
   border-radius: 10px;
@@ -150,13 +150,13 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #2b6cb0;
+  background-color: var(--primary-blue);
 }
 
 .btn-secondary {
   padding: 14px 20px;
   background-color: #edf2f7;
-  color: #2b6cb0;
+  color: var(--primary-blue);
   border: 1px solid #cbd5e0;
   border-radius: 10px;
   font-size: 0.95rem;
@@ -188,8 +188,8 @@ button[type="submit"]:hover {
 }
 
 pre {
-  background-color: #1a202c;
-  color: #63b3ed;
+  background-color: var(--dark-navy);
+  color: var(--off-white);
   padding: 14px;
   border-radius: 8px;
   overflow-x: auto;
